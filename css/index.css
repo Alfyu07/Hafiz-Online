@@ -54,7 +54,9 @@ nav h1 {
 	margin-top: auto;
 	margin-bottom: 8px;
 }
-
+.button {
+	background-color: #89c3ff;
+}
 /* Akhir dari Nav */
 
 /* Awal dari Banner */
@@ -85,58 +87,22 @@ nav h1 {
 
 /* Awal Event */
 .event-container {
-	width: 1200;
-	height: 700px;
-	background-color: #eeeded;
-	display: block;
-	margin: 0 auto;
-}
-.header-event,
-#ket-event {
-	text-align: center;
-}
-.clear {
+	/* background-color: black; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
 	width: 100%;
 }
-.section-container {
-	width: 94%;
-	height: 500px;
+#table {
+	width: 70%;
+}
+td {
+	margin: 0 10px;
+}
+#table img {
+	width: 150px;
 	display: block;
-	margin: 0 auto;
-	margin-left: 200px;
+	padding: 0;
+	margin: 3px auto;
 }
-.section-event {
-	display: inline-block;
-	width: 300px;
-	height: 400px;
-	background-color: white;
-	margin-top: 40px;
-	margin-right: 40px;
-	border-radius: 10px;
-	box-shadow: 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.section-event img {
-	display: block;
-	width: 276px;
-	height: 150px;
-	border-radius: 10px;
-	margin: 10px auto;
-}
-.section-event h3 {
-	margin-left: 20px;
-}
-.section-event p {
-	margin-left: 20px;
-}
-.section-event .button {
-	display: block;
-	margin-top: 60px;
-	margin-left: 120px;
-	float: none;
-}
-.section-container .button {
-	display: block;
-	margin: 80px auto;
-}
-/* Masih bingung styling event nya, belum belajar flex box, mungkin belajar dlu baru bisa */
