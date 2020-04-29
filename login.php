@@ -28,7 +28,7 @@ if(isset($_POST["login"])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="./registrasi.css"> 
+    <link rel="stylesheet" href="./css/registrasi.css"> 
     <title>Login!</title>
   </head>
   <body>
@@ -55,18 +55,19 @@ if(isset($_POST["login"])){
         <li>
           <input type="password" name="password" id="password" placeholder="Type your password here..">
         </li>
-        <li class="remember">
+        <li class="remember" style="margin-bottom:-10px">
           <label class="container">Remember me
 
             <input type="checkbox"  >
             <span class="checkmark"></span>
           </label>
         </li>
-        <li id="forgot">Forgot your password</li>
+        <li id="forgot"><a href="">Forgot your password</a></li>
         <li>
           <button type="submit" name="login">Register!</button>
         </li>
-
+        <li class="optionlink">  Already have an account? <span><a href="./registrasi.php">click here!</a></span>
+        </li>
       </ul>
     </form>
     </div>

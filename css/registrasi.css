@@ -6,7 +6,7 @@
 body {
 	margin: 0 auto;
 	padding: 0;
-	background-image: url("./Asset/Login.png");
+	background-image: url("../Asset/Login.png");
 	background-size: cover;
 	/* background-attachment: ; */
 }
@@ -27,6 +27,10 @@ nav h1 {
 .title:hover {
 	background-color: white;
 	border-radius: 10px;
+}
+a {
+	text-decoration: none;
+	color: #0a8754;
 }
 main {
 	display: flex;
@@ -144,6 +148,22 @@ main {
 	color: #333;
 	margin-left: -2rem;
 }
+.optionlink {
+	margin-top: 0.7rem;
+	color: rgba(10, 135, 84);
+}
+.optionlink span {
+	font-weight: bold;
+}
+#forgot {
+	display: inline-flex;
+	font-size: 0.9rem;
+	position: relative;
+	bottom: 1.7rem;
+	left: 10rem;
+	color: #0a8754;
+}
+
 .form-input button {
 	background-color: #0a8754;
 	padding: 0.7rem 1.5rem;
@@ -152,14 +172,6 @@ main {
 	border-radius: 10px;
 	border: none;
 	width: 100%;
-}
-#forgot {
-	display: inline-flex;
-	font-size: 0.9rem;
-	position: relative;
-	bottom: 2.215rem;
-	left: 10rem;
-	color: #0a8754;
 }
 
 @media (min-width: 768px) {
