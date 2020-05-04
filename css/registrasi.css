@@ -196,7 +196,7 @@ main {
 	.banner {
 		position: relative;
 		display: flex;
-		width: 480px;box
+		width: 480px;
 		height: 600px;
 		align-items: center;
 		flex-direction: column;
