@@ -8,6 +8,7 @@ body {
 	padding: 0;
 	background-image: url("../Asset/Login.png");
 	background-size: cover;
+	overflow: scroll;
 	/* background-attachment: ; */
 }
 body,
@@ -37,6 +38,10 @@ main {
 	justify-content: space-around;
 	flex-direction: column;
 }
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+}
 .banner {
 	display: none;
 }
@@ -47,8 +52,9 @@ main {
 	align-items: center;
 	justify-content: center;
 	width: 588px;
-	height: 668.15px;
-	margin-top: -5rem;
+	height: 600px;
+	/* margin-top: -6rem;	 */
+	/* box-shadow: 2px 2px 4px #888888; */
 	/* border: 3px solid rgba(0, 0, 0, 0.4); */
 }
 .form-input ul {
@@ -185,13 +191,13 @@ main {
 	}
 	.form-input h1 {
 		position: relative;
-		left: -0.9rem;
+		left: 0rem;
 	}
 	.banner {
 		position: relative;
 		display: flex;
-		width: 480px;
-		height: 668.15px;
+		width: 480px;box
+		height: 600px;
 		align-items: center;
 		flex-direction: column;
 	}

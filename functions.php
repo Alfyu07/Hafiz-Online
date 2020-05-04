@@ -48,12 +48,6 @@
       return false;
     }
     //cek apakah password dan konfirmasi sama
-    if($password !== $password2){
-      echo "<script>
-        alert('your password didnt match');
-      </script>";
-      return false;
-    }
     //enkripsi password
     $password = password_hash($password,PASSWORD_DEFAULT);
     //insert ke database

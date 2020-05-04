@@ -32,21 +32,22 @@ if(isset($_POST["register"])){
       <div class="banner" style="margin: 0;">
         <img src="./Asset/reading-quran-nigth-ramadhan-illustration_19181-27-removebg-preview (1).png" alt="">
       </div>
-      <div class="form-input">
+      <div class="form-input" ">
         <h1 style="left:0.1rem">Ready to Join Us?</h1>
-        <form action="" method="post">
+        <div id="error" style="color:red; font-style:italic"></div>
+        <form action="" method="post" id="registrasi">
       <ul>
         <li>
-          <input type="text" name="username" id="username" placeholder="Type your username here..">
+          <input type="text" name="username" autocomplete="on" id="username" placeholder="Type your username here.." >
         </li>
         <li>
-          <input type="email" name="email" id="email" placeholder="Type your email here..">
+          <input type="email" name="email" autocomplete="on" id="email" placeholder="Type your email here..">
         </li>
         <li>
-          <input type="password" name="password" id="password" placeholder="Type your password here..">
+          <input type="password" name="password" autocomplete="on" id="password" placeholder="Type your password here..">
         </li>
         <li>
-          <input type="password" name="password" id="password" placeholder="Type your password here..">
+          <input type="password" name="password2" autocomplete="on" id="password2" placeholder="Type your password here..">
         </li>
         <li class="remember">
           <label class="container">I agree with term and condition
@@ -60,32 +61,12 @@ if(isset($_POST["register"])){
       </ul>
     </form>
     </div>
-    <!-- </main>
-    <div class="banner">
-    </div>
-    <div class="form-input">
-    <h1>Registrasi</h1>
-    <form action="" method="post">
-      <ul>
-        <li>
-          <label for="username">username</label>
-          <input type="text" name="username" id="username">
-        </li>
-        <li>
-          <label for="password">password</label>
-          <input type="password" name="password" id="password">
-        </li>
-        <li>
-          <label for="password2">konfirmasi password</label>
-          <input type="password" name="password2" id="password2">
-        </li>
-        <li>
-          <button type="submit" name="register">Register!</button>
-        </li>
-
-      </ul>
-    </form>
-    </div> -->
+    <script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
+    <script src="./js/registrasi.js" type="text/javascript"></script>
 
   </body>
 </html>
