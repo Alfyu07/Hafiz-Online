@@ -1,6 +1,9 @@
 <?php 
   //koneksi ke database
-  $conn = mysqli_connect("localhost","root","","hafiz");
+  $namadb = "hafizquran";
+  $unamedb = "root";
+  $passdb = "250700";
+  $conn = mysqli_connect("localhost","$unamedb","$passdb","$namadb");
   //ambil data dari tabel Mahasiswa /query
 
   function query($query){

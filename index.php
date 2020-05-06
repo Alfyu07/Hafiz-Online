@@ -1,5 +1,6 @@
 <?php 
-  require 'functions.php';
+	require 'functions.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,3 +49,4 @@
 		</div>
 	</body>
 </html>
+

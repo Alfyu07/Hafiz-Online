@@ -51,12 +51,9 @@ if(isset($_POST["login"])){
 			<div class="form-input card">
 				<h1>Hello,<br />Selamat Datang!</h1>
 
-		<?php if(isset($error)):?>
-			<script>
-				let err= $("#error");
-				err.html("wahyu");
-			</script>
-		<?php endif?>
+				<?php if(isset($error)): ?>
+					<p style="color:red; font-style:italic">username / password salah</p>
+    		<?php endif; ?>
 		<p id="error" style="color: red; font-style: italic; "></p>
 				<form action="" method="post" id="login">
 					<ul>

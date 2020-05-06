@@ -1,0 +1,258 @@
+:root {
+	--main-theme-color: #0a8754;
+	--main-text-color: #333;
+	--bgcolor: #fff;
+	--btn-input-color: #89c3ff;
+	--font-size: 1rem;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+}
+.title {
+	font-size: 1.5rem;
+	font-weight: 800;
+}
+body,
+input,
+button {
+	font-family: "Poppins", sans-serif;
+}
+/* Navbar Style  */
+.navbar {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	transition: all 1s;
+}
+
+.navbar .title {
+	margin: 0.58rem;
+	margin-left: 3rem;
+	position: relative;
+}
+
+.navbar .navbar-links {
+	display: none;
+	/* position: relative; */
+}
+
+.navbar .navbar-links ul {
+	width: 100%;
+	/* height: 100%; */
+	list-style-type: none;
+	padding: 0;
+	margin: auto auto;
+}
+
+.navbar .navbar-links ul li {
+	padding: 0.5rem 1rem;
+	display: block;
+	text-align: center;
+}
+
+.navbar .navbar-links ul li:hover {
+	background-color: var(--main-text-color);
+	opacity: 0.3;
+}
+
+.navbar .navbar-links ul li:hover a {
+	color: var(--bgcolor);
+}
+
+.navbar .navbar-links ul li a {
+	text-decoration: none;
+	color: var(--main-text-color);
+}
+
+.navbar .navbar-links.active {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.navbar .toggle-button {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	position: absolute;
+	width: 30px;
+	height: 21px;
+	top: 1rem;
+	left: 0.5rem;
+}
+
+.navbar .toggle-button .bar {
+	height: 3px;
+	width: 100%;
+	background-color: var(--main-text-color);
+	border-radius: 10px;
+}
+/* End of Navbar  */
+
+/* Main style */
+.surah.title {
+	margin-top: 32px;
+	padding: 10px;
+	width: 100%;
+	background-color: rgba(10, 135, 84);
+	color: white;
+	display: flex;
+	justify-content: center;
+	border-radius: 5px;
+}
+.ayat {
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 80px 1fr;
+	grid-template-rows: 1fr 0.1fr 1fr;
+	padding: 0;
+	margin: 16px 10px;
+	transition: transform 300ms;
+}
+.ayat:hover {
+	transform: scale(1.05);
+}
+
+.no-ayat {
+	display: flex;
+	justify-self: center;
+	margin-top: 20px;
+	background-color: rgba(10, 135, 84, 0.6);
+	width: 40px;
+	height: 32px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--bgcolor);
+	font-weight: 800;
+	grid-row: 1/2;
+	grid-column: 1/2;
+}
+.play {
+	font-size: 14 px;
+	display: flex;
+	position: relative;
+	justify-self: center;
+	top: 4rem;
+	color: rgba(10, 135, 84, 0.6);
+	grid-row: 1/2;
+	grid-column: 1/2;
+}
+.ayatquran {
+	display: flex;
+	justify-content: flex-end;
+	text-align: right;
+	font-size: 2.3rem;
+	grid-row: 1/2;
+	grid-column: 2/3;
+	margin-right: 20px;
+	margin-left: 40px;
+}
+.latin {
+	margin-right: 20px;
+	margin-left: 40px;
+	margin-bottom: 5px;
+	max-width: 90%;
+	grid-row: 2/3;
+	grid-column: 2/3;
+	color: rgba(10, 135, 84, 0.6);
+	font-style: italic;
+}
+.terjemah {
+	max-width: 90%;
+	margin-right: 20px;
+	margin-left: 40px;
+	grid-row: 3/4;
+	grid-column: 2/3;
+}
+footer {
+	margin-top: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	background-color: var(--main-text-color);
+	color: var(--bgcolor);
+}
+@media (min-width: 700px) {
+	/* Navbar Style  */
+
+	.navbar {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+	}
+
+	.navbar .navbar-links {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		height: 100%;
+	}
+	.navbar .navbar-links ul {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	.navbar .navbar-links ul li {
+		margin: 0;
+	}
+	.navbar .navbar-links ul li:hover {
+		background-color: var(--bgcolor);
+	}
+	.navbar .navbar-links ul li:hover a {
+		color: var(--main-text-color);
+	}
+	.navbar .navbar-links ul li a {
+		display: block;
+	}
+	.navbar .navbar-links ul li #sign-up {
+		background-color: var(--btn-input-color);
+		padding: 1px 4px;
+		border-radius: 5px;
+		color: var(--bgcolor);
+	}
+	/* End of Navbar Style  */
+
+	/* Main style */
+	main {
+		width: 902px;
+		margin: 0 auto;
+	}
+	.ayat {
+		margin: 16px 0;
+	}
+}
+/*# sourceMappingURL=test.css.map */

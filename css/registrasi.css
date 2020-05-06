@@ -1,3 +1,10 @@
+:root {
+	--main-theme-color: #0a8754;
+	--main-text-color: #333;
+	--bgcolor: #fff;
+	--btn-input-color: #2196f3;
+	--font-size: 1rem;
+}
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,800&display=swap");
 
 * {
@@ -21,12 +28,12 @@ nav h1 {
 	font-size: 1rem;
 }
 .title {
-	color: #333;
+	color: var(--main-text-color);
 	text-decoration: none;
 	padding: 0.5rem 1rem;
 }
 .title:hover {
-	background-color: white;
+	background-color: var(--bgcolor);
 	border-radius: 10px;
 }
 a {
@@ -77,7 +84,7 @@ main {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	color: #0a8754;
+	color: var(--main-theme-color);
 }
 /* Hide the browser's default checkbox */
 .container input {
@@ -94,19 +101,19 @@ main {
 	left: 0;
 	height: 18px;
 	width: 18px;
-	background-color: white;
-	border: 2px solid #0a8754;
+	background-color: var(--bgcolor);
+	border: 2px solid var(--main-theme-color);
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-	background-color: white;
-	border: 2px solid #0a8754;
+	background-color: var(--bgcolor);
+	border: 2px solid var(--main-theme-color);
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-	background-color: #2196f3;
+	background-color: var(--btn-input-color);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
