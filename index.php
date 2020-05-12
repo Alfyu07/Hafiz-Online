@@ -1,6 +1,5 @@
 <?php 
 	require 'functions.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +13,7 @@
 			href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./css/index.css
+		<link rel="stylesheet" href="./css/style.css
 	" />
 	</head>
 	<body>

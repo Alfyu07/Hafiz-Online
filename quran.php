@@ -1,6 +1,6 @@
 <?php  
 	require 'functions.php';
-	$surah = 1; //nanti di pilih pas pemilihan surah
+	$surah = 16	; //nanti di pilih pas pemilihan surah	
 	$quran = query("SELECT * FROM quran_id where suraId = '$surah'");
 ?>
 

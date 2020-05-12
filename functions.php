@@ -4,7 +4,7 @@
   $unamedb = "root";
   $passdb = "250700";
   $conn = mysqli_connect("localhost","$unamedb","$passdb","$namadb");
-  //ambil data dari tabel Mahasiswa /query
+  //ambil data dari tabel
 
   function query($query){
     global $conn;
