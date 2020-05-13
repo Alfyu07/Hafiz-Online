@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,800&display=swap");
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+  box-shadow: (0, 0, 0, 0.5);
+}

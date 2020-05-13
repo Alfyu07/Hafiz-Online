@@ -1,0 +1,132 @@
+@import "./scss/variabel";
+@import "./scss/navbar";
+@import "./scss/base";
+
+.photo-grid {
+  margin: 0 auto;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+}
+
+main {
+  margin: 0 auto;
+  margin-top: 50px;
+  h1 {
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+.card-tall {
+  grid-row: span 2 / auto;
+}
+.card-wide {
+  grid-column: span 2 / auto;
+}
+.grid-container {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repat(3, 1fr);
+  grid-auto-rows: minmax(240, 640);
+  gap: 30px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform ease-in-out 300ms;
+
+  h2 {
+    width: 80%;
+    line-height: 2rem;
+    margin: 10px auto;
+    margin-bottom: 15px;
+  }
+  .keterangan {
+    margin: 0;
+    margin-top: 20px;
+    width: 80%;
+    font-size: 13px;
+    line-height: 1.25rem;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.list p {
+  width: 80%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    li {
+      width: 35px;
+      height: 35px;
+      background-color: $bgColor;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+      &.active {
+        background-color: #000;
+        a {
+          color: $bgColor;
+        }
+      }
+      &.disabled {
+        pointer-events: none;
+        cursor: no-drop;
+      }
+      &.arrow {
+        width: 20px;
+      }
+      a {
+        text-align: center;
+        width: 100%;
+        font-size: 1rem;
+        text-decoration: none;
+        color: $main-text-color;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, minmax(240, 1fr));
+    grid-auto-rows: 240px;
+  }
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-container {
+    margin: 0 5rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,31 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,800&display=swap");
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body,
-input,
-button {
-  font-family: "Poppins", sans-serif;
-}
-
-.card {
-  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.card {
-  -webkit-box-shadow: 0, 0, 0, 0.5;
-          box-shadow: 0, 0, 0, 0.5;
-}
-
 /* Style Navbar Mobile*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,800&display=swap");
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,61 +200,144 @@ footer {
   color: #fff;
 }
 
-@font-face {
-  font-family: quranfont;
-  src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-/* Main style */
-.surah.title {
-  margin-top: 2rem;
-  padding: 10px;
-  /* width: 100%; */
-  background-color: #0a8754;
-  color: white;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+  -webkit-box-shadow: 0, 0, 0, 0.5;
+          box-shadow: 0, 0, 0, 0.5;
+}
+
+.photo-grid {
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  gap: 0.5rem;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+}
+
+main {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+main h1 {
+  text-align: center;
+}
+
+main img {
+  max-width: 100%;
+}
+
+.card-tall {
+  grid-row: span 2 / auto;
+}
+
+.card-wide {
+  grid-column: span 2 / auto;
+}
+
+.grid-container {
+  margin: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: repat(3, 1fr);
+      grid-template-columns: repat(3, 1fr);
+  grid-auto-rows: minmax(240, 640);
+  gap: 30px;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform ease-in-out 300ms;
+  transition: -webkit-transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms;
+  transition: transform ease-in-out 300ms, -webkit-transform ease-in-out 300ms;
+}
+
+.list h2 {
+  width: 80%;
+  line-height: 2rem;
+  margin: 10px auto;
+  margin-bottom: 15px;
+}
+
+.list .keterangan {
+  margin: 0;
+  margin-top: 20px;
+  width: 80%;
+  font-size: 13px;
+  line-height: 1.25rem;
+}
+
+.list:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.list p {
+  width: 80%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 60px;
 }
 
-.ayat {
+.pagination ul {
   list-style-type: none;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 80px 1fr;
-      grid-template-columns: 80px 1fr;
-  -ms-grid-rows: 1fr 0.1fr calc(max-content);
-      grid-template-rows: 1fr 0.1fr calc(-webkit-max-content);
-      grid-template-rows: 1fr 0.1fr calc(max-content);
-  padding: 0;
-  margin: 1.5rem 10px;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-}
-
-.ayat:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
-}
-
-.no-ayat {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-self: center;
-  margin-top: 20px;
-  background-color: rgba(10, 135, 84, 0.6);
-  width: 40px;
-  height: 32px;
-  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination ul li {
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -288,109 +345,60 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+.pagination ul li.active {
+  background-color: #000;
+}
+
+.pagination ul li.active a {
   color: #fff;
-  font-weight: 800;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
 }
 
-svg.iconify {
-  margin-top: 5px;
+.pagination ul li.disabled {
+  pointer-events: none;
+  cursor: no-drop;
 }
 
-.play {
-  font-size: 14 px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  justify-self: center;
-  top: 4rem;
-  color: rgba(10, 135, 84, 0.6);
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
+.pagination ul li.arrow {
+  width: 20px;
 }
 
-.ayatquran {
-  font-family: "quranfont", "sans-serif";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  text-align: right;
-  font-size: 2.3rem;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 40px;
+.pagination ul li a {
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #333;
 }
 
-.latin {
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-bottom: 5px;
-  max-width: 90%;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  color: rgba(10, 135, 84, 0.6);
-  font-style: italic;
-}
-
-.arabic_number {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  font-family: "quranfont", "sans-serif";
-  font-size: 2.3rem;
-}
-
-.terjemah {
-  max-width: 90%;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-@media (min-width: 768px) {
-  main {
-    width: 902px;
-    margin: 0 auto;
+@media screen and (min-width: 600px) {
+  .photo-grid {
+    -ms-grid-columns: (minmax(240, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(240, 1fr));
+    grid-auto-rows: 240px;
   }
-  .surah.title {
-    margin-left: 0;
-    margin-right: 0;
+  .card-tall {
+    grid-row: span 2 / auto;
   }
-  .ayat {
-    margin: 16px 0;
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+  .grid-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-container {
+    margin: 0 5rem;
   }
 }
-/*# sourceMappingURL=quran.css.map */
+
+@media screen and (min-width: 900px) {
+  .grid-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*# sourceMappingURL=listArticle.css.map */
