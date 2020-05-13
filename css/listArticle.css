@@ -234,6 +234,12 @@ button {
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 150px;
+  width: 100%;
+}
+
+.photo-grid a {
+  background-size: cover;
+  background-position: center;
 }
 
 main {

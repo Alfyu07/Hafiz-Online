@@ -29,22 +29,23 @@
         </ul>
       </div>
     </nav>
-    <!-- Akhir dari navigasi -->
-    <div class="photo-grid">
-      <div class="card one card-wide" style="
-            background-image: url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
-          "></div>
-      <div class="card two card-tall" style="
-            background-image: url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80');
-          "></div>
-      <div class="card three" style="
-            background-image: url('https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80');
-          "></div>
-      <div class="card four" style="
-            background-image: url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80');
-          "></div>
-    </div>
   </header>
+  <!-- Akhir dari navigasi -->
+  <div class="photo-grid">
+    <a href="" class="card one card-wide" style="
+            background-image: url('https://images.unsplash.com/photo-1558981359-219d6364c9c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80'); background-size:cover;
+          "></a>
+    <a href="" class="card two card-tall" style="
+            background-image: url('https://images.unsplash.com/photo-1583585635793-0e1894c169bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=913&q=80');
+          "></a>
+    <a href="" class="card three" style="
+            background-image: url('https://images.unsplash.com/photo-1583531172005-814191b8b6c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80');
+          "></a>
+    <a href="" class="card four" style="
+            background-image: url('https://images.unsplash.com/photo-1583426573939-97d09302d76a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80');
+          "></a>
+  </div>
+
   <main>
     <h1>Artikel Terbaru</h1>
 
