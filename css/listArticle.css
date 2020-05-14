@@ -1,5 +1,5 @@
 /* Style Navbar Mobile*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,7 +98,7 @@
   color: #fff;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
   /* Style Navbar Desktop */
   .navbar {
     display: -webkit-box;
@@ -145,7 +145,7 @@
             justify-content: center;
   }
   .navbar-links ul li a {
-    font-size: 1rem;
+    font-size: 1.15rem;
     padding: 6px 30px;
   }
   .navbar-links ul li a:hover {
@@ -160,6 +160,11 @@
     padding: 6px 20px;
     margin-left: 35px;
     color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 0.6;
+        flex-shrink: 0.6;
   }
   #login-text {
     color: #0a8754;

@@ -25,18 +25,6 @@ button {
           box-shadow: 0, 0, 0, 0.5;
 }
 
-@font-face {
-  font-family: "lpmq_isep_misbahregular";
-  src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"), url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"), url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: quranfont;
-  src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
-}
-
 /* Style Navbar Mobile*/
 .navbar {
   display: -webkit-box;
@@ -243,14 +231,105 @@ footer {
   color: #fff;
 }
 
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: absolute;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  width: 30px;
+  top: 0;
+  right: 1rem;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@font-face {
+  font-family: quranfont;
+  src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
+}
+
 /* Main style */
+.quran-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[autofit];
+      grid-template-columns: repeat(autofit, 1fr);
+  gap: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .surah.title {
   margin-top: 2rem;
   padding: 10px;
+  font-size: 2rem;
   font-weight: bold;
-  font-size: 1.5rem;
-  background-color: #0a8754;
-  color: white;
+  /* width: 100%; */
+  color: #0a8754;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -260,23 +339,27 @@ footer {
   border-radius: 5px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 35px;
+}
+
+ul {
+  margin: 0;
 }
 
 .ayat {
   list-style-type: none;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 80px 1fr;
-      grid-template-columns: 80px 1fr;
-  -ms-grid-rows: 1fr 0.1fr calc(max-content);
-      grid-template-rows: 1fr 0.1fr calc(-webkit-max-content);
-      grid-template-rows: 1fr 0.1fr calc(max-content);
+  -ms-grid-columns: 76px 1fr;
+      grid-template-columns: 76px 1fr;
+  -ms-grid-rows: 0.5fr 0.5fr;
+      grid-template-rows: 0.5fr 0.5fr;
   padding: 0;
-  margin: 1.5rem 10px;
   -webkit-transition: -webkit-transform 300ms;
   transition: -webkit-transform 300ms;
   transition: transform 300ms;
   transition: transform 300ms, -webkit-transform 300ms;
+  border-radius: 10px;
 }
 
 .ayat:hover {
@@ -291,10 +374,12 @@ footer {
   justify-self: center;
   margin-top: 20px;
   background-color: rgba(10, 135, 84, 0.6);
-  width: 40px;
+  width: 38px;
   height: 32px;
   border-radius: 5px;
   display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -311,37 +396,16 @@ footer {
   grid-column: 1/2;
 }
 
-svg.iconify {
-  margin-top: 5px;
-}
-
-.play {
-  font-size: 14 px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.surahIndo {
   position: relative;
-  justify-self: center;
-  top: 4rem;
-  color: rgba(10, 135, 84, 0.6);
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-.ayatquran {
-  font-family: "lpmq_isep_misbahregular", "quranfont", "sans-serif";
+  font-family: "Poppins", "sans-serif";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  text-align: right;
-  font-size: 2.3rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 1.5rem;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -349,24 +413,9 @@ svg.iconify {
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 40px;
-}
-
-.latin {
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-bottom: 5px;
-  max-width: 90%;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  color: rgba(10, 135, 84, 0.6);
-  font-style: italic;
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-weight: 500;
 }
 
 .arabic_number {
@@ -381,29 +430,33 @@ svg.iconify {
 }
 
 .terjemah {
-  max-width: 90%;
-  margin-right: 20px;
-  margin-left: 40px;
+  font-size: 14px;
+  margin-top: 5px;
   margin-bottom: 20px;
-  -ms-grid-row: 3;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 3/4;
+  grid-row: 2/3;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
+  max-width: 90%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1020px) {
   main {
     width: 902px;
     margin: 0 auto;
+  }
+  .surahIndo {
+    font-size: 1.25rem;
   }
   .surah.title {
     margin-left: 0;
     margin-right: 0;
   }
-  .ayat {
-    margin: 16px 0;
+  .quran-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
 }
-/*# sourceMappingURL=quran.css.map */
+/*# sourceMappingURL=daftarSurah.css.map */

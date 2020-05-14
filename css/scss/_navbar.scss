@@ -63,7 +63,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
   /* Style Navbar Desktop */
   .navbar {
     display: flex;
@@ -92,7 +92,7 @@
     justify-content: center;
     li {
       a {
-        font-size: 1rem;
+        font-size: 1.15rem;
         padding: 6px 30px;
         &:hover {
           color: rgba(3, 3, 3, 0.3);
@@ -110,7 +110,10 @@
     padding: 6px 20px;
     margin-left: 35px;
     color: $bgColor;
+    display: flex;
+    flex-shrink: 0.6;
   }
+
   #login-text {
     color: $main-theme-color;
     margin-right: 4.5rem;

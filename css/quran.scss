@@ -1,16 +1,26 @@
 @import "./scss/variabel";
 @import "./scss/base";
-@import "./scss/navbar";
 
+@font-face {
+  font-family: "lpmq_isep_misbahregular";
+  src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"),
+    url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"),
+    url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: quranfont;
   src: url("../Asset/fonts/UthmanicHafs1\ Ver09.otf");
 }
+@import "./scss/navbar";
+
 /* Main style */
 .surah.title {
   margin-top: 2rem;
   padding: 10px;
-  /* width: 100%; */
+  font-weight: bold;
+  font-size: 1.5rem;
   background-color: rgb(10, 135, 84);
   color: white;
   display: flex;
@@ -62,7 +72,7 @@ svg.iconify {
   grid-column: 1/2;
 }
 .ayatquran {
-  font-family: "quranfont", "sans-serif";
+  font-family: "lpmq_isep_misbahregular", "quranfont", "sans-serif";
   display: flex;
   justify-content: flex-end;
   text-align: right;
