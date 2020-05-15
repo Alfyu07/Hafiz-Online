@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
+@font-face {
+  font-family: "lpmq_isep_misbahregular";
+  src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"), url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"), url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: quranfont;
+  src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+  -webkit-box-shadow: 0, 0, 0, 0.5;
+          box-shadow: 0, 0, 0, 0.5;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  background: white;
+  height: 50%;
+  width: 50%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.modal strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal .input {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.modal .modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit {
+  margin: 0 auto;
+  width: 69%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+button {
+  margin: 1rem 10px;
+  border: none;
+  width: 120px;
+  height: 44px;
+  border-radius: 10px;
+  color: white;
+}
+
+button.tidak {
+  background-color: #ff7777;
+}
+
+button.ya {
+  background-color: #7977ff;
+}
+/*# sourceMappingURL=modal.css.map */

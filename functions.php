@@ -5,7 +5,7 @@ $unamedb = "root";
 $passdb = "250700";
 $conn = mysqli_connect("localhost", "$unamedb", "$passdb", "$namadb");
 //ambil data dari tabel
-
+// var_dump($conn);
 function query($query)
 {
   global $conn;

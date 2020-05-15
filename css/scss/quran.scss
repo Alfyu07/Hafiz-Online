@@ -1,19 +1,7 @@
-@import "./scss/variabel";
-@import "./scss/base";
+@import "./variabel";
+@import "./base";
 
-@font-face {
-  font-family: "lpmq_isep_misbahregular";
-  src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"),
-    url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"),
-    url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: quranfont;
-  src: url("../Asset/fonts/UthmanicHafs1\ Ver09.otf");
-}
-@import "./scss/navbar";
+@import "./navbar";
 
 /* Main style */
 .surah.title {
@@ -33,10 +21,11 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: 80px 1fr;
-  grid-template-rows: 1fr 0.1fr calc(max-content);
+  grid-template-rows: max-content max-content calc(max-content);
   padding: 0;
   margin: 1.5rem 10px;
   transition: transform 300ms;
+  border-radius: 10px;
 }
 .ayat:hover {
   transform: scale(1.03);
@@ -79,7 +68,7 @@ svg.iconify {
   font-size: 2.3rem;
   grid-row: 1/2;
   grid-column: 2/3;
-  margin-top: 20px;
+  // margin-top: 20px;
   margin-right: 20px;
   margin-left: 40px;
 }

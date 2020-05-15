@@ -1,7 +1,8 @@
 <?php
 require 'functions.php';
-$surah = 16; //nanti di pilih pas pemilihan surah	
+$surah = 13; //nanti di pilih pas pemilihan surah
 $quran = query("SELECT * FROM quran_id where suraId = '$surah'");
+$namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$surah'");
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +39,10 @@ $quran = query("SELECT * FROM quran_id where suraId = '$surah'");
 		<!-- Akhir dari navigasi -->
 	</header>
 	<main class="quran-container">
-		<header class="surah title">Surah Al-Fatihah</header>
+		<?php foreach ($namasurah as $nama) : ?>
+			<header class="surah title"><?php echo $nama['surat_indonesia']; ?></header>
+		<?php endforeach; ?>
+
 		<?php foreach ($quran as $ayat) : ?>
 			<ul class="ayat card">
 				<li class="no-ayat"><?php echo $ayat["verseID"]; ?></li>

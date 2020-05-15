@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
+@font-face {
+  font-family: "lpmq_isep_misbahregular";
+  src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"), url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"), url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: quranfont;
+  src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -303,7 +315,7 @@ footer {
   text-decoration: none;
   color: var(--main-text-color);
   text-align: center;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .glider ul {

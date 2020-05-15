@@ -39,16 +39,17 @@ $quran = query('SELECT * FROM DaftarSurat');
     <main class="quran-container">
       <?php foreach ($quran as $surah) : ?>
         <ul class="ayat card">
-          <li class="no-ayat"><?php echo $surah["suraID"]; ?></li>
+          <li class="no-ayat"><?php echo $surah["suraId"]; ?></li>
           <li class="surahIndo">
-            <?php echo $surah["surat_indonesia"]; ?>
+            <?php echo ucfirst($surah["surat_indonesia"]); ?>
             <label class="container">
+              <!-- dia checked kalo surahnya berhasil dia hafal -->
               <input type="checkbox" checked="checked">
               <span class="checkmark"></span>
             </label>
           </li>
 
-          <li class="terjemah"><?php echo $surah["arti"]; ?></li>
+          <li class="terjemah"><?php echo ucwords($surah["arti"]); ?></li>
         </ul>
       <?php endforeach; ?>
 

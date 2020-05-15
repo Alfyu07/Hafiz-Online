@@ -1,7 +1,7 @@
-@import "./scss/variabel";
-@import "./scss/base";
-@import "./scss/navbar";
-@import "./scss/checkbox";
+@import "./variabel";
+@import "./base";
+@import "./navbar";
+@import "./checkbox";
 
 @font-face {
   font-family: quranfont;
@@ -32,6 +32,7 @@
 ul {
   margin: 0;
 }
+
 .ayat {
   list-style-type: none;
   display: grid;

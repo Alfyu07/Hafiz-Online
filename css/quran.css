@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
+@font-face {
+  font-family: "lpmq_isep_misbahregular";
+  src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"), url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"), url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: quranfont;
+  src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -23,18 +35,6 @@ button {
 .card {
   -webkit-box-shadow: 0, 0, 0, 0.5;
           box-shadow: 0, 0, 0, 0.5;
-}
-
-@font-face {
-  font-family: "lpmq_isep_misbahregular";
-  src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"), url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"), url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: quranfont;
-  src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
 }
 
 /* Style Navbar Mobile*/
@@ -268,15 +268,16 @@ footer {
   display: grid;
   -ms-grid-columns: 80px 1fr;
       grid-template-columns: 80px 1fr;
-  -ms-grid-rows: 1fr 0.1fr calc(max-content);
-      grid-template-rows: 1fr 0.1fr calc(-webkit-max-content);
-      grid-template-rows: 1fr 0.1fr calc(max-content);
+  -ms-grid-rows: max-content max-content calc(max-content);
+      grid-template-rows: -webkit-max-content -webkit-max-content calc(-webkit-max-content);
+      grid-template-rows: max-content max-content calc(max-content);
   padding: 0;
   margin: 1.5rem 10px;
   -webkit-transition: -webkit-transform 300ms;
   transition: -webkit-transform 300ms;
   transition: transform 300ms;
   transition: transform 300ms, -webkit-transform 300ms;
+  border-radius: 10px;
 }
 
 .ayat:hover {
@@ -348,7 +349,6 @@ svg.iconify {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  margin-top: 20px;
   margin-right: 20px;
   margin-left: 40px;
 }

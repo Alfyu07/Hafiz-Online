@@ -1,6 +1,6 @@
-@import "./scss/variabel";
-@import "./scss/base";
-@import "./scss/navbar";
+@import "./variabel";
+@import "./base";
+@import "./navbar";
 
 .header-article {
   display: flex;
@@ -54,7 +54,7 @@
   text-decoration: none;
   color: var(--main-text-color);
   text-align: center;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .glider ul {
   list-style-type: none;
