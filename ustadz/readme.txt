@@ -1,0 +1,1 @@
+form_artikel.php bisa di peruntukkan untuk dua buah input yang mirip yaitu input artikel dan input event.

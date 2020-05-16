@@ -206,7 +206,7 @@ button {
         flex-shrink: 0.6;
   }
   #login-text {
-    color: #0a8754;
+    color: #279863;
     margin-right: 4.5rem;
   }
   #signUp:hover,
@@ -342,7 +342,7 @@ footer {
   font-size: 2rem;
   font-weight: bold;
   /* width: 100%; */
-  color: #0a8754;
+  color: #279863;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

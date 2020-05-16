@@ -1,0 +1,158 @@
+@import "variabel";
+:root {
+  --ck-sample-base-spacing: 2em;
+  --ck-sample-color-white: #fff;
+  --ck-sample-color-green: #279863;
+  --ck-sample-color-blue: #1a9aef;
+  --ck-sample-container-width: 1285px;
+  --ck-sample-sidebar-width: 350px;
+  --ck-sample-editor-min-height: 400px;
+}
+
+/* --------- EDITOR STYLES  ---------------------------------------------------------------------------------------- */
+/* --------- SAMPLE GENERIC STYLES (not related to CKEditor) ------------------------------------------------------- */
+@import "base";
+@import "navbar";
+@import "texteditor";
+
+// body,
+// html {
+//   padding: 0;
+//   margin: 0;
+
+//   font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji",
+//     "Segoe UI Emoji", "Segoe UI Symbol";
+//   font-size: 16px;
+//   line-height: 1.5;
+// }
+
+body {
+  height: 100%;
+  color: #2d3a4a;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+a {
+  color: #38a5ee;
+}
+
+main .message {
+  padding: 0 0 var(--ck-sample-base-spacing);
+  background: var(--ck-sample-color-green);
+  color: var(--ck-sample-color-white);
+  blockquote {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  span {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+main .message::after {
+  content: "";
+  z-index: -1;
+  display: block;
+  height: 70%;
+  width: 100%;
+  background: var(--ck-sample-color-green);
+  position: absolute;
+  left: 0;
+}
+
+main .message h2 {
+  // position: relative;
+  padding-top: 1em;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.centered {
+  /* Hide overlapping comments. */
+  overflow: hidden;
+  max-width: var(--ck-sample-container-width);
+  margin: 0 auto;
+  padding: 0 var(--ck-sample-base-spacing);
+}
+input {
+  margin: 0;
+  border: 0;
+  box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.3);
+}
+.row {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  .input-title {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    input {
+      width: 100%;
+      height: 100%;
+      height: 2.5rem;
+      border-radius: 0 5px 5px 0;
+      padding-left: 1rem;
+      outline: 1px solid rgb(0, 153, 255);
+    }
+    .iconify {
+      display: flex;
+      align-self: center;
+      height: 100%;
+      font-size: 40px;
+      background-color: white;
+      border-radius: 5px 0px 0px 0px;
+      box-shadow: 0 0 4px rgba($color: #000000, $alpha: 0.3);
+    }
+  }
+  #submit {
+    width: 100%;
+    height: 2.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: $main-theme-color;
+    font-size: 1.2rem;
+    color: white;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 1rem;
+  user-select: none;
+  border-radius: 4px;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  background-color: var(--ck-sample-color-button-blue);
+  border-color: var(--ck-sample-color-button-blue);
+  color: var(--ck-sample-color-white);
+  display: inline-block;
+}
+
+.btn--tiny {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+/* --------- RWD --------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 800px) {
+  :root {
+    --ck-sample-base-spacing: 1em;
+  }
+}

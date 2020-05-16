@@ -10,7 +10,8 @@ $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$sur
 
 <head>
 	<!-- <link rel="stylesheet" href="background_styles.css" /> -->
-	<link rel="stylesheet" href="./css/quran.css" />
+	<!-- <link rel="stylesheet" href="./css/quran.css" /> -->
+	<link rel="stylesheet" href="./css/quran.css">
 	<script src="./js/script.js" defer></script>
 	<title>HafizQuran</title>
 </head>
