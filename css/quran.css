@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
+.primary-btn {
+  border-radius: 5px;
+  border: none;
+  background-color: #89c3ff;
+  padding: 12px 16px;
+  color: #fff;
+}
+
 @font-face {
   font-family: "lpmq_isep_misbahregular";
   src: url("../Asset/fonts/lpmq_isepmisbah-webfont.woff2") format("woff2"), url("../Asset/fonts/lpmq_isepmisbah-webfont.woff") format("woff"), url("../Asset/fonts/lpmq_isepmisbah-webfont.ttf") format("truetype");
@@ -30,11 +38,6 @@ button {
 .card {
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.card {
-  -webkit-box-shadow: 0, 0, 0, 0.5;
-          box-shadow: 0, 0, 0, 0.5;
 }
 
 /* Style Navbar Mobile*/
@@ -250,7 +253,7 @@ footer {
   padding: 10px;
   font-weight: bold;
   font-size: 1.5rem;
-  background-color: #279863;
+  background-color: #279662;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -292,8 +295,8 @@ footer {
   display: flex;
   justify-self: center;
   margin-top: 20px;
-  background-color: rgba(39, 150, 98, 0.6);
-  width: 40px;
+  background-color: #279863;
+  width: 32px;
   height: 32px;
   border-radius: 5px;
   display: flex;
@@ -311,10 +314,6 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
-}
-
-svg.iconify {
-  margin-top: 5px;
 }
 
 .play {
@@ -406,5 +405,36 @@ svg.iconify {
   .ayat {
     margin: 16px 0;
   }
+}
+
+button.plymedia {
+  border: none;
+  background-color: white !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #279863;
+  outline: none;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  left: 4px;
+}
+
+button.plymedia svg.iconify {
+  font-size: 1.5rem;
+}
+
+button.plymedia:hover {
+  opacity: 0.7;
+}
+
+button .hidden {
+  display: none !important;
 }
 /*# sourceMappingURL=quran.css.map */

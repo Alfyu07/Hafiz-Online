@@ -1,6 +1,6 @@
 <?php
-require 'functions.php';
-$surah = 13; //nanti di pilih pas pemilihan surah
+
+$surah = 2; //nanti di pilih pas pemilihan surah
 $quran = query("SELECT * FROM quran_id where suraId = '$surah'");
 $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$surah'");
 ?>
@@ -9,10 +9,7 @@ $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$sur
 <html>
 
 <head>
-	<!-- <link rel="stylesheet" href="background_styles.css" /> -->
-	<!-- <link rel="stylesheet" href="./css/quran.css" /> -->
 	<link rel="stylesheet" href="./css/quran.css">
-	<script src="./js/script.js" defer></script>
 	<title>HafizQuran</title>
 </head>
 
@@ -47,7 +44,15 @@ $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$sur
 		<?php foreach ($quran as $ayat) : ?>
 			<ul class="ayat card">
 				<li class="no-ayat"><?php echo $ayat["verseID"]; ?></li>
-				<li class="play"><span class="iconify" data-inline="false" data-icon="bi:play-fill"></span>play</li>
+				<li class="play">
+					<div class="player">
+						<audio class="plyr-audio">
+							<source src="Asset/ayat/<?= $ayat["id"] + 1 ?>.mp3" type="audio/mp3" />
+						</audio>
+						<button class="plymedia"><span class="iconify" data-inline="false" data-icon="bi:play-fill"></span>
+							play</button>
+					</div>
+				</li>
 				<li class="ayatquran">
 					<?php echo $ayat["ayahText"];
 					?></li>
@@ -63,6 +68,11 @@ $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$sur
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="./js/script.js"></script>
+	<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
+
+
 </body>
 
 </html>

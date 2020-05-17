@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
+.primary-btn {
+  border-radius: 5px;
+  border: none;
+  background-color: #89c3ff;
+  padding: 12px 16px;
+  color: #fff;
+}
+
 :root {
   --ck-sample-base-spacing: 2em;
   --ck-sample-color-white: #fff;
@@ -42,11 +50,6 @@ button {
 .card {
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.card {
-  -webkit-box-shadow: 0, 0, 0, 0.5;
-          box-shadow: 0, 0, 0, 0.5;
 }
 
 /* Style Navbar Mobile*/

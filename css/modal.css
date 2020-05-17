@@ -32,11 +32,6 @@ button {
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.card {
-  -webkit-box-shadow: 0, 0, 0, 0.5;
-          box-shadow: 0, 0, 0, 0.5;
-}
-
 .modal-bg {
   position: fixed;
   top: 0;
@@ -123,7 +118,7 @@ button {
           justify-content: flex-end;
 }
 
-button {
+button.modal-btn {
   margin: 1rem 10px;
   border: none;
   width: 120px;
@@ -132,11 +127,11 @@ button {
   color: white;
 }
 
-button.tidak {
+button.modal-btn.tidak {
   background-color: #ff7777;
 }
 
-button.ya {
+button.modal-btn.ya {
   background-color: #7977ff;
 }
 /*# sourceMappingURL=modal.css.map */

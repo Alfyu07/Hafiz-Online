@@ -1,0 +1,222 @@
+@import "variabel";
+@import "base";
+@import "navbar";
+.primary-btn {
+  border-radius: 5px;
+  border: none;
+  background-color: $btnColor;
+  padding: 12px 16px;
+  color: #fff;
+  width: 120px;
+}
+#periksa {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+  .title {
+    text-align: center;
+    color: $main-theme-color;
+    font-size: 28px;
+  }
+  .plyr-container {
+    width: 80%;
+    margin: 30px auto;
+  }
+
+  .user-info {
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, max-content) 1fr;
+    grid-auto-rows: minmax(100px, 1fr);
+    .profile-photo {
+      display: flex;
+      justify-self: center;
+      align-self: center;
+      clip-path: circle(40%);
+      width: 100px;
+    }
+    .centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .username {
+      margin: 0 0;
+      grid-column: 2/3;
+      grid-row: 1/2;
+      width: 100%;
+    }
+    .waktu {
+      display: block;
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+    #ket-hafalan {
+      width: 90%;
+      margin: auto;
+      font-size: 1rem;
+      min-width: 120px;
+      color: $main-theme-color;
+    }
+  }
+}
+.view {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  .hafalan {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.komentar {
+  width: 90%;
+  margin: 0 auto;
+  // border: 1px solid rgba($color: #000000, $alpha: 0.5);
+  font-size: 1.25rem;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  h3 {
+    margin-top: 0;
+    background-color: $main-theme-color;
+    color: white;
+    // text-align: center;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+}
+.quran {
+  width: 90%;
+  margin: 20px auto;
+  // border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+
+  .collapsible {
+    background-color: $main-theme-color;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 0px;
+    border: 0;
+    height: 60px;
+  }
+  .content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 450px;
+    overflow-y: scroll;
+    list-style-type: none;
+  }
+
+  .ayat {
+    width: 90%;
+    font-family: "lpmq_isep_misbahregular", "quranfont", "poppins";
+    text-align: right;
+    font-size: 2rem;
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+  }
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  form {
+    width: 80%;
+    margin: 20px auto;
+
+    label {
+      display: block;
+      font-size: 28px;
+      font-weight: bold;
+      color: $main-theme-color;
+    }
+    input {
+      padding-left: 10px;
+      height: 40px;
+      font-size: 1.25rem;
+      border-radius: 5px;
+    }
+    textarea {
+      padding-left: 10px;
+      padding-top: 10px;
+      width: 450px;
+      font-size: 1.25rem;
+      border-radius: 5px;
+    }
+    .primary-btn {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+    .primary-btn:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #ket-hafalan {
+    font-size: 1.5rem !important;
+    width: 70%;
+  }
+  .hafalan {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: max-content;
+  }
+  .quran {
+    width: 50%;
+    margin: 0 auto;
+    // overflow-y: scroll;
+  }
+  .komentar {
+    width: 45%;
+    margin: 0 auto;
+    // overflow-y: scroll;
+  }
+  .review {
+    form {
+      margin-top: 85px;
+      width: 90%;
+      display: grid;
+      grid-template-columns: 0.5fr 1fr;
+      gap: 1rem;
+      label {
+        width: 50%;
+        margin-left: 1.5rem;
+      }
+      input {
+        width: 13%;
+      }
+      textarea {
+        width: 100%;
+      }
+      button {
+        grid-column: 2/3;
+        display: flex;
+        justify-self: flex-end;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

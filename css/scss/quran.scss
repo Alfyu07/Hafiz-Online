@@ -9,7 +9,7 @@
   padding: 10px;
   font-weight: bold;
   font-size: 1.5rem;
-  background-color: #279863;
+  background-color: rgb(39, 150, 98);
   color: white;
   display: flex;
   justify-content: center;
@@ -35,8 +35,8 @@
   display: flex;
   justify-self: center;
   margin-top: 20px;
-  background-color: rgba(39, 150, 98, 0.6);
-  width: 40px;
+  background-color: $main-theme-color;
+  width: 32px;
   height: 32px;
   border-radius: 5px;
   display: flex;
@@ -47,9 +47,7 @@
   grid-row: 1/2;
   grid-column: 1/2;
 }
-svg.iconify {
-  margin-top: 5px;
-}
+
 .play {
   font-size: 14 px;
   display: flex;
@@ -110,4 +108,27 @@ svg.iconify {
   .ayat {
     margin: 16px 0;
   }
+}
+
+button.plymedia {
+  border: none;
+  background-color: white !important;
+  display: flex;
+  color: $main-theme-color;
+  outline: none;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 4px;
+  svg.iconify {
+    font-size: 1.5rem;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+button .hidden {
+  display: none !important;
 }

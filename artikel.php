@@ -52,7 +52,7 @@ require 'functions.php';
       <h1 id="judul">Wisuda Akbar Bali Nusa 2020</h1>
       <!-- disini panggil source image yang di upload -->
       <p id="keterangan"><time>2 month ago</time> By <a>Ust. Agung Dwitatwa Achmadi</a></p>
-      <img src="./Asset/girl-4629214_1280.jpg" alt="judul artikel">
+      <img src="./Asset/img/girl-4629214_1280.jpg" alt="judul artikel">
     </header>
     <article class="isi">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore necessitatibus tempora sit recusandae quod nostrum animi, soluta, repudiandae fugiat sequi nobis itaque, eius ad neque minima magni assumenda ducimus! Culpa, eligendi quis, qui consequatur aliquid reprehenderit repudiandae ipsam sequi saepe voluptate, quaerat dolorum esse error dolores laudantium molestiae ipsum tenetur iusto. Explicabo, mollitia voluptates? Cumque atque iste soluta aspernatur, quia culpa provident beatae sint temporibus distinctio eveniet et nulla ad aliquam? Omnis illo, minima mollitia cupiditate fugit sunt ex quasi itaque eius totam velit optio minus enim nihil voluptas, reprehenderit iste error odit iure sequi. Voluptatem enim, voluptatibus cum quod beatae necessitatibus nesciunt totam, perferendis quam similique commodi ducimus in. Nam, esse voluptas assumenda adipisci facere, veniam quibusdam cum deleniti dicta et, saepe explicabo veritatis inventore vel sint sequi quod. Sit neque maiores tempore voluptatum, facilis nulla dolore mollitia nam repellendus. Inventore, asperiores quo. Eaque officiis doloribus vero sint accusantium iure iusto pariatur deserunt, est mollitia quisquam et laborum consectetur expedita voluptatibus sunt reiciendis rerum nostrum excepturi nulla esse, reprehenderit voluptatum ullam! Unde, nostrum.</p>
@@ -71,7 +71,7 @@ require 'functions.php';
 
         <a href="">
           <ul class="card">
-            <li><img src="./Asset/mtqn.jpg" alt=""></li>
+            <li><img src="./Asset/img/mtqn.jpg" alt=""></li>
             <li>
               <p>
                 Wisuda Hafiz Bali Nusa Tenggara 2020
@@ -82,7 +82,7 @@ require 'functions.php';
 
         <a href="">
           <ul class="card">
-            <li><img src="./Asset/mtqn.jpg" alt=""></li>
+            <li><img src="./Asset/img/mtqn.jpg" alt=""></li>
             <li>
               <p>
                 Wisuda Hafiz Bali Nusa Tenggara 2020
@@ -93,7 +93,7 @@ require 'functions.php';
 
         <a href="">
           <ul class="card">
-            <li><img src="./Asset/mtqn.jpg" alt=""></li>
+            <li><img src="./Asset/img/mtqn.jpg" alt=""></li>
             <li>
               <p>
                 Wisuda Hafiz Bali Nusa Tenggara 2020
@@ -104,7 +104,7 @@ require 'functions.php';
 
         <a href="">
           <ul class="card">
-            <li><img src="./Asset/mtqn.jpg" alt=""></li>
+            <li><img src="./Asset/img/mtqn.jpg" alt=""></li>
             <li>
               <p>
                 Wisuda Hafiz Bali Nusa Tenggara 2020
@@ -115,7 +115,7 @@ require 'functions.php';
 
         <a href="">
           <ul class="card">
-            <li><img src="./Asset/mtqn.jpg" alt=""></li>
+            <li><img src="./Asset/img/mtqn.jpg" alt=""></li>
             <li>
               <p>
                 Wisuda Hafiz Bali Nusa Tenggara 2020
@@ -126,7 +126,7 @@ require 'functions.php';
 
         <a href="">
           <ul class="card">
-            <li><img src="./Asset/mtqn.jpg" alt=""></li>
+            <li><img src="./Asset/img/mtqn.jpg" alt=""></li>
             <li>
               <p>
                 Wisuda Hafiz Bali Nusa Tenggara 2020
@@ -137,7 +137,7 @@ require 'functions.php';
 
         <a href="">
           <ul class="card">
-            <li><img src="./Asset/mtqn.jpg" alt=""></li>
+            <li><img src="./Asset/img/mtqn.jpg" alt=""></li>
             <li>
               <p>
                 Wisuda Hafiz Bali Nusa Tenggara 2020
