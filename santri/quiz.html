@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/quiz.css" />
     <title>Daftar Surat</title>
+    <link rel="stylesheet" href="../css/quiz.css" />
   </head>
 
   <body>
     <header>
       <!-- Navigasi -->
+
       <nav class="navbar">
         <div class="brand-title">HafizQuran</div>
         <a href="#" class="toggle-button">
@@ -29,10 +30,18 @@
         </div>
       </nav>
     </header>
+    <div class="confirm">
+      <h1>Memorization Quiz</h1>
+      <p>Quiz | 5 pertanyaan</p>
 
+      <div class="centered">
+        <a href="../index.php"
+          ><button class="primary-btn false">Tidak</button></a
+        >
+        <button class="mainkan primary-btn">Main</button>
+      </div>
+    </div>
     <main id="quiz">
-      <div class="confirm"></div>
-
       <!-- kalo jawabannya benar tampilkan yang ini -->
       <div class="benar" style="display: none;">
         <span
@@ -43,8 +52,7 @@
         <strong>Jawaban Anda Benar</strong>
         <p class="text">Jawaban :</p>
         <p class="ayat">
-          اُولٰۤىِٕكَ الَّذِيْنَ اشْتَرَوُا الضَّلٰلَةَ بِالْهُدٰىۖ فَمَا
-          رَبِحَتْ تِّجَارَتُهُمْ وَمَا كَانُوْا مُهْتَدِيْنَ
+          اَلَآ اِنَّهُمْ هُمُ الْمُفْسِدُوْنَ وَلٰكِنْ لَّا يَشْعُرُوْنَ
         </p>
       </div>
 
@@ -58,8 +66,7 @@
         <strong>Jawaban Anda Belum Benar</strong>
         <p class="text">Jawaban :</p>
         <p class="ayat">
-          اُولٰۤىِٕكَ الَّذِيْنَ اشْتَرَوُا الضَّلٰلَةَ بِالْهُدٰىۖ فَمَا
-          رَبِحَتْ تِّجَارَتُهُمْ وَمَا كَانُوْا مُهْتَدِيْنَ
+          اَلَآ اِنَّهُمْ هُمُ الْمُفْسِدُوْنَ وَلٰكِنْ لَّا يَشْعُرُوْنَ
         </p>
       </div>
 
@@ -120,9 +127,17 @@
     ></script>
     <script>
       //ini cuma script javascript buat coba2 nanti pas demo
-
+      const main = document.querySelector(".mainkan");
       const btn = document.querySelector(".cek");
+      const quiz = document.querySelector("#quiz");
       const input = document.querySelectorAll("input");
+
+      main.addEventListener("click", () => {
+        document.querySelector(".confirm").style.display = "none";
+        quiz.style.display = "block";
+        document.querySelector("footer").style.display = "flex";
+      });
+
       btn.addEventListener("click", (e) => {
         if (btn.value == "4") {
           document.querySelector(".benar").style.setProperty("display", "flex");

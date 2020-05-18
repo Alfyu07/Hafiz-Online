@@ -1,3 +1,5 @@
+//toogle navbar
+
 $(".toggle-button").click(function () {
   if ($(".navbar-links").hasClass("active")) {
     $(".navbar-links").removeClass("block").outerWidth();

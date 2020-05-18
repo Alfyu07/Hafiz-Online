@@ -1,22 +1,69 @@
 @import "variabel";
 @import "base";
 @import "navbar";
-
-#quiz {
-  width: 90%;
-  margin: 0 auto;
-}
-.text {
-  margin-top: 20px;
-  margin-bottom: 0;
-}
 .centered {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.confirm {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+  .centered {
+    margin-top: 120px;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      width: 120px;
+      &.false {
+        background-color: rgb(255, 119, 119);
+      }
+    }
+  }
+}
+footer {
+  margin-top: 30px;
+  height: 60px;
+  justify-content: space-between;
+  background-color: $main-text-color;
+  display: none;
+  a {
+    margin-right: 32px;
+  }
+  p {
+    margin-left: 32px;
+  }
+}
+
+#quiz {
+  width: 90%;
+  margin: 0 auto;
+  display: none;
+}
+.text {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
 .ayat {
-  font-family: "lpmq_isep_misbahregular", "quranfont", "sans-serif";
+  font-family: "quranfont", "sans-serif";
   font-size: 2rem;
   margin-top: 10px;
   display: flex;
@@ -128,16 +175,4 @@
 }
 button.primary-btn {
   margin-top: 8px;
-}
-footer {
-  margin-top: 30px;
-  height: 60px;
-  justify-content: space-between;
-  background-color: $main-text-color;
-  a {
-    margin-right: 32px;
-  }
-  p {
-    margin-left: 32px;
-  }
 }
