@@ -14,3 +14,12 @@ button {
 .card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
+.primary-btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: $btnColor;
+  color: white;
+}

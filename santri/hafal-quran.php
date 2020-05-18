@@ -138,7 +138,7 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
   <!-- Pop Up -->
   <div class="submit">
     <button class="modal-btn tidak">Selesai</button>
-    <button class="modal-btn ya">Setor Hafalan</button>
+    <button class="modal-btn ya">Rekam Hafalan</button>
   </div>
   <div class="modal-bg">
     <div class="modal confirm">
