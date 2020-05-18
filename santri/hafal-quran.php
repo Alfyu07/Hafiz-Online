@@ -163,12 +163,6 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
       </div>
     </div>
   </div>
-
-
-
-
-
-
   <footer>
     <p><span>&copy</span> HafizQuran 2020</p>
   </footer>
