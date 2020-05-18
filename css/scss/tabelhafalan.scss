@@ -1,7 +1,6 @@
 @import "variabel";
 @import "base";
 @import "navbar";
-
 main {
   width: 90%;
   margin: 0 auto;
@@ -10,12 +9,6 @@ main {
   font-size: 14px;
 }
 
-h1 {
-  margin: 40px auto;
-  text-align: center;
-  color: $main-theme-color;
-  margin-bottom: 20px;
-}
 .table {
   display: grid;
   grid-row: 240px 240px;
@@ -28,7 +21,7 @@ h1 {
 .field {
   grid-row: 1/2;
   display: grid;
-  grid-template-columns: 65px repeat(4, 1fr);
+  grid-template-columns: 65px 150px repeat(4, 1fr);
   background-color: $main-theme-color;
   width: 100%;
   height: 60px;
@@ -47,25 +40,28 @@ h1 {
 }
 .row {
   display: grid;
-  grid-template-columns: 65px repeat(4, 1fr);
+  grid-template-columns: 65px 150px repeat(4, 1fr);
   border-bottom: 2px solid rgba($color: #000000, $alpha: 0.5);
   margin-top: 5px;
   padding-bottom: 10px;
   a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
     color: #333;
   }
   img {
-    width: 110%;
+    width: 100%;
+    margin-left: 10%;
     clip-path: circle(40%);
     display: flex;
-    justify-self: center;
+    justify-self: flex-end;
     align-self: center;
   }
   .nama {
     grid-column: 2/3;
+    justify-self: flex-start;
+    margin-left: 20px;
   }
   .deskripsi {
     display: flex;
@@ -96,6 +92,10 @@ aside {
     margin: 0;
     margin-top: 10px;
   }
+  .primary-btn {
+    width: 50%;
+    margin-top: 20px;
+  }
 }
 @media (min-width: 768px) {
   main {
@@ -108,4 +108,74 @@ aside {
   aside {
     width: 20%;
   }
+  .primary-btn {
+    margin-top: 20px;
+  }
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
