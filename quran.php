@@ -1,5 +1,5 @@
 <?php
-
+require "functions.php";
 $surah = 2; //nanti di pilih pas pemilihan surah
 $quran = query("SELECT * FROM quran_id where suraId = '$surah'");
 $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$surah'");
@@ -25,10 +25,10 @@ $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$sur
 			</a>
 			<div class="navbar-links">
 				<ul>
-					<li><a href="">Tahfiz</a></li>
-					<li><a href="">Murajaah</a></li>
-					<li><a href="">Artikel</a></li>
-					<li><a href="">Event</a></li>
+					<li><a href="./daftarSurah.php">Baca Quran</a></li>
+					<li><a href="./santri/hafal-quran.php">Tahfiz</a></li>
+					<li><a href="./santri/quiz.html">Murajaah</a></li>
+					<li><a href="./list-artikel.php">Artikel dan Event</a></li>
 					<li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
 					<li><a href="" id="login-text">Login</a></li>
 				</ul>
@@ -39,7 +39,7 @@ $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$sur
 	<main class="quran-container">
 		<?php foreach ($namasurah as $nama) : ?>
 			<header class="surah title"><?php echo $nama['surat_indonesia']; ?></header>
-		<?php endforeach; ?>
+		<?php endforeach ?>
 
 		<?php foreach ($quran as $ayat) : ?>
 			<ul class="ayat card">

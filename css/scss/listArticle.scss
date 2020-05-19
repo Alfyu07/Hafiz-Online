@@ -1,7 +1,6 @@
 @import "./variabel";
 @import "./navbar";
 @import "./base";
-
 .photo-grid {
   margin: 0 auto;
   display: grid;
@@ -38,12 +37,14 @@ main {
   grid-auto-rows: minmax(240, 640);
   gap: 30px;
 }
+
 .list {
+  text-decoration: none;
+  color: $main-text-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform ease-in-out 300ms;
-
   h2 {
     width: 80%;
     line-height: 2rem;
@@ -59,6 +60,9 @@ main {
   }
   &:hover {
     transform: scale(1.05);
+  }
+  span {
+    color: $main-theme-color;
   }
 }
 

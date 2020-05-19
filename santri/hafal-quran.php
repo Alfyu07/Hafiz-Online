@@ -54,33 +54,37 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
     .ayat:hover {
       transform: none;
     }
+
+    .rekam {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .rec {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .modal-btn.ya {
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      margin-right: 0;
+    }
+
+    .modal .title {
+      margin: 0;
+    }
   </style>
   <title>HafizQuran</title>
 </head>
 
 <body>
-  <header>
-    <!-- Navigasi -->
-    <nav class="navbar">
-      <div class="brand-title">HafizQuran</div>
-      <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
-      <div class="navbar-links">
-        <ul>
-          <li><a href="">Tahfiz</a></li>
-          <li><a href="">Murajaah</a></li>
-          <li><a href="">Artikel</a></li>
-          <li><a href="">Event</a></li>
-          <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
-          <li><a href="" id="login-text">Login</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Akhir dari navigasi -->
-  </header>
+  <?php require "santrinavbar.php" ?>
   <main class="quran-container">
     <?php
     /* prev buat cek apa di nama surah x pernah di print atau ndak */
@@ -153,14 +157,24 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
     </div>
 
     <div class="modal setor">
-      <strong>Setor?</strong>
+      <header class="surah title">Al-Zalzalah : 4 - Al-Qariah : 4</header>
       <div class="input">
-        <button class="modal-btn tidak">Tidak</button>
-        <button class="modal-btn ya">Ya</button>
+        <form action="" class="rekam">
+          <div class="rec">
+            <input type="text">
+            <span class="iconify" data-inline="false" data-icon="bi:mic-fill" style="font-size: 31.129005432128906px;"></span>
+          </div>
+          <label for="deskripsi">Deskripsi</label>
+          <textarea name="" id="deskripsi" cols="30" rows="4"></textarea>
+          <button class="modal-btn ya">Setor Hafalan</button>
+
+        </form>
+
         <div class="modal-close">
           <span class="iconify" data-inline="false" data-icon="fa-solid:times-circle" style="color: #ff2f3b; font-size: 30px;"></span>
         </div>
       </div>
+
     </div>
   </div>
   <footer>

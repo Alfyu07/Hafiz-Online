@@ -35,6 +35,8 @@ ul {
 
 .ayat {
   list-style-type: none;
+  text-decoration: none;
+  color: $main-text-color;
   display: grid;
   grid-template-columns: 76px 1fr;
   grid-template-rows: 0.5fr 0.5fr;

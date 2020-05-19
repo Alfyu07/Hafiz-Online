@@ -1,4 +1,5 @@
 @import "./base";
+@import "variabel";
 .modal-bg {
   position: fixed;
   top: 0;
@@ -55,13 +56,18 @@ button.modal-btn {
   margin: 1rem 10px;
   border: none;
   width: 120px;
+  box-sizing: border-box;
   height: 44px;
   border-radius: 10px;
   color: white;
+  a {
+    text-decoration: none;
+    color: white;
+  }
   &.tidak {
     background-color: rgb(255, 119, 119);
   }
   &.ya {
-    background-color: rgb(121, 119, 255);
+    background-color: $btnColor;
   }
 }

@@ -25,10 +25,10 @@ $quran = query('SELECT * FROM DaftarSurat');
       </a>
       <div class="navbar-links">
         <ul>
-          <li><a href="">Tahfiz</a></li>
-          <li><a href="">Murajaah</a></li>
-          <li><a href="">Artikel</a></li>
-          <li><a href="">Event</a></li>
+          <li><a href="./daftarSurah.php">Baca Quran</a></li>
+          <li><a href="./santri/hafal-quran.php">Tahfiz</a></li>
+          <li><a href="./santri/quiz.html">Murajaah</a></li>
+          <li><a href="./list-artikel.php">Artikel dan Event</a></li>
           <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
           <li><a href="" id="login-text">Login</a></li>
         </ul>
@@ -38,7 +38,8 @@ $quran = query('SELECT * FROM DaftarSurat');
     <header class="surah title">Daftar Surat</header>
     <main class="quran-container">
       <?php foreach ($quran as $surah) : ?>
-        <ul class="ayat card">
+        <a href="quran.php" class="ayat card">
+
           <li class="no-ayat"><?php echo $surah["suraId"]; ?></li>
           <li class="surahIndo">
             <?php echo ucfirst($surah["surat_indonesia"]); ?>
@@ -50,7 +51,7 @@ $quran = query('SELECT * FROM DaftarSurat');
           </li>
 
           <li class="terjemah"><?php echo ucwords($surah["arti"]); ?></li>
-        </ul>
+        </a>
       <?php endforeach; ?>
 
 

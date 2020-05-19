@@ -1,7 +1,7 @@
 @import "variabel";
 @import "base";
 @import "navbar";
-
+@import "dropdown";
 .picture {
   margin-top: 50px;
   width: 100%;
@@ -47,47 +47,8 @@
   font-size: 16px;
   border: none;
 }
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  bottom: 69.94%;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 11;
-  right: 10%;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+a {
   text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
 }
 .userinfo {
   width: 90%;
@@ -130,5 +91,22 @@
   }
   .dropdown-content {
     left: 10%;
+  }
+}
+a.modal-btn {
+  border: none;
+  width: 120px;
+  box-sizing: border-box;
+  height: 44px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.tidak {
+    background-color: rgb(255, 119, 119);
+  }
+  &.ya {
+    background-color: $btnColor;
   }
 }

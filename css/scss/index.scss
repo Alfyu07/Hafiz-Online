@@ -1,0 +1,17 @@
+@import "variabel";
+@import "base";
+@import "navbar";
+
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+.banner-container {
+  display: flex;
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 600px;
+  }
+}

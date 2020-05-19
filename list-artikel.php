@@ -20,10 +20,10 @@
       </a>
       <div class="navbar-links">
         <ul>
-          <li><a href="">Tahfiz</a></li>
-          <li><a href="">Murajaah</a></li>
-          <li><a href="">Artikel</a></li>
-          <li><a href="">Event</a></li>
+          <li><a href="./daftarSurah.php">Baca Quran</a></li>
+          <li><a href="./santri/hafal-quran.php">Tahfiz</a></li>
+          <li><a href="./santri/quiz.html">Murajaah</a></li>
+          <li><a href="./list-artikel.php">Artikel dan Event</a></li>
           <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
           <li><a href="" id="login-text">Login</a></li>
         </ul>
@@ -52,8 +52,9 @@
 
     <div class="grid-container">
       <!-- Ini juga Perulangan Pake PHP -->
-      <div class="list card">
-        <img src="Asset/mtqn.jpg" alt="" />
+      <a href="./artikel.php" class="list card">
+
+        <img src="Asset/img/mtqn.jpg" alt="" />
         <div class="keterangan">
           By <span>Lingkaran Quran Babul Hikmah</span>
         </div>
@@ -67,13 +68,15 @@
           doloremque sapiente sit quasi sunt illo possimus, nemo veritatis,
           nostrum dignissimos facere deleniti!...
         </p>
-      </div>
-      <div class="list card">
-        <img src="Asset/mtqn.jpg" alt="" />
+      </a>
+      <a href="./artikel.php" class="list card">
+
+        <img src="Asset/img/mtqn.jpg" alt="" />
         <div class="keterangan">
           By <span>Lingkaran Quran Babul Hikmah</span>
         </div>
         <h2>Wisuda Tahfiz 2020</h2>
+        <!-- Kasi Kondisi Kalo Word nya dah lebih dari 50 tambahin ... -->
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
           iure voluptates et sequi quidem libero accusantium ipsa quibusdam
@@ -82,13 +85,15 @@
           doloremque sapiente sit quasi sunt illo possimus, nemo veritatis,
           nostrum dignissimos facere deleniti!...
         </p>
-      </div>
-      <div class="list card">
-        <img src="Asset/mtqn.jpg" alt="" />
+      </a>
+      <a href="./artikel.php" class="list card">
+
+        <img src="Asset/img/mtqn.jpg" alt="" />
         <div class="keterangan">
           By <span>Lingkaran Quran Babul Hikmah</span>
         </div>
         <h2>Wisuda Tahfiz 2020</h2>
+        <!-- Kasi Kondisi Kalo Word nya dah lebih dari 50 tambahin ... -->
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
           iure voluptates et sequi quidem libero accusantium ipsa quibusdam
@@ -97,13 +102,15 @@
           doloremque sapiente sit quasi sunt illo possimus, nemo veritatis,
           nostrum dignissimos facere deleniti!...
         </p>
-      </div>
-      <div class="list card">
-        <img src="Asset/mtqn.jpg" alt="" />
+      </a>
+      <a href="./artikel.php" class="list card">
+
+        <img src="Asset/img/mtqn.jpg" alt="" />
         <div class="keterangan">
           By <span>Lingkaran Quran Babul Hikmah</span>
         </div>
         <h2>Wisuda Tahfiz 2020</h2>
+        <!-- Kasi Kondisi Kalo Word nya dah lebih dari 50 tambahin ... -->
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
           iure voluptates et sequi quidem libero accusantium ipsa quibusdam
@@ -112,13 +119,15 @@
           doloremque sapiente sit quasi sunt illo possimus, nemo veritatis,
           nostrum dignissimos facere deleniti!...
         </p>
-      </div>
-      <div class="list card">
-        <img src="Asset/mtqn.jpg" alt="" />
+      </a>
+      <a href="./artikel.php" class="list card">
+
+        <img src="Asset/img/mtqn.jpg" alt="" />
         <div class="keterangan">
           By <span>Lingkaran Quran Babul Hikmah</span>
         </div>
         <h2>Wisuda Tahfiz 2020</h2>
+        <!-- Kasi Kondisi Kalo Word nya dah lebih dari 50 tambahin ... -->
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
           iure voluptates et sequi quidem libero accusantium ipsa quibusdam
@@ -127,13 +136,15 @@
           doloremque sapiente sit quasi sunt illo possimus, nemo veritatis,
           nostrum dignissimos facere deleniti!...
         </p>
-      </div>
-      <div class="list card">
-        <img src="Asset/mtqn.jpg" alt="" />
+      </a>
+      <a href="./artikel.php" class="list card">
+
+        <img src="Asset/img/mtqn.jpg" alt="" />
         <div class="keterangan">
           By <span>Lingkaran Quran Babul Hikmah</span>
         </div>
         <h2>Wisuda Tahfiz 2020</h2>
+        <!-- Kasi Kondisi Kalo Word nya dah lebih dari 50 tambahin ... -->
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
           iure voluptates et sequi quidem libero accusantium ipsa quibusdam
@@ -142,7 +153,8 @@
           doloremque sapiente sit quasi sunt illo possimus, nemo veritatis,
           nostrum dignissimos facere deleniti!...
         </p>
-      </div>
+      </a>
+
     </div>
   </main>
   <div class="pagination">
@@ -168,6 +180,7 @@
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
