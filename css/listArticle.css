@@ -40,6 +40,8 @@
 }
 
 .brand-title {
+  text-decoration: none;
+  color: #333;
   margin: 0.5rem;
   margin-left: 3rem;
   font-size: 28px;

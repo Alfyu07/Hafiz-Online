@@ -1,0 +1,36 @@
+@import "variabel", "base", "navbar", "checkbox", "collapsible";
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  color: $main-theme-color;
+}
+label.container {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba($color: #000000, $alpha: 0.5);
+  padding-left: 50px;
+  font-weight: bold;
+}
+.container {
+  .checkmark {
+    top: 3px;
+  }
+}
+.collapsible {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.primary-btn {
+  width: 120px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}

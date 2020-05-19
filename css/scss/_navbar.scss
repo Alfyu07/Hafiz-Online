@@ -23,6 +23,8 @@
 }
 
 .brand-title {
+  text-decoration: none;
+  color: $main-text-color;
   margin: 0.5rem;
   margin-left: 3rem;
   font-size: 28px;
@@ -138,4 +140,4 @@ footer {
   background-color: $main-text-color;
   color: $bgColor;
 }
-@import 'dropdown';
+@import "dropdown";

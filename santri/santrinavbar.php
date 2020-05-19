@@ -4,7 +4,7 @@ echo '
 <header>
     <!-- Navigasi -->
     <nav class="navbar">
-      <div class="brand-title">HafizQuran</div>
+    <a href="../index.html" class="brand-title">HafizQuran</a>
       <a href="#" class="toggle-button">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -13,7 +13,7 @@ echo '
       <div class="navbar-links">
         <ul>
           <li><a href="../daftarSurah.php">Baca Quran</a></li>
-          <li><a href="./hafal-quran.php">Tahfiz</a></li>
+          <li><a href="./pilih.php">Tahfiz</a></li>
           <li><a href="./quiz.php">Memorization Quiz</a></li>
           <li><a href="../list-artikel.php">Event</a></li>
           <li><a href="../list-artikel.php">Artikel </a></li>

@@ -1,9 +1,9 @@
 <?php
 require '../functions.php';
-$fromsurah = 99; // dipilih dari surah sekian ini mungkin nanti pake method get
-$tosurah = 101; //sampe surah sekian
-$fromayat = 4; // dari from surah ayat sekian
-$toayat = 4; //sampe from surah ayat sekian
+$fromsurah = 1; // dipilih dari surah sekian ini mungkin nanti pake method get
+$tosurah = 2; //sampe surah sekian
+$fromayat = 1; // dari from surah ayat sekian
+$toayat = 12; //sampe from surah ayat sekian
 
 // Mengambil id ayat awal
 $idfrom = query("SELECT id from quran_id where suraId = '$fromsurah' and verseID = '$fromayat'")[0]['id'];
@@ -96,22 +96,24 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
       <!-- kalo id surah pada ayat x tidak sama dengan id surah pada ayat sebelumnya maka print nama surah -->
       <?php if ($ayat['suraId'] != $prev) : ?>
         <header class="surah title"><?php echo $namasurah[$i]['surat_indonesia'] ?> </header>
+        <?php if ($ayat['suraId'] != 1 && $ayat['suraId'] != 9) : ?>
+          <?php if ($ayat['verseID'] == 1) : ?>
+            <ul class="ayat card " id="bismillah">
+              <li class="no-ayat">
 
-        <?php if ($ayat['suraId'] != 9 && $ayat['verseID'] == 1) : ?>
-          <ul class="ayat card " id="bismillah">
-            <li class="no-ayat">
+                <?php echo $bismillah[0]["verseID"]; ?></li>
 
-              <?php echo $bismillah[0]["verseID"]; ?></li>
+              <li class="play"><span class="iconify" data-inline="false" data-icon="bi:play-fill"></span>play</li>
 
-            <li class="play"><span class="iconify" data-inline="false" data-icon="bi:play-fill"></span>play</li>
-
-            <li class="ayatquran">
-              <?php echo $bismillah[0]["ayahText"];
-              ?></li>
-            <li class="latin"><?php echo $bismillah[0]["readText"]; ?></li>
-            <li class="terjemah"><?php echo $bismillah[0]["indoText"]; ?></li>
-          </ul>
+              <li class="ayatquran">
+                <?php echo $bismillah[0]["ayahText"];
+                ?></li>
+              <li class="latin"><?php echo $bismillah[0]["readText"]; ?></li>
+              <li class="terjemah"><?php echo $bismillah[0]["indoText"]; ?></li>
+            </ul>
+          <?php endif ?>
         <?php endif ?>
+
         <!-- increment untuk i dan memperbarui nilai prev -->
       <?php $i++;
         $prev = $ayat['suraId'];
@@ -159,7 +161,7 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
     <div class="modal setor">
       <header class="surah title">Al-Zalzalah : 4 - Al-Qariah : 4</header>
       <div class="input">
-        <form action="" class="rekam">
+        <form action="./listhafalan.php" class="rekam">
           <div class="rec">
             <input type="text">
             <span class="iconify" data-inline="false" data-icon="bi:mic-fill" style="font-size: 31.129005432128906px;"></span>

@@ -1,0 +1,23 @@
+.collapsible {
+  background-color: $main-theme-color;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.active,
+.collapsible:hover {
+  opacity: 0.8;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow-y: scroll;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+  height: 300px;
+}

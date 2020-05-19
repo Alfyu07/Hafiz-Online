@@ -1,6 +1,6 @@
 <?php
 require "functions.php";
-$surah = 2; //nanti di pilih pas pemilihan surah
+$surah = 1; //nanti di pilih pas pemilihan surah
 $quran = query("SELECT * FROM quran_id where suraId = '$surah'");
 $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$surah'");
 ?>
@@ -14,28 +14,8 @@ $namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$sur
 </head>
 
 <body>
-	<header>
-		<!-- Navigasi -->
-		<nav class="navbar">
-			<div class="brand-title">HafizQuran</div>
-			<a href="#" class="toggle-button">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</a>
-			<div class="navbar-links">
-				<ul>
-					<li><a href="./daftarSurah.php">Baca Quran</a></li>
-					<li><a href="./santri/hafal-quran.php">Tahfiz</a></li>
-					<li><a href="./santri/quiz.html">Murajaah</a></li>
-					<li><a href="./list-artikel.php">Artikel dan Event</a></li>
-					<li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
-					<li><a href="" id="login-text">Login</a></li>
-				</ul>
-			</div>
-		</nav>
-		<!-- Akhir dari navigasi -->
-	</header>
+	<?php require "navbar.php"; ?>
+
 	<main class="quran-container">
 		<?php foreach ($namasurah as $nama) : ?>
 			<header class="surah title"><?php echo $nama['surat_indonesia']; ?></header>

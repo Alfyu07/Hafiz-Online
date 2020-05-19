@@ -82,6 +82,8 @@ button {
 }
 
 .brand-title {
+  text-decoration: none;
+  color: #333;
   margin: 0.5rem;
   margin-left: 3rem;
   font-size: 28px;
@@ -341,15 +343,6 @@ footer {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  width: 30px;
-  top: 0;
-  right: 1rem;
 }
 
 /* Hide the browser's default checkbox */
@@ -408,6 +401,18 @@ footer {
 @font-face {
   font-family: quranfont;
   src: url("../Asset/fonts/UthmanicHafs1 Ver09.otf");
+}
+
+.container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  width: 30px;
+  top: 0;
+  right: 1rem;
 }
 
 /* Main style */
@@ -540,6 +545,18 @@ ul {
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   max-width: 90%;
+}
+
+.container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  width: 30px;
+  top: 0;
+  right: 1rem;
 }
 
 @media (min-width: 1020px) {

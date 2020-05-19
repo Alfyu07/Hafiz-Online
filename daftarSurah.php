@@ -14,55 +14,35 @@ $quran = query('SELECT * FROM DaftarSurat');
 </head>
 
 <body>
-  <header>
-    <!-- Navigasi -->
-    <nav class="navbar">
-      <div class="brand-title">HafizQuran</div>
-      <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+  <?php require "navbar.php"; ?>
+
+  <main class="quran-container">
+    <?php foreach ($quran as $surah) : ?>
+      <a href="quran.php" class="ayat card">
+
+        <li class="no-ayat"><?php echo $surah["suraId"]; ?></li>
+        <li class="surahIndo">
+          <?php echo ucfirst($surah["surat_indonesia"]); ?>
+          <label class="container">
+            <!-- dia checked kalo surahnya berhasil dia hafal -->
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+        </li>
+
+        <li class="terjemah"><?php echo ucwords($surah["arti"]); ?></li>
       </a>
-      <div class="navbar-links">
-        <ul>
-          <li><a href="./daftarSurah.php">Baca Quran</a></li>
-          <li><a href="./santri/hafal-quran.php">Tahfiz</a></li>
-          <li><a href="./santri/quiz.html">Murajaah</a></li>
-          <li><a href="./list-artikel.php">Artikel dan Event</a></li>
-          <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
-          <li><a href="" id="login-text">Login</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Akhir dari navigasi -->
-    <header class="surah title">Daftar Surat</header>
-    <main class="quran-container">
-      <?php foreach ($quran as $surah) : ?>
-        <a href="quran.php" class="ayat card">
-
-          <li class="no-ayat"><?php echo $surah["suraId"]; ?></li>
-          <li class="surahIndo">
-            <?php echo ucfirst($surah["surat_indonesia"]); ?>
-            <label class="container">
-              <!-- dia checked kalo surahnya berhasil dia hafal -->
-              <input type="checkbox" checked="checked">
-              <span class="checkmark"></span>
-            </label>
-          </li>
-
-          <li class="terjemah"><?php echo ucwords($surah["arti"]); ?></li>
-        </a>
-      <?php endforeach; ?>
+    <?php endforeach; ?>
 
 
 
-    </main>
-    <footer>
-      <p><span>&copy</span> HafizQuran 2020</p>
-    </footer>
+  </main>
+  <footer>
+    <p><span>&copy</span> HafizQuran 2020</p>
+  </footer>
 
-    <script src="./js/script.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="./js/script.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </body>
 
 </html>
