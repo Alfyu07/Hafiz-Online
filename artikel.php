@@ -24,28 +24,7 @@ require 'functions.php';
 </head>
 
 <body>
-  <header>
-    <!-- Navigasi -->
-    <nav class="navbar">
-      <div class="brand-title">HafizQuran</div>
-      <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
-      <div class="navbar-links">
-        <ul>
-          <li><a href="">Tahfiz</a></li>
-          <li><a href="">Murajaah</a></li>
-          <li><a href="">Artikel</a></li>
-          <li><a href="">Event</a></li>
-          <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
-          <li><a href="" id="login-text">Login</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Akhir dari navigasi -->
-  </header>
+  <?php require "navbar.php"; ?>
   <main id="artikel">
     <header class="header-article">
       <!-- disini nanti pake php judulnya di taruh -->

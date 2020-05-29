@@ -1,8 +1,9 @@
 /* Style Navbar Mobile*/
-
 .navbar {
+  z-index: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .toggle-button {
   display: flex;
@@ -22,8 +23,10 @@
 }
 
 .brand-title {
+  text-decoration: none;
+  color: $main-text-color;
   margin: 0.5rem;
-  margin-left: 3.5rem;
+  margin-left: 3rem;
   font-size: 28px;
   font-weight: 800;
   color: $main-text-color;
@@ -45,7 +48,8 @@
   li {
     display: flex;
     justify-content: center;
-    a {
+    a,
+    button {
       padding: 8px;
       display: flex;
       justify-content: center;
@@ -72,7 +76,7 @@
   }
   .brand-title {
     margin: 0.5rem;
-    margin-left: 4.5rem;
+    margin-left: 2rem;
   }
   .toggle-button {
     display: none;
@@ -110,7 +114,6 @@
 
   #login-text {
     color: $main-theme-color;
-    margin-right: 4.5rem;
   }
   #signUp:hover,
   #login-text:hover {
@@ -137,3 +140,4 @@ footer {
   background-color: $main-text-color;
   color: $bgColor;
 }
+@import "dropdown";

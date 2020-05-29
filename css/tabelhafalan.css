@@ -331,58 +331,49 @@ footer {
   }
 }
 
-/* Main style */
-.surah.title {
-  margin-top: 2rem;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background-color: #279662;
-  color: white;
+main {
+  width: 90%;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  font-size: 14px;
 }
 
-.ayat {
-  list-style-type: none;
+.table {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 80px 1fr;
-      grid-template-columns: 80px 1fr;
-  -ms-grid-rows: max-content max-content calc(max-content);
-      grid-template-rows: -webkit-max-content -webkit-max-content calc(-webkit-max-content);
-      grid-template-rows: max-content max-content calc(max-content);
-  padding: 0;
-  margin: 1.5rem 10px;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-  border-radius: 10px;
+  grid-row: 240px 240px;
+  width: 100%;
+  margin: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: none;
 }
 
-.ayat:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+.field {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 65px 150px (1fr)[4];
+      grid-template-columns: 65px 150px repeat(4, 1fr);
+  background-color: #279863;
+  width: 100%;
+  height: 60px;
+  font-size: 1.2rem;
 }
 
-.no-ayat {
+.nama,
+.tanggal,
+.deskripsi,
+.nilai {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  justify-self: center;
-  margin-top: 20px;
-  background-color: #279863;
-  width: 32px;
-  height: 32px;
-  border-radius: 5px;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -390,135 +381,186 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #fff;
-  font-weight: 800;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
 }
 
-.play {
-  font-size: 14 px;
+.nama {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+.row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 65px 150px (1fr)[4];
+      grid-template-columns: 65px 150px repeat(4, 1fr);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  margin-top: 5px;
+  padding-bottom: 10px;
+}
+
+.row a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.row img {
+  width: 100%;
+  margin-left: 10%;
+  -webkit-clip-path: circle(40%);
+          clip-path: circle(40%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  justify-self: center;
-  top: 4rem;
-  color: rgba(10, 135, 84, 0.6);
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
+  justify-self: flex-end;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
-.ayatquran {
-  font-family: "lpmq_isep_misbahregular", "quranfont", "sans-serif";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  text-align: right;
-  font-size: 2.3rem;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
+.row .nama {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  margin-right: 20px;
-  margin-left: 40px;
+  justify-self: flex-start;
+  margin-left: 20px;
 }
 
-.latin {
+.row .deskripsi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.row .deskripsi p {
+  margin: 0;
+  margin-top: 5px;
+  width: 95%;
+}
+
+aside {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+aside input,
+aside select {
+  border-radius: 5px;
+  background-color: white;
+  padding: 6px 10px;
+}
+
+aside select {
+  margin-top: 10px;
+}
+
+aside p,
+aside label {
+  margin: 0;
+  margin-top: 10px;
+}
+
+aside .primary-btn {
+  width: 50%;
   margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-bottom: 5px;
-  max-width: 90%;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  color: rgba(10, 135, 84, 0.6);
-  font-style: italic;
-}
-
-.arabic_number {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  font-family: "quranfont", "sans-serif";
-  font-size: 2.3rem;
-}
-
-.terjemah {
-  max-width: 90%;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
 }
 
 @media (min-width: 768px) {
   main {
-    width: 902px;
-    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
   }
-  .surah.title {
-    margin-left: 0;
-    margin-right: 0;
+  table {
+    width: 90%;
   }
-  .ayat {
-    margin: 16px 0;
+  aside {
+    width: 20%;
+  }
+  .primary-btn {
+    margin-top: 20px;
   }
 }
 
-button.plymedia {
-  border: none;
-  background-color: white !important;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #279863;
-  outline: none;
-  padding: 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.container {
+  display: block;
   position: relative;
-  left: 4px;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-button.plymedia svg.iconify {
-  font-size: 1.5rem;
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-button.plymedia:hover {
-  opacity: 0.7;
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
 }
 
-button .hidden {
-  display: none !important;
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
 }
-/*# sourceMappingURL=quran.css.map */
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*# sourceMappingURL=tabelhafalan.css.map */

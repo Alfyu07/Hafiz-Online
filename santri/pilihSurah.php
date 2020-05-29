@@ -25,12 +25,12 @@ $quran = query('SELECT * FROM DaftarSurat');
       </a>
       <div class="navbar-links">
         <ul>
-          <li><a href="">Tahfiz</a></li>
-          <li><a href="">Murajaah</a></li>
-          <li><a href="">Artikel</a></li>
-          <li><a href="">Event</a></li>
-          <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
-          <li><a href="" id="login-text">Login</a></li>
+          <li><a href="../daftarSurah.php">Baca Quran</a></li>
+          <li><a href="/hafal-quran.php">Tahfiz</a></li>
+          <li><a href="/quiz.html">Murajaah</a></li>
+          <li><a href="../list-artikel.php">Artikel dan Event</a></li>
+          <li><a href="../registrasi.php" class="btn-primary" id="signUp">Sign Up</a></li>
+          <li><a href="../login.php" id="login-text">Login</a></li>
         </ul>
       </div>
     </nav>

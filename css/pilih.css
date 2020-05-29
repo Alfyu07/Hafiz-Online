@@ -331,194 +331,141 @@ footer {
   }
 }
 
-/* Main style */
-.surah.title {
-  margin-top: 2rem;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background-color: #279662;
-  color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: absolute;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.ayat {
-  list-style-type: none;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 80px 1fr;
-      grid-template-columns: 80px 1fr;
-  -ms-grid-rows: max-content max-content calc(max-content);
-      grid-template-rows: -webkit-max-content -webkit-max-content calc(-webkit-max-content);
-      grid-template-rows: max-content max-content calc(max-content);
-  padding: 0;
-  margin: 1.5rem 10px;
-  -webkit-transition: -webkit-transform 300ms;
-  transition: -webkit-transform 300ms;
-  transition: transform 300ms;
-  transition: transform 300ms, -webkit-transform 300ms;
-  border-radius: 10px;
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-.ayat:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
 }
 
-.no-ayat {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-self: center;
-  margin-top: 20px;
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.collapsible {
   background-color: #279863;
-  width: 32px;
-  height: 32px;
-  border-radius: 5px;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #fff;
-  font-weight: 800;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-.play {
-  font-size: 14 px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  justify-self: center;
-  top: 4rem;
-  color: rgba(10, 135, 84, 0.6);
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
-}
-
-.ayatquran {
-  font-family: "lpmq_isep_misbahregular", "quranfont", "sans-serif";
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  text-align: right;
-  font-size: 2.3rem;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  margin-right: 20px;
-  margin-left: 40px;
-}
-
-.latin {
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-bottom: 5px;
-  max-width: 90%;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  color: rgba(10, 135, 84, 0.6);
-  font-style: italic;
-}
-
-.arabic_number {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  font-family: "quranfont", "sans-serif";
-  font-size: 2.3rem;
-}
-
-.terjemah {
-  max-width: 90%;
-  margin-right: 20px;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-}
-
-@media (min-width: 768px) {
-  main {
-    width: 902px;
-    margin: 0 auto;
-  }
-  .surah.title {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .ayat {
-    margin: 16px 0;
-  }
-}
-
-button.plymedia {
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
   border: none;
-  background-color: white !important;
+  outline: none;
+}
+
+.active,
+.collapsible:hover {
+  opacity: 0.8;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow-y: scroll;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+  background-color: #fff;
+  height: 300px;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #279863;
+}
+
+label.container {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  padding-left: 50px;
+  font-weight: bold;
+}
+
+.container .checkmark {
+  top: 3px;
+}
+
+.collapsible {
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: #279863;
-  outline: none;
-  padding: 0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-  left: 4px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-button.plymedia svg.iconify {
-  font-size: 1.5rem;
+.primary-btn {
+  width: 120px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-
-button.plymedia:hover {
-  opacity: 0.7;
-}
-
-button .hidden {
-  display: none !important;
-}
-/*# sourceMappingURL=quran.css.map */
+/*# sourceMappingURL=pilih.css.map */

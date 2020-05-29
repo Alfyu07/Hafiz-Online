@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<!--
-	Copyright (c) 2014-2020, CKSource - Frederico Knabben. All rights reserved.
-	This file is licensed under the terms of the MIT License (see LICENSE.md).
--->
+<?php
+?>
 
+
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 </html>
@@ -21,35 +20,19 @@
 </head>
 
 <body data-editor="ClassicEditor" data-collaboration="false">
-	<header>
-		<!-- Navigasi -->
-		<nav class="navbar">
-			<div class="brand-title">HafizQuran</div>
-			<a href="#" class="toggle-button">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</a>
-			<div class="navbar-links">
-				<ul>
-					<li><a href="">Tahfiz</a></li>
-					<li><a href="">Murajaah</a></li>
-					<li><a href="">Artikel</a></li>
-					<li><a href="">Event</a></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
+	<?php require "ustadznavbar.php" ?>
 	<main>
 		<div class="message">
 			<div class="centered">
 				<h2>Sampaikanlah Walau Satu Ayat!</h2>
-				<blockquote> <span>"</span>Siapakah yang lebih baik perkataannya daripada orang yang menyeru kepada Allah, mengerjakan amal yang saleh, dan berkata: Sesungguhnya aku termasuk orang-orang yang menyerah diri? (QS. Fushshilat: 33)<span>”</span></blockquote> 
+				<blockquote> <span>"</span>Siapakah yang lebih baik perkataannya daripada orang yang menyeru
+					kepada Allah, mengerjakan amal yang saleh, dan berkata: Sesungguhnya aku termasuk
+					orang-orang yang menyerah diri? (QS. Fushshilat: 33)<span>”</span></blockquote>
 			</div>
 		</div>
 		<div class="centered">
 			<div class="row row-editor">
-				
+
 				<form action=""></form>
 				<div class="input-title">
 					<div class="icon">
@@ -63,14 +46,14 @@
 					</div>
 					<input type="text" name="author" id="author" placeholder="Masukkan nama author">
 				</div>
-		
+
 				<textarea class="editor">
 
-					
+
 				</textarea>
 
-				<button type="submit" name="submit" id="submit">Create Article</button>
-			</form>
+				<button type="submit" name="submit" id="submit">Post Artikel</button>
+				</form>
 			</div>
 		</div>
 		</div>
@@ -82,7 +65,6 @@
 
 	<script src="../CKEditor/build/ckeditor.js"></script>
 	<script>
-		
 		ClassicEditor
 			.create(document.querySelector('.editor'), {
 

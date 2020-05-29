@@ -1,9 +1,9 @@
 <?php
 require '../functions.php';
-$fromsurah = 99; // dipilih dari surah sekian ini mungkin nanti pake method get
-$tosurah = 101; //sampe surah sekian
-$fromayat = 4; // dari from surah ayat sekian
-$toayat = 4; //sampe from surah ayat sekian
+$fromsurah = 1; // dipilih dari surah sekian ini mungkin nanti pake method get
+$tosurah = 2; //sampe surah sekian
+$fromayat = 1; // dari from surah ayat sekian
+$toayat = 12; //sampe from surah ayat sekian
 
 // Mengambil id ayat awal
 $idfrom = query("SELECT id from quran_id where suraId = '$fromsurah' and verseID = '$fromayat'")[0]['id'];
@@ -54,33 +54,37 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
     .ayat:hover {
       transform: none;
     }
+
+    .rekam {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .rec {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .modal-btn.ya {
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      margin-right: 0;
+    }
+
+    .modal .title {
+      margin: 0;
+    }
   </style>
   <title>HafizQuran</title>
 </head>
 
 <body>
-  <header>
-    <!-- Navigasi -->
-    <nav class="navbar">
-      <div class="brand-title">HafizQuran</div>
-      <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
-      <div class="navbar-links">
-        <ul>
-          <li><a href="">Tahfiz</a></li>
-          <li><a href="">Murajaah</a></li>
-          <li><a href="">Artikel</a></li>
-          <li><a href="">Event</a></li>
-          <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
-          <li><a href="" id="login-text">Login</a></li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Akhir dari navigasi -->
-  </header>
+  <?php require "santrinavbar.php" ?>
   <main class="quran-container">
     <?php
     /* prev buat cek apa di nama surah x pernah di print atau ndak */
@@ -92,22 +96,24 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
       <!-- kalo id surah pada ayat x tidak sama dengan id surah pada ayat sebelumnya maka print nama surah -->
       <?php if ($ayat['suraId'] != $prev) : ?>
         <header class="surah title"><?php echo $namasurah[$i]['surat_indonesia'] ?> </header>
+        <?php if ($ayat['suraId'] != 1 && $ayat['suraId'] != 9) : ?>
+          <?php if ($ayat['verseID'] == 1) : ?>
+            <ul class="ayat card " id="bismillah">
+              <li class="no-ayat">
 
-        <?php if ($ayat['suraId'] != 9 && $ayat['verseID'] == 1) : ?>
-          <ul class="ayat card " id="bismillah">
-            <li class="no-ayat">
+                <?php echo $bismillah[0]["verseID"]; ?></li>
 
-              <?php echo $bismillah[0]["verseID"]; ?></li>
+              <li class="play"><span class="iconify" data-inline="false" data-icon="bi:play-fill"></span>play</li>
 
-            <li class="play"><span class="iconify" data-inline="false" data-icon="bi:play-fill"></span>play</li>
-
-            <li class="ayatquran">
-              <?php echo $bismillah[0]["ayahText"];
-              ?></li>
-            <li class="latin"><?php echo $bismillah[0]["readText"]; ?></li>
-            <li class="terjemah"><?php echo $bismillah[0]["indoText"]; ?></li>
-          </ul>
+              <li class="ayatquran">
+                <?php echo $bismillah[0]["ayahText"];
+                ?></li>
+              <li class="latin"><?php echo $bismillah[0]["readText"]; ?></li>
+              <li class="terjemah"><?php echo $bismillah[0]["indoText"]; ?></li>
+            </ul>
+          <?php endif ?>
         <?php endif ?>
+
         <!-- increment untuk i dan memperbarui nilai prev -->
       <?php $i++;
         $prev = $ayat['suraId'];
@@ -138,7 +144,7 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
   <!-- Pop Up -->
   <div class="submit">
     <button class="modal-btn tidak">Selesai</button>
-    <button class="modal-btn ya">Rekam Hafalan</button>
+    <button class="modal-btn ya">Setor Hafalan</button>
   </div>
   <div class="modal-bg">
     <div class="modal confirm">
@@ -153,22 +159,26 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
     </div>
 
     <div class="modal setor">
-      <strong>Setor?</strong>
+      <header class="surah title">Al-Zalzalah : 4 - Al-Qariah : 4</header>
       <div class="input">
-        <button class="modal-btn tidak">Tidak</button>
-        <button class="modal-btn ya">Ya</button>
+        <form action="./listhafalan.php" class="rekam">
+          <div class="rec">
+            <input type="text">
+            <span class="iconify" data-inline="false" data-icon="bi:mic-fill" style="font-size: 31.129005432128906px;"></span>
+          </div>
+          <label for="deskripsi">Deskripsi</label>
+          <textarea name="" id="deskripsi" cols="30" rows="4"></textarea>
+          <button class="modal-btn ya">Setor Hafalan</button>
+
+        </form>
+
         <div class="modal-close">
           <span class="iconify" data-inline="false" data-icon="fa-solid:times-circle" style="color: #ff2f3b; font-size: 30px;"></span>
         </div>
       </div>
+
     </div>
   </div>
-
-
-
-
-
-
   <footer>
     <p><span>&copy</span> HafizQuran 2020</p>
   </footer>
