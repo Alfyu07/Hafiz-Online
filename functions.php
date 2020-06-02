@@ -1,9 +1,28 @@
 <?php
+session_start();
 //koneksi ke database
-$namadb = "hafiz";
-$unamedb = "root";
-$passdb = "250700";
-$conn = mysqli_connect("localhost", "$unamedb", "$passdb", "$namadb");
+#$namadb = "hafiz";
+#$unamedb = "root";
+#$passdb = "250700";
+#$conn = mysqli_connect("localhost", "$unamedb", "$passdb", "$namadb");
+
+#KONEKSI DENGAN DATABASE XAMPP
+$dbServer = "localhost";
+$dbUser = "root";
+$dbPass = "";
+$dbname = "hafizquran";
+$conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
+
+#data session
+$_SESSION["login"] = false;
+$_SESSION["username"] = "";
+$_SESSION["id_user"] = 0; #untuk edit profil, query(UPDATE...WHERE id='$_SESSION["id_user"]')
+#untuk bedain menu admin/santri/ustadz
+$_SESSION["admin"] = false;
+$_SESSION["santri"] = false;
+$_SESSION["ustadz"] = false;
+
+
 //ambil data dari tabel
 // var_dump($conn);
 function query($query)
@@ -16,6 +35,71 @@ function query($query)
     $rows[] = $row;
   }
   return $rows;
+}
+
+function insSantri($data)
+{
+  #isi form register: nama, email, password
+  global $conn;
+
+  $email = mysqli_real_escape_string($conn, $data["email"]);
+  $nama = strtolower(stripslashes($data["username"]));
+  $password = mysqli_real_escape_string($conn, $data["password"]);
+  $password2 = mysqli_real_escape_string($conn, $data["password2"]);  
+ 
+  $res = mysqli_query($conn, "SELECT id_santri FROM santri ORDER BY id_santri DESC LIMIT 1");
+  $bar =  mysqli_fetch_array($res); 
+  #cari jumlah baris untuk id_santri
+  $id_santri = 1; #id_santri pertama
+  $indeks = $bar[0]; #variabel isi id_santri terbesar
+  if($indeks!=0){ #ada data santri, ganti id_santri
+		$id_santri = $indeks + 1;  
+  }
+  
+  #cek konfirmasi password
+  if(strcmp($password, $password2)!=0){
+	  echo "<script>
+        alert('password dan konfirmasi berbeda');
+      </script>";
+	  return false;
+  }
+  $password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+  #insert ke database, tabel santri
+  $query = "INSERT into santri (id_santri,name,email,password) values('$id_santri','$nama','$email','$password')";
+  $result = mysqli_query($conn, $query);
+  
+  #ubah status jadi logged in
+  $_SESSION["login"] = true;
+  $_SESSION["santri"] = true;
+  $_SESSION["username"] = $nama;
+  $_SESSION["id_user"] = $id_santri; 
+  
+  return $result;
+}
+
+function loginSantri($data)
+{
+  #isi form register: nama, email, password
+  global $conn;
+
+  $email = mysqli_real_escape_string($conn, $data["email"]);
+  $nama = strtolower(stripslashes($data["username"]));
+  $password = mysqli_real_escape_string($conn, $data["password"]);
+
+  $result = query("SELECT * FROM santri WHERE name = '$nama'");
+  if (mysqli_num_rows($result) === 1) {
+		//cek password
+		$row = mysqli_fetch_assoc($result);
+		if (password_verify($password, $row["password"])) {
+			#ubah status jadi logged in
+			$_SESSION["login"] = true;
+			$_SESSION["santri"] = true;
+			$_SESSION["username"] = $row["name"];
+			$_SESSION["id_user"] = $row["id_santri"]; 
+			header("Location: index.php");
+			exit;
+		}
+  }  
 }
 
 function tambah($data)
