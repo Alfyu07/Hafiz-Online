@@ -43,7 +43,8 @@ function insSantri($data)
   global $conn;
 
   $email = mysqli_real_escape_string($conn, $data["email"]);
-  $nama = strtolower(stripslashes($data["username"]));
+  #$nama = strtolower(stripslashes($data["username"]));
+  $nama = mysqli_real_escape_string($conn, $data["username"]);
   $password = mysqli_real_escape_string($conn, $data["password"]);
   $password2 = mysqli_real_escape_string($conn, $data["password2"]);  
  
@@ -83,7 +84,8 @@ function loginSantri($data)
   global $conn;
 
   $email = mysqli_real_escape_string($conn, $data["email"]);
-  $nama = strtolower(stripslashes($data["username"]));
+  #$nama = strtolower(stripslashes($data["username"]));
+  $nama = mysqli_real_escape_string($conn, $data["username"]);
   $password = mysqli_real_escape_string($conn, $data["password"]);
 
   $result = query("SELECT * FROM santri WHERE name = '$nama'");
@@ -100,6 +102,40 @@ function loginSantri($data)
 			exit;
 		}
   }  
+}
+
+#UPDATE 'tabel' SET kol1 = ?, kol2 = ?, ... WHERE 'tabel_id'=?
+function updSantri($data, $id_user)  
+{	#name, phone_number, address, gender, birth_date, email, password
+	#$id_user dapet dari $_SESSION["id_user"]
+	global $conn;
+	
+	#$data : data/nilai baru
+	$nama = $data["nama"];
+	$phone_number = $data["phone_number"];
+	$address = $data["address"];
+	$gender = $data["gender"];
+	$birth_date = $data["birth_date"];
+	$email = $data["email"];
+	$password = $data["password"];
+	
+	$password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+	
+	$query = "UPDATE santri SET name='$nama', phone_number='$phone_number', address='$address',
+	gender='$gender', birth_date='$birth_date', email='$email', password='$password'
+	WHERE id_santri = $id_user";
+	
+	$result = mysqli_query($conn, $query);
+	return $result;
+}
+
+#DELETE FROM 'tabel' WHERE 'tabel_id'=?
+function delSantri($id_user)
+{
+	global $conn;
+	$query = "DELETE FROM santri WHERE id_santri = '$id_user'";
+	$result = mysqli_query($conn, $query);
+	return $result;
 }
 
 function tambah($data)
