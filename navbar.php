@@ -1,5 +1,6 @@
 <?php
-echo '<header>
+echo '
+<header>
 <!-- Navigasi -->
 <nav class="navbar">
   <div class="brand-title">HafizQuran</div>

@@ -77,18 +77,18 @@ button {
 .toggle-button .bar {
   width: 100%;
   height: 3px;
-  background-color: #333;
+  background-color: #343a40;
   border-radius: 10px;
 }
 
 .brand-title {
   text-decoration: none;
-  color: #333;
+  color: #343a40;
   margin: 0.5rem;
   margin-left: 3rem;
   font-size: 28px;
   font-weight: 800;
-  color: #333;
+  color: #343a40;
 }
 
 .navbar-links {
@@ -136,7 +136,7 @@ button {
           justify-content: center;
   width: 100%;
   text-decoration: none;
-  color: #333;
+  color: #343a40;
   font-size: 1.3rem;
 }
 
@@ -244,7 +244,7 @@ footer {
           align-items: center;
   height: 100px;
   width: 100%;
-  background-color: #333;
+  background-color: #343a40;
   color: #fff;
 }
 
@@ -452,7 +452,7 @@ ul {
 .ayat {
   list-style-type: none;
   text-decoration: none;
-  color: #333;
+  color: #343a40;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 76px 1fr;
