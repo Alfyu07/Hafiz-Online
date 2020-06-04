@@ -4,9 +4,13 @@ $user = query($sql);
 ?>
 <div class="page-container">
   <h3>Kelola Santri</h3>
-  <button class="primary-btn">Tambah</button>
-  <table>
-    <thead>
+  <!-- <button class="primary-btn">Tambah</button> -->
+
+  <?php $i = 1;
+  if (count($user) > 0) {
+    echo '
+      <table>
+      <thead>
       <tr>
         <th>#</th>
         <th>Nama</th>
@@ -16,27 +20,32 @@ $user = query($sql);
         <th>No Telp</th>
         <th>Edit</th>
       </tr>
+      </thead>';
 
-      <?php $i = 1;
-      foreach ($user as $santri) {
-        echo "<tr>";
-        echo ("<td>" . $i . "</td>");
-        echo ("<td>" . $santri['name'] . "</td>");
-        echo ("<td>" . $santri['gender'] . "</td>");
+    foreach ($user as $santri) {
+      echo "<tr>";
+      echo ("<td>" . $i . "</td>");
+      echo ("<td>" . $santri['name'] . "</td>");
+      echo ("<td>" . $santri['gender'] . "</td>");
 
-        echo ("<td>" . $santri['email'] . "</td>");
-        echo ("<td>" . $santri['phone_number'] . "</td>");
-        echo ("<td>" . $santri['address'] . "</td>");
-        echo ('<td class="menu-edit">
+      echo ("<td>" . $santri['email'] . "</td>");
+      echo ("<td>" . $santri['address'] . "</td>");
+      echo ("<td>" . $santri['phone_number'] . "</td>");
+      echo ('<td class="menu-edit">
         <button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
         
         <button class="edit"><a href="./editsantri.php"><span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span></a></button>
         </td>
         ');
-        echo "</tr>";
+      echo "</tr>";
 
-        $i++;
-      } ?>
-    </thead>
-  </table>
+      $i++;
+    }
+    echo "</table>";
+  } else {
+    echo "<h2 class='kosong'> Data Kosong</h2>";
+  }
+  ?>
+
+
 </div>

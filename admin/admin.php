@@ -21,19 +21,27 @@ require "../functions.php";
   require "adminsidebar.php";
   ?>
   <div class="wrapper">
-    <?php
-    require "./adminnavbar.php";
-
-    ?>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-links">
+          <ul>
+            <li><a class="path" href="">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <div class="main">
 
       <?php
-      if ($_GET['halaman'] == 'santri') {
+      if ($_GET['halaman'] == 'dashboard') {
+        require "dashboard.php";
+      } else if ($_GET['halaman'] == 'santri') {
         require "kelola-santri.php";
       } else if ($_GET['halaman'] == 'ustadz') {
         require 'kelola-ustadz.php';
+      } else {
+        require "dashboard.php";
       }
-
       ?>
 
     </div>
@@ -44,23 +52,14 @@ require "../functions.php";
 </script>
 <script src=" https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 <script>
-  // let link = $(".link");
-
-  // for (let i = 0; i < link.length; i++) {
-
-  //   link[i].addEventListener('click', () => {
-  //     let cur = document.getElementsByClassName('active');
-  //     if (cur.length > 0) {
-  //       cur[0].classList.remove("active");
-  //     }
-  //     link[i].classList.add("active");
-  //   });
-  // }
   $(document).ready(function() {
     $(".sidebar a").click(function() {
       var id = $(this);
-
-      $(".active").removeClass("active");
+      var act = $(".active");
+      // $(".active").removeClass("active");
+      act.each((index) => {
+        $(this).removeClass('active');
+      })
       $(id).addClass("active");
       localStorage.setItem("selectedolditem", $(id).text());
 

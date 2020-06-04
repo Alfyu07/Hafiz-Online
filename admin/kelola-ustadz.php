@@ -6,7 +6,9 @@ $user = query($sql);
   <h3>Kelola Ustadz</h3>
   <button class="primary-btn">Tambah</button>
   <table>
-    <thead>
+    <?php $i = 1;
+    if (count($user) > 0) {
+      echo '<thead>
       <tr>
         <th>#</th>
         <th>Nama</th>
@@ -16,8 +18,8 @@ $user = query($sql);
         <th>No Telp</th>
         <th>Edit</th>
       </tr>
+      </thead>';
 
-      <?php $i = 1;
       foreach ($user as $santri) {
         echo "<tr>";
         echo ("<td>" . $i . "</td>");
@@ -25,8 +27,8 @@ $user = query($sql);
         echo ("<td>" . $santri['gender'] . "</td>");
 
         echo ("<td>" . $santri['email'] . "</td>");
-        echo ("<td>" . $santri['phone_number'] . "</td>");
         echo ("<td>" . $santri['address'] . "</td>");
+        echo ("<td>" . $santri['phone_number'] . "</td>");
         echo ('<td class="menu-edit">
         <button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
         
@@ -36,7 +38,10 @@ $user = query($sql);
         echo "</tr>";
 
         $i++;
-      } ?>
-    </thead>
+      }
+    } else {
+      echo "<h2>Data Kosong</h2>";
+    } ?>
+
   </table>
 </div>
