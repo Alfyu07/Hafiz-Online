@@ -411,7 +411,7 @@ ul {
 }
 
 .wrapper .page-container {
-  width: 95%;
+  min-width: 95%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;

@@ -10,7 +10,7 @@ $user = query($sql);
     if (count($user) > 0) {
       echo '<thead>
       <tr>
-        <th>#</th>
+        <th>id</th>
         <th>Nama</th>
         <th>Jenis Kelamin</th>
         <th>Email</th>
@@ -20,15 +20,15 @@ $user = query($sql);
       </tr>
       </thead>';
 
-      foreach ($user as $santri) {
+      foreach ($user as $ustadz) {
         echo "<tr>";
-        echo ("<td>" . $i . "</td>");
-        echo ("<td>" . $santri['name'] . "</td>");
-        echo ("<td>" . $santri['gender'] . "</td>");
+        echo ("<td>" . $ustadz['id_ustadz'] . "</td>");
+        echo ("<td>" . $ustadz['name'] . "</td>");
+        echo ("<td>" . $ustadz['gender'] . "</td>");
 
-        echo ("<td>" . $santri['email'] . "</td>");
-        echo ("<td>" . $santri['address'] . "</td>");
-        echo ("<td>" . $santri['phone_number'] . "</td>");
+        echo ("<td>" . $ustadz['email'] . "</td>");
+        echo ("<td>" . $ustadz['address'] . "</td>");
+        echo ("<td>" . $ustadz['phone_number'] . "</td>");
         echo ('<td class="menu-edit">
         <button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
         

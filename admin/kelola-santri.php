@@ -12,7 +12,7 @@ $user = query($sql);
       <table>
       <thead>
       <tr>
-        <th>#</th>
+        <th>id</th>
         <th>Nama</th>
         <th>Jenis Kelamin</th>
         <th>Email</th>
@@ -24,7 +24,7 @@ $user = query($sql);
 
     foreach ($user as $santri) {
       echo "<tr>";
-      echo ("<td>" . $i . "</td>");
+      echo ("<td>" . $santri['id_santri'] . "</td>");
       echo ("<td>" . $santri['name'] . "</td>");
       echo ("<td>" . $santri['gender'] . "</td>");
 
@@ -46,6 +46,10 @@ $user = query($sql);
     echo "<h2 class='kosong'> Data Kosong</h2>";
   }
   ?>
-
-
 </div>
+
+<script>
+  document.querySelector('button.hapus').addEventListener('click', function() {
+    confirm("Apakah anda yakin?")
+  })
+</script>

@@ -55,7 +55,7 @@ ul {
     }
   }
   .page-container {
-    width: 95%;
+    min-width: 95%;
     height: max-content;
     margin: 0 auto;
     background-color: $bgColor;
@@ -171,7 +171,9 @@ ul {
 .primary-btn {
   padding: 6px;
 }
-
 .page-container h2 {
   text-align: center;
+}
+
+@media (min-width: 600px) {
 }
