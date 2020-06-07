@@ -11,7 +11,7 @@
     <div class="inputan ">
       <label for="gender">Jenis Kelamin</label>
       <div class="custom-select">
-        <select>
+        <select id="gender" name="gender">
           <option value="other">Pilih Jenis Kelamin</option>
           <option value="laki-laki">Laki-laki</option>
           <option value="perempuan">Perempuan</option>
@@ -31,5 +31,41 @@
 
     <button type="submit" class="primary-btn">Submit</button>
   </form>
-
 </div>
+
+
+<script>
+  //Scrpt validasi
+  var submit = document.querySelector("form");
+
+  function phonenumber(input) {
+    var phoneno = /^\d{10,12}$/;
+    if (input.value.match(phoneno)) {
+      return true;
+    } else {
+      alert("Nomor telp yang dimasukkan salah");
+      return false;
+    }
+  }
+  submit.addEventListener("submit", (e) => {
+    var valid = true;
+    var telp = document.querySelector("#phone_number");
+    var pass = document.querySelector("#password");
+    var konf = document.querySelector("#passkonfirm");
+    var gender = document.querySelector('#gender');
+    if (gender.value == 'other') {
+      valid = false;
+      alert('Pilih Jenis Kelamin');
+      e.preventDefault();
+    }
+    if (pass.value != konf.value) {
+      valid = false;
+      alert("password konfirmasi tidak sama");
+      e.preventDefault();
+    }
+    valid = phonenumber(telp);
+    if (!valid) {
+      e.preventDefault();
+    }
+  });
+</script>

@@ -1,19 +1,33 @@
-let id = [];
-let formId = $("form").attr("id");
-(function getId() {
-	$("input").each(function () {
-		currentId = currentId = $(this).attr("id");
-		if (currentId) id.push(currentId);
-	});
-})();
+let username = $("#username");
+let password = $("#password");
+let email = $("#email");
+let password2 = $("#password2");
+let error = $("#error");
+let form = $("form").attr("id");
 
-$("#" + formId).submit(function (e) {
-	let valid = true;
-	id.forEach((cek) => {
-		if ($("#" + cek).val() == "" && cek != "password2") {
-			alert(cek + " tidak bisa kosong");
-			valid = false;
-		}
-	});
-	if (!valid) e.preventDefault();
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) return false;
+  }
+  return true;
+}
+
+$("#" + form).submit(function (e) {
+  let message = [];
+  if (username.val() === "" || username.val() == null) {
+    message.push("mohon isi username anda");
+  }
+  if (password.val() == "") {
+    message.push("mohon isi password anda");
+  }
+  if (!isEmpty(password2)) {
+    if (password2.val() != password.val()) {
+      message.push("password tidak sama");
+    }
+  }
+
+  if (message.length != 0) {
+    e.preventDefault();
+    error.html(message.join(", "));
+  }
 });

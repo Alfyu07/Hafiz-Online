@@ -163,3 +163,31 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+//Scrpt validasi
+var submit = document.querySelector("form");
+
+function phonenumber(input) {
+  var phoneno = /^\d{10,12}$/;
+  if (input.value.match(phoneno)) {
+    return true;
+  } else {
+    alert("Nomor telp yang dimasukkan salah");
+    return false;
+  }
+}
+submit.addEventListener("submit", (e) => {
+  var valid = true;
+  var telp = document.querySelector("#phone_number");
+  var pass = document.querySelector("#password");
+  var konf = document.querySelector("#passkonfirm");
+  if (pass.value != konf.value) {
+    valid = false;
+    alert("password konfirmasi tidak sama");
+    e.preventDefault();
+  }
+  valid = phonenumber(telp);
+  if (!valid) {
+    e.preventDefault();
+  }
+});
