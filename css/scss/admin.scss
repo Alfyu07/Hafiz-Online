@@ -1,6 +1,8 @@
 @import "variabel";
 @import "base";
 @import "navbar";
+@import "modal";
+@import "selectinput";
 button {
   border: none;
   background-color: white;
@@ -28,7 +30,35 @@ body {
     color: white;
   }
 }
-
+.fitur {
+  display: flex;
+  // width: ;
+  justify-content: center;
+  margin-top: 2rem;
+  .card {
+    margin: 1rem;
+    width: max-content;
+    display: flex;
+    padding: 6px 16px;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px;
+  }
+  .iconify {
+    width: unset !important;
+    font-size: 5em;
+    color: $lightwhite;
+    background-color: $success;
+    border-radius: 10px;
+  }
+  a {
+    padding: 6px 12px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: $main-text-color;
+  }
+}
 ul {
   padding: 0;
   margin: 0;
@@ -69,6 +99,7 @@ ul {
       padding-bottom: 0;
       border-bottom: 1px solid #dee2e6;
       color: $main-text-color;
+      // text-align: center;
     }
     table {
       width: 95%;
@@ -89,6 +120,12 @@ ul {
     .menu-edit {
       display: flex;
       justify-content: space-evenly;
+      .iconify {
+        font-size: 1.2rem;
+      }
+    }
+    h2 {
+      text-align: center;
     }
   }
 }
@@ -135,14 +172,15 @@ ul {
     }
   }
 }
-.iconify {
-  width: 25px;
-  font-size: 1.3rem;
-}
+
 .sidebar {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  .iconify {
+    width: 25px;
+    font-size: 1.3rem;
+  }
   .link {
     width: 90%;
     margin: 0 auto;
@@ -164,16 +202,39 @@ ul {
     }
   }
 }
-
 .active {
   background-color: $btnColor;
 }
 .primary-btn {
-  padding: 6px;
+  padding: 8px 12px;
+  text-decoration: none;
+  // padding: 6px 12px;
 }
-.page-container h2 {
-  text-align: center;
+.form {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  .inputan {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-top: 6px;
+    label {
+      color: $main-text-color;
+    }
+    input {
+      padding: 8px;
+      border: none;
+      border: 1px solid $darkgray;
+      border-radius: 5px;
+    }
+  }
+  .primary-btn {
+    float: right;
+    margin-top: 12px;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+  }
 }
-
 @media (min-width: 600px) {
 }

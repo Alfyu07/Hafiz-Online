@@ -11,7 +11,7 @@ echo '
     </div>
   </div>
   <div class="sidebar">
-    <a href="admin.php?=dashboard" class="link">
+    <a href="admin.php" class="link">
       <span class="iconify" data-inline="false" data-icon="dashicons:dashboard"></span>
       Dashboard
     </a>

@@ -4,7 +4,8 @@ $user = query($sql);
 ?>
 <div class="page-container">
   <h3>Kelola Ustadz</h3>
-  <button class="primary-btn">Tambah</button>
+  <a href="admin.php?halaman=tambah" class=" primary-btn">Tambah</a>
+
   <table>
     <?php $i = 1;
     if (count($user) > 0) {
@@ -29,10 +30,13 @@ $user = query($sql);
         echo ("<td>" . $ustadz['email'] . "</td>");
         echo ("<td>" . $ustadz['address'] . "</td>");
         echo ("<td>" . $ustadz['phone_number'] . "</td>");
-        echo ('<td class="menu-edit">
-        <button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
-        
-        <button class="edit"><a href="./editsantri.php"><span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span></a></button>
+        echo ('<td>
+        <div class="menu-edit">
+        	
+        	<button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
+        	
+        	<button class="edit"><a href="admin.php?halaman=edit"><span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span></a></button>
+        </div>
         </td>
         ');
         echo "</tr>";

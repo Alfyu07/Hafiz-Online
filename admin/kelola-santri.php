@@ -31,10 +31,13 @@ $user = query($sql);
       echo ("<td>" . $santri['email'] . "</td>");
       echo ("<td>" . $santri['address'] . "</td>");
       echo ("<td>" . $santri['phone_number'] . "</td>");
-      echo ('<td class="menu-edit">
-        <button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
-        
-        <button class="edit"><a href="./editsantri.php"><span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span></a></button>
+      echo ('<td>
+        <div class="menu-edit">
+        	
+        	<button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
+        	
+        	<button class="edit"><a href="admin.php?halaman=edit"><span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span></a></button>
+        </div>
         </td>
         ');
       echo "</tr>";
