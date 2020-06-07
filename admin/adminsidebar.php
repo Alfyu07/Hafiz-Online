@@ -1,6 +1,4 @@
-<?php
-echo '
-  <aside class="main-sidebar">
+<aside class="main-sidebar">
   <a href="" class="brand-title">HafizQuran</a>
   <div class="user">
     <div class="image">
@@ -23,11 +21,12 @@ echo '
       <span class="iconify" data-inline="false" data-icon="bx:bx-customize"></span>
       Kelola Ustadz
     </a>
-    <a href = "" class="link">
+
+    <!-- bagian logout -->
+    <a href="" class="link">
       <span class="iconify" data-inline="false" data-icon="mdi:logout"></span>
       Logout
     </a>
 
   </div>
 </aside>
-';
