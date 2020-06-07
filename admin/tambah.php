@@ -1,3 +1,17 @@
+<?php
+#require '../functions.php';
+if (isset($_POST["register"])) {
+  if (insUstadz($_POST) > 0) {
+    echo "<script>
+        alert('Ustadz berhasil ditambahkan!');
+      </script>";
+  } else {
+    echo mysqli_error($conn);
+  }
+}
+
+?>
+
 <div class="page-container">
   <h3>Tambah Ustadz</h3>
   <form action="" class="form" method="POST">
@@ -33,10 +47,10 @@
     </div>
     <div class="inputan">
       <label for="passkonfirm">Konfimasi Password</label>
-      <input type="password" name="passkonfirm" id="passkonfirm" required>
+      <input type="password" name="password2" id="password2" required>
       </input>
     </div>
-    <button type="submit" id='submit' class="primary-btn">Submit</button>
+    <button type="submit" name="register" id='submit' class="primary-btn">Submit</button>
   </form>
 
 </div>

@@ -1,17 +1,17 @@
     <?php
   session_start();
   //koneksi ke database
-  $namadb = "hafiz";
-  $unamedb = "root";
-  $passdb = "250700";
-  $conn = mysqli_connect("localhost", "$unamedb", "$passdb", "$namadb");
+  // $namadb = "hafiz";
+  // $unamedb = "root";
+  // $passdb = "250700";
+  // $conn = mysqli_connect("localhost", "$unamedb", "$passdb", "$namadb");
 
   // #KONEKSI DENGAN DATABASE XAMPP
-  // $dbServer = "localhost";
-  // $dbUser = "root";
-  // $dbPass = "";
-  // $dbname = "hafizquran";
-  // $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
+   $dbServer = "localhost";
+   $dbUser = "root";
+   $dbPass = "";
+   $dbname = "hafizquran";
+   $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
 
   #data session
   $_SESSION["login"] = false;
@@ -138,6 +138,213 @@
     return $result;
   }
 
+  ##ADMIN
+  function insAdmin($data)
+  {
+    #isi form register: nama, email, password
+    global $conn;
+
+    $email = mysqli_real_escape_string($conn, $data["email"]);
+    #$nama = strtolower(stripslashes($data["username"]));
+    $nama = mysqli_real_escape_string($conn, $data["username"]);
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+    $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+
+    $res = mysqli_query($conn, "SELECT id_admin FROM admin ORDER BY id_admin DESC LIMIT 1");
+    $bar =  mysqli_fetch_array($res);
+    #cari jumlah baris untuk id_santri
+    $id_admin = 1; #id_admin pertama
+    $indeks = $bar[0]; #variabel isi id_admin terbesar
+    if ($indeks != 0) { #ada data admin, ganti id_admin
+      $id_admin = $indeks + 1;
+    }
+
+    #cek konfirmasi password
+    if (strcmp($password, $password2) != 0) {
+      echo "<script>
+        alert('password dan konfirmasi berbeda');
+      </script>";
+      return false;
+    }
+    $password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+    #insert ke database, tabel santri
+    $query = "INSERT into admin (id_admin,name,email,password) values('$id_admin','$nama','$email','$password')";
+    $result = mysqli_query($conn, $query);
+
+    #ubah status jadi logged in
+    $_SESSION["login"] = true;
+    $_SESSION["admin"] = true;
+    $_SESSION["username"] = $nama;
+    $_SESSION["id_user"] = $id_admin;
+
+    return $result;
+  }
+
+  function loginAdmin($data)
+  {
+    #isi form register: nama, email, password
+    global $conn;
+
+    $email = mysqli_real_escape_string($conn, $data["email"]);
+    #$nama = strtolower(stripslashes($data["username"]));
+    $nama = mysqli_real_escape_string($conn, $data["username"]);
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+
+    $result = query("SELECT * FROM admin WHERE name = '$nama'");
+    if (mysqli_num_rows($result) === 1) {
+      //cek password
+      $row = mysqli_fetch_assoc($result);
+      if (password_verify($password, $row["password"])) {
+        #ubah status jadi logged in
+        $_SESSION["login"] = true;
+        $_SESSION["admin"] = true;
+        $_SESSION["username"] = $row["name"];
+        $_SESSION["id_user"] = $row["id_admin"];
+        header("Location: index.php");
+        exit;
+      }
+    }
+  }
+
+  #UPDATE 'tabel' SET kol1 = ?, kol2 = ?, ... WHERE 'tabel_id'=?
+  function updAdmin($data, $id_user)
+  {  #name, phone_number, address, gender, birth_date, email, password
+    #$id_user dapet dari $_SESSION["id_user"]
+    global $conn;
+
+    #$data : data/nilai baru
+    $nama = $data["nama"];
+    $phone_number = $data["phone_number"];
+    $address = $data["address"];
+    $gender = $data["gender"];
+    $birth_date = $data["birth_date"];
+    $email = $data["email"];
+    $password = $data["password"];
+
+    $password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+
+    $query = "UPDATE admin SET name='$nama', phone_number='$phone_number', address='$address',
+	gender='$gender', birth_date='$birth_date', email='$email', password='$password'
+	WHERE id_admin = $id_user";
+
+    $result = mysqli_query($conn, $query);
+    return $result;
+  }
+
+  #DELETE FROM 'tabel' WHERE 'tabel_id'=?
+  function delAdmin($id_user)
+  {
+    global $conn;
+    $query = "DELETE FROM admin WHERE id_admin = '$id_user'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+  }
+
+  ##Ustadz
+  function insUstadz($data)
+  {
+    #isi form register: nama, email, password
+    global $conn;
+
+    $email = mysqli_real_escape_string($conn, $data["email"]);
+    #$nama = strtolower(stripslashes($data["username"]));
+	$phone_number = mysqli_real_escape_string($conn, $data["phone_number"]);
+    $nama = mysqli_real_escape_string($conn, $data["nama"]);
+	$gender = mysqli_real_escape_string($conn, $data["gender"]);
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+    $password2 = mysqli_real_escape_string($conn, $data["password2"]);
+
+    $res = mysqli_query($conn, "SELECT id_ustadz FROM ustadz ORDER BY id_ustadz DESC LIMIT 1");
+    $bar =  mysqli_fetch_array($res);
+    #cari jumlah baris untuk id_ustadz
+    $id_ustadz = 1; #id_ustadz pertama
+    $indeks = $bar[0]; #variabel isi id_ustadz terbesar
+    if ($indeks != 0) { #ada data admin, ganti id_ustadz
+      $id_ustadz = $indeks + 1;
+    }
+
+    #cek konfirmasi password
+    if (strcmp($password, $password2) != 0) {
+      echo "<script>
+        alert('password dan konfirmasi berbeda');
+      </script>";
+      return false;
+    }
+    $password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+    #insert ke database, tabel santri
+    $query = "INSERT into ustadz (id_ustadz,name,email,password, gender, phone_number)
+	values('$id_ustadz','$nama','$email','$password', '$gender', '$phone_number')";
+    $result = mysqli_query($conn, $query);
+
+    #ubah status jadi logged in
+    $_SESSION["login"] = true;
+    $_SESSION["ustadz"] = true;
+    $_SESSION["username"] = $nama;
+    $_SESSION["id_user"] = $id_ustadz;
+
+    return $result;
+  }
+
+  function loginUstadz($data)
+  {
+    #isi form register: nama, email, password
+    global $conn;
+
+    $email = mysqli_real_escape_string($conn, $data["email"]);
+    #$nama = strtolower(stripslashes($data["username"]));
+    $nama = mysqli_real_escape_string($conn, $data["username"]);
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+
+    $result = query("SELECT * FROM ustadz WHERE name = '$ustadz'");
+    if (mysqli_num_rows($result) === 1) {
+      //cek password
+      $row = mysqli_fetch_assoc($result);
+      if (password_verify($password, $row["password"])) {
+        #ubah status jadi logged in
+        $_SESSION["login"] = true;
+        $_SESSION["ustadz"] = true;
+        $_SESSION["username"] = $row["name"];
+        $_SESSION["id_user"] = $row["id_ustadz"];
+        header("Location: index.php");
+        exit;
+      }
+    }
+  }
+
+  #UPDATE 'tabel' SET kol1 = ?, kol2 = ?, ... WHERE 'tabel_id'=?
+  function updUstadz($data, $id_user)
+  {  #name, phone_number, address, gender, birth_date, email, password
+    #$id_user dapet dari $_SESSION["id_user"]
+    global $conn;
+
+    #$data : data/nilai baru
+    $nama = $data["nama"];
+    $phone_number = $data["phone_number"];
+    $address = $data["address"];
+    $gender = $data["gender"];
+    $birth_date = $data["birth_date"];
+    $email = $data["email"];
+    $password = $data["password"];
+
+    $password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+
+    $query = "UPDATE ustadz SET name='$nama', phone_number='$phone_number', address='$address',
+	gender='$gender', birth_date='$birth_date', email='$email', password='$password'
+	WHERE id_ustadz = $id_user";
+
+    $result = mysqli_query($conn, $query);
+    return $result;
+  }
+
+  #DELETE FROM 'tabel' WHERE 'tabel_id'=?
+  function delUstadz($id_user)
+  {
+    global $conn;
+    $query = "DELETE FROM ustadz WHERE id_admin = '$id_user'";
+    $result = mysqli_query($conn, $query);
+    return $result;
+  }
+
   function tambah($data)
   {
     global $conn;
@@ -193,3 +400,5 @@
     }
     return '<span class="arabic_number">' . $temp . '</span>';
   }
+
+
