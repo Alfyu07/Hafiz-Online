@@ -23,7 +23,7 @@
     </a>
 
     <!-- bagian logout -->
-    <a href="" class="link">
+    <a href="../logout.php" class="link">
       <span class="iconify" data-inline="false" data-icon="mdi:logout"></span>
       Logout
     </a>

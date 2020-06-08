@@ -340,7 +340,7 @@
   function delUstadz($id_user)
   {
     global $conn;
-    $query = "DELETE FROM ustadz WHERE id_admin = '$id_user'";
+    $query = "DELETE FROM ustadz WHERE id_ustadz = '$id_user'";
     $result = mysqli_query($conn, $query);
     return $result;
   }
