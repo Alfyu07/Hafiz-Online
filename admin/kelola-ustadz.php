@@ -22,6 +22,8 @@ $user = query($sql);
       </thead>';
 
       foreach ($user as $ustadz) {
+		#echo "<a href='hapus.php?id=".$siswa['id']."'>Hapus</a>";  
+		#$kata = "";
         echo "<tr>";
         echo ("<td>" . $ustadz['id_ustadz'] . "</td>");
         echo ("<td>" . $ustadz['name'] . "</td>");
@@ -33,9 +35,17 @@ $user = query($sql);
         echo ('<td>
         <div class="menu-edit">
         	
-        	<button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
+        	<button class="hapus">
+			<a href="hapusUstadz.php">
+			<span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span>
+			</a>
+			</button>
         	
-        	<button class="edit"><a href="admin.php?halaman=edit"><span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span></a></button>
+        	<button class="edit">
+			<a href="admin.php?halaman=edit">
+			<span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span>
+			</a>
+			</button>
         </div>
         </td>
         ');
