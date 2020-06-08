@@ -1,10 +1,12 @@
 <?php
+	require "../functions.php";
 	$id = 0;
 	$nama = "";
 	if ( isset($_GET['id_ustadz'])){
 		$id = $_GET['id_ustadz'];
 		$sql = "SELECT * FROM ustadz WHERE id_ustadz='$id'";
 		$user = query($sql);
+		#var_dump ($user);
 	}
 	
 	else if ( isset($_GET['id_santri'])){
@@ -43,12 +45,23 @@
     </div>
     <div class="inputan">
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" value="w.alfa433@gmail.com">
+      <input type="email" name="email" id="email" value=
+	  	  <?php 
+		if(isset($user)){echo $user[0]["email"];}
+		else {echo $nama;}
+		?>
+	  >
       </input>
     </div>
     <div class="inputan">
       <label for="phone_number">Nomor Telp</label>
-      <input type="text" name="phone_number" id="phone_number" value="081901231">
+      <input type="text" name="phone_number" id="phone_number" value=
+	  	<?php 
+		if(isset($user)){echo $user[0]["phone_number"];}
+		else {echo $nama;}
+		?>
+		
+	  >
       </input>
     </div>
 
