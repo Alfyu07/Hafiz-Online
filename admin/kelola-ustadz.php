@@ -32,16 +32,16 @@ $user = query($sql);
         echo ("<td>" . $ustadz['email'] . "</td>");
         echo ("<td>" . $ustadz['address'] . "</td>");
         echo ("<td>" . $ustadz['phone_number'] . "</td>");
-        echo ('<td>
-        <div class="menu-edit">
+        echo ('<td>');
+        echo ('<div class="menu-edit">');
         	
-        	<button class="hapus">
-			<a href="hapusUstadz.php">
-			<span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span>
+        echo ('<button class="hapus">');
+		echo ("<a href='hapusUstadz.php?id_ustadz=".$ustadz["id_ustadz"]."'>");
+		echo ('<span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span>
 			</a>
-			</button>
+			</button>');
         	
-        	<button class="edit">
+        echo ('	<button class="edit">
 			<a href="admin.php?halaman=edit">
 			<span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span>
 			</a>
