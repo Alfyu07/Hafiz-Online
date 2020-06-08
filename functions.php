@@ -113,17 +113,21 @@
     #$data : data/nilai baru
     $nama = $data["nama"];
     $phone_number = $data["phone_number"];
-    $address = $data["address"];
+    #$address = $data["address"];
     $gender = $data["gender"];
-    $birth_date = $data["birth_date"];
+    #$birth_date = $data["birth_date"];
     $email = $data["email"];
-    $password = $data["password"];
+    #$password = $data["password"];
 
-    $password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+    #$password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
 
-    $query = "UPDATE santri SET name='$nama', phone_number='$phone_number', address='$address',
-	gender='$gender', birth_date='$birth_date', email='$email', password='$password'
-	WHERE id_santri = $id_user";
+    #$query = "UPDATE santri SET name='$nama', phone_number='$phone_number', address='$address',
+	#gender='$gender', birth_date='$birth_date', email='$email', password='$password'
+	#WHERE id_santri = $id_user";
+	
+    $query = "UPDATE santri SET name='$nama', phone_number='$phone_number', 
+	gender='$gender', email='$email' 
+	WHERE id_santri = $id_user";	
 
     $result = mysqli_query($conn, $query);
     return $result;
@@ -320,19 +324,24 @@
     #$data : data/nilai baru
     $nama = $data["nama"];
     $phone_number = $data["phone_number"];
-    $address = $data["address"];
+    #$address = $data["address"];
     $gender = $data["gender"];
-    $birth_date = $data["birth_date"];
+    #$birth_date = $data["birth_date"];
     $email = $data["email"];
-    $password = $data["password"];
+    #$password = $data["password"];
 
-    $password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
+    #$password = password_hash($password, PASSWORD_DEFAULT);#enkripsi password
 
-    $query = "UPDATE ustadz SET name='$nama', phone_number='$phone_number', address='$address',
-	gender='$gender', birth_date='$birth_date', email='$email', password='$password'
-	WHERE id_ustadz = $id_user";
+    #$query = "UPDATE ustadz SET name='$nama', phone_number='$phone_number', address='$address',
+	#gender='$gender', birth_date='$birth_date', email='$email', password='$password'
+	#WHERE id_ustadz = $id_user";
+	
+    $query = "UPDATE ustadz SET name='$nama', phone_number='$phone_number', 
+	gender='$gender',  email='$email' 
+	WHERE id_ustadz = '$id_user'";	
 
     $result = mysqli_query($conn, $query);
+	
     return $result;
   }
 

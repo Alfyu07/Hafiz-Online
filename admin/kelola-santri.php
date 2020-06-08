@@ -31,12 +31,20 @@ $user = query($sql);
       echo ("<td>" . $santri['email'] . "</td>");
       echo ("<td>" . $santri['address'] . "</td>");
       echo ("<td>" . $santri['phone_number'] . "</td>");
-      echo ('<td>
-        <div class="menu-edit">
+
+      echo ('<td>');
+      echo ('<div class="menu-edit">');
+      echo ('<button class="hapus">');
+	  echo ("<a href='hapusSantri.php?id_santri=".$santri["id_santri"]."'>");
+	  echo ('<span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span>
+			</a>
+			</button>');
         	
-        	<button class="hapus"><span class="iconify" data-inline="false" data-icon="bx:bxs-trash"></span></button>
-        	
-        	<button class="edit"><a href="admin.php?halaman=edit"><span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span></a></button>
+      echo ('	<button class="edit">');
+	  echo ("	<a href='admin.php?halaman=edit.php&id_santri=".$santri["id_santri"]."'>");
+	  echo ('	<span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span>
+			</a>
+			</button>
         </div>
         </td>
         ');

@@ -42,7 +42,7 @@ $user = query($sql);
 			</button>');
         	
         echo ('	<button class="edit">');
-		echo ("	<a href='admin.php?halaman=edit.php?id_ustadz=".$ustadz["id_ustadz"]."'>");
+		echo ("	<a href='admin.php?halaman=edit.php&id_ustadz=".$ustadz["id_ustadz"]."'>");
 		echo ('	<span class="iconify" data-inline="false" data-icon="bx:bx-edit"></span>
 			</a>
 			</button>

@@ -39,7 +39,7 @@ require "../functions.php";
         require 'kelola-ustadz.php';
       } else if ($_GET['halaman'] == 'tambah') {
         require "tambah.php";
-      } else if ($_GET['halaman'] == 'edit') {
+      } else if ($_GET['halaman'] == 'edit.php') {
         require "edit.php";
       }
       ?>
