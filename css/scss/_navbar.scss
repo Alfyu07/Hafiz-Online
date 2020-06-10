@@ -26,12 +26,13 @@
   text-decoration: none;
   color: $main-text-color;
   margin: 0.5rem;
-  margin-left: 3rem;
+  margin-left: 3.5rem;
   font-size: 28px;
   font-weight: 800;
   color: $main-text-color;
 }
 .navbar-links {
+  background-color: $lightwhite;
   opacity: 0;
   display: none;
   justify-content: space-between;
@@ -84,6 +85,8 @@
   .navbar-links {
     display: flex;
     opacity: 1;
+    background-color: $bgColor;
+    height: 80px;
   }
   .navbar-links ul {
     display: flex;

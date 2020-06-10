@@ -4,7 +4,7 @@ echo '
 <header>
     <!-- Navigasi -->
     <nav class="navbar">
-      <a href="../index.html" class="brand-title">HafizQuran</a>
+      <a href="../index.php" class="brand-title">HafizQuran</a>
       <a href="#" class="toggle-button">
         <span class="bar"></span>
         <span class="bar"></span>

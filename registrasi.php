@@ -29,7 +29,7 @@ if (isset($_POST["register"])) {
 <body>
 
   <nav>
-    <h1><a href="./index.html" class="title">HafizQuran</a></h1>
+    <h1><a href="./index.php" class="title">HafizQuran</a></h1>
   </nav>
   <main>
     <div class="banner card" style="margin: 0;">

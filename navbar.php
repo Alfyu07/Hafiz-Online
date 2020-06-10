@@ -11,7 +11,7 @@ echo '
   </a>
   <div class="navbar-links">
     <ul>
-      <li><a href="./daftarSurah.php">Baca Quran</a></li>
+      <li><a href="./index.php?halaman=daftarSurah">Baca Quran</a></li>
       <li><a href="./santri/hafal-quran.php">Tahfiz</a></li>
       <li><a href="./santri/quiz.php">Murajaah</a></li>
       <li><a href="./list-artikel.php">Artikel dan Event</a></li>

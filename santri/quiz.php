@@ -15,7 +15,7 @@
     <p>Quiz | 5 pertanyaan</p>
 
     <div class="centered">
-      <a href="../index.html"><button class="primary-btn false">Tidak</button></a>
+      <a href="../index.php"><button class="primary-btn false">Tidak</button></a>
       <button class="mainkan primary-btn">Main</button>
     </div>
   </div>
