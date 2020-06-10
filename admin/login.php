@@ -49,18 +49,22 @@ if (isset($_POST["login"])) {
 		<div class="form-input card">
 			<h1>Halo,<br />Selamat Datang!</h1>
 
-			<?php if (isset($error)) : ?>
-				<p style="color:red; font-style:italic">username / password salah</p>
-			<?php endif; ?>
-			<p id="error" style="color: red; font-style: italic; "></p>
+
+			<!-- <p id="error" style="color: red; font-style: italic; "></p> -->
 			<form action="" method="post" id="login">
+				<!-- <label class='centered'>Masuk sebagai : </label> -->
+
+				<?php if (isset($error)) : ?>
+					<p style="color:red; font-style:italic; text-align:center" id="error">username / password salah</p>
+				<?php endif; ?>
 				<ul>
 					<li>
-						<input autocomple="on" type="text" name="username" id="username" placeholder="Type your username here.." />
+						<input autocomple="on" type="text" name="username" id="username" placeholder="Type your username here.." required />
 					</li>
 					<li>
-						<input type="password" name="password" id="password" placeholder="Type your password here.." autocomplete="on" />
+						<input type="password" name="password" id="password" placeholder="Type your password here.." autocomplete="on" required />
 					</li>
+					<li></li>
 					<li class="remember" style="margin-bottom: -10px;">
 						<label class="container">ingat saya
 							<input type="checkbox" />
@@ -69,9 +73,8 @@ if (isset($_POST["login"])) {
 					</li>
 					<li id="forgot"><a href="">Lupa password</a></li>
 					<li>
-						<button type="submit" name="login">Masuk</button>
+						<button type="submit" name="login" class="submit">Masuk</button>
 					</li>
-
 				</ul>
 			</form>
 		</div>

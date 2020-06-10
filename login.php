@@ -64,22 +64,23 @@ if (isset($_POST["login"])) {
 		<div class="form-input card">
 			<h1>Halo,<br />Selamat Datang!</h1>
 
-			<?php if (isset($error)) : ?>
-				<p style="color:red; font-style:italic">username / password salah</p>
-			<?php endif; ?>
-			<p id="error" style="color: red; font-style: italic; "></p>
+
+			<!-- <p id="error" style="color: red; font-style: italic; "></p> -->
 			<form action="" method="post" id="login">
-				<label class='centered'>Masuk sebagai : </label>
+				<!-- <label class='centered'>Masuk sebagai : </label> -->
 				<div class="pilih-user">
 					<button type='button' name='user' value='santri' class='user'>Santri</button>
 					<button type='button' name='user' value='ustadz' class='user active'>ustadz</button>
 				</div>
+				<?php if (isset($error)) : ?>
+					<p style="color:red; font-style:italic; text-align:center" id="error">username / password salah</p>
+				<?php endif; ?>
 				<ul>
 					<li>
-						<input autocomple="on" type="text" name="username" id="username" placeholder="Type your username here.." />
+						<input autocomple="on" type="text" name="username" id="username" placeholder="Type your username here.." required />
 					</li>
 					<li>
-						<input type="password" name="password" id="password" placeholder="Type your password here.." autocomplete="on" />
+						<input type="password" name="password" id="password" placeholder="Type your password here.." autocomplete="on" required />
 					</li>
 					<li></li>
 					<li class="remember" style="margin-bottom: -10px;">
