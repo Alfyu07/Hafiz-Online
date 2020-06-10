@@ -3,17 +3,38 @@ require 'functions.php';
 if (isset($_POST["login"])) {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	$result = mysqli_query($conn, "SELECT * FROM user where username = '$username'");
-
-	//cek $username
-	if (mysqli_num_rows($result) === 1) {
+	
+	if(isset($_POST["santri"])){
+		$result = mysqli_query($conn, "SELECT * FROM santri where name = '$username'");
+		if (mysqli_num_rows($result) === 1) {
 		//cek password
-		$row = mysqli_fetch_assoc($result);
-		if (password_verify($password, $row["password"])) {
-			header("Location: index.php");
-			exit;
+			$row = mysqli_fetch_assoc($result);
+			if (password_verify($password, $row["password"])) {
+				$_SESSION["login"] = true;
+				$_SESSION["santri"] = true;
+				$_SESSION["username"] = $row["name"];
+				$_SESSION["id_user"] = $row["id_santri"];			
+				header("Location: index.php");
+				exit;
+			}
 		}
 	}
+	else if (isset($_POST["ustadz"])){
+		$result2 = mysqli_query($conn, "SELECT * FROM ustadz where name = '$username'");
+		//cek $username
+		if (mysqli_num_rows($result2) === 1) {
+		//cek password
+			$row = mysqli_fetch_assoc($result2);
+			if (password_verify($password, $row["password"])) {
+				$_SESSION["login"] = true;
+				$_SESSION["ustadz"] = true;
+				$_SESSION["username"] = $row["name"];
+				$_SESSION["id_user"] = $row["id_ustadz"];			
+				header("Location: admin.php");
+				exit;
+			}
+		}
+	}	
 	$error = true;
 }
 
