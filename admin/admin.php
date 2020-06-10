@@ -1,6 +1,8 @@
 <?php
 require "../functions.php";
-
+if(!$_SESSION["login"]&&!$_SESSION["admin"]){
+	header("Location: login.php");
+}
 ?>
 
 <!DOCTYPE html>

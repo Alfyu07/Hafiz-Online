@@ -1,17 +1,17 @@
     <?php
     session_start();
     // koneksi ke database
-    $namadb = "hafiz";
-    $unamedb = "root";
-    $passdb = "250700";
-    $conn = mysqli_connect("localhost", "$unamedb", "$passdb", "$namadb");
+    // $namadb = "hafiz";
+    // $unamedb = "root";
+    // $passdb = "250700";
+    // $conn = mysqli_connect("localhost", "$unamedb", "$passdb", "$namadb");
 
     // // #KONEKSI DENGAN DATABASE XAMPP
-    //  $dbServer = "localhost";
-    //  $dbUser = "root";
-    //  $dbPass = "";
-    //  $dbname = "hafizquran";
-    //  $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
+      $dbServer = "localhost";
+      $dbUser = "root";
+      $dbPass = "";
+      $dbname = "hafizquran";
+      $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
 
     #data session
     $_SESSION["login"] = false;
