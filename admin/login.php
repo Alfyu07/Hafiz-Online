@@ -11,12 +11,11 @@ if (isset($_POST["login"])) {
 		$row = mysqli_fetch_assoc($result);
 		if ($password === $row["password"]) {
 			#echo '<script language="javascript">alert("Anda berhasil login Admin!")</script>';
-            $_SESSION["login"] = true;
-            $_SESSION["admin"] = true;
+			$_SESSION["login"] = true;
+			$_SESSION["admin"] = true;
 			header("Location: admin.php");
 			#exit;
-		}
-		else {
+		} else {
 			echo '<script language="javascript">alert("Anda bukan Admin!")</script>';
 		}
 	}
@@ -48,7 +47,7 @@ if (isset($_POST["login"])) {
 			<img src="../Asset/img/reading-quran-nigth-ramadhan-illustration_19181-27-removebg-preview (1).png" alt="" />
 		</div>
 		<div class="form-input card">
-			<h1>Hello,<br />Selamat Datang!</h1>
+			<h1>Halo,<br />Selamat Datang!</h1>
 
 			<?php if (isset($error)) : ?>
 				<p style="color:red; font-style:italic">username / password salah</p>
@@ -70,12 +69,9 @@ if (isset($_POST["login"])) {
 					</li>
 					<li id="forgot"><a href="">Lupa password</a></li>
 					<li>
-						<button type="submit" name="login">Masuk !</button>
+						<button type="submit" name="login">Masuk</button>
 					</li>
-					<li class="optionlink">
-						Belum punya akun?
-						<span><a href="./registrasi.php">Klik disini!</a></span>
-					</li>
+
 				</ul>
 			</form>
 		</div>

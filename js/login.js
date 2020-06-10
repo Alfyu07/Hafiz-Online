@@ -12,6 +12,13 @@ function isEmpty(obj) {
   return true;
 }
 
+let userbutton = $(".user").each(function () {
+  $(this).click(function () {
+    $(this).addClass("active");
+    $(this).siblings().removeClass("active");
+  });
+});
+
 $("#" + form).submit(function (e) {
   let message = [];
   if (username.val() === "" || username.val() == null) {

@@ -178,7 +178,7 @@ label.container {
   color: #0a8754;
 }
 
-.form-input button {
+.form-input .submit {
   background-color: #0a8754;
   padding: 0.7rem 1.5rem;
   color: white;
@@ -219,4 +219,20 @@ label.container {
     padding: 0.5rem 2rem 0.5rem 0.1rem;
     box-shadow: rgba(10, 135, 84, 0.5);
   }
+}
+
+.pilih-user {
+  display: flex;
+  justify-content: center;
+}
+.pilih-user .user {
+  border: none;
+  background-color: rgba(10, 135, 84, 0.2);
+  color: white;
+  padding: 8px 16px;
+}
+.pilih-user .user.active {
+  background-color: rgba(10, 135, 84, 1);
+  outline: 2px solid rgba(10, 135, 84, 0.8);
+  transform: scale(1.025);
 }

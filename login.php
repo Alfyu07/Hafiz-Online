@@ -3,38 +3,37 @@ require 'functions.php';
 if (isset($_POST["login"])) {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	
-	if(isset($_POST["santri"])){
+
+	if (isset($_POST["santri"])) {
 		$result = mysqli_query($conn, "SELECT * FROM santri where name = '$username'");
 		if (mysqli_num_rows($result) === 1) {
-		//cek password
+			//cek password
 			$row = mysqli_fetch_assoc($result);
 			if (password_verify($password, $row["password"])) {
 				$_SESSION["login"] = true;
 				$_SESSION["santri"] = true;
 				$_SESSION["username"] = $row["name"];
-				$_SESSION["id_user"] = $row["id_santri"];			
+				$_SESSION["id_user"] = $row["id_santri"];
 				header("Location: index.php");
 				exit;
 			}
 		}
-	}
-	else if (isset($_POST["ustadz"])){
+	} else if (isset($_POST["ustadz"])) {
 		$result2 = mysqli_query($conn, "SELECT * FROM ustadz where name = '$username'");
 		//cek $username
 		if (mysqli_num_rows($result2) === 1) {
-		//cek password
+			//cek password
 			$row = mysqli_fetch_assoc($result2);
 			if (password_verify($password, $row["password"])) {
 				$_SESSION["login"] = true;
 				$_SESSION["ustadz"] = true;
 				$_SESSION["username"] = $row["name"];
-				$_SESSION["id_user"] = $row["id_ustadz"];			
+				$_SESSION["id_user"] = $row["id_ustadz"];
 				header("Location: admin.php");
 				exit;
 			}
 		}
-	}	
+	}
 	$error = true;
 }
 
@@ -63,13 +62,18 @@ if (isset($_POST["login"])) {
 			<img src="./Asset/img/reading-quran-nigth-ramadhan-illustration_19181-27-removebg-preview (1).png" alt="" />
 		</div>
 		<div class="form-input card">
-			<h1>Hello,<br />Selamat Datang!</h1>
+			<h1>Halo,<br />Selamat Datang!</h1>
 
 			<?php if (isset($error)) : ?>
 				<p style="color:red; font-style:italic">username / password salah</p>
 			<?php endif; ?>
 			<p id="error" style="color: red; font-style: italic; "></p>
 			<form action="" method="post" id="login">
+				<label class='centered'>Masuk sebagai : </label>
+				<div class="pilih-user">
+					<button type='button' name='user' value='santri' class='user'>Santri</button>
+					<button type='button' name='user' value='ustadz' class='user active'>ustadz</button>
+				</div>
 				<ul>
 					<li>
 						<input autocomple="on" type="text" name="username" id="username" placeholder="Type your username here.." />
@@ -77,6 +81,7 @@ if (isset($_POST["login"])) {
 					<li>
 						<input type="password" name="password" id="password" placeholder="Type your password here.." autocomplete="on" />
 					</li>
+					<li></li>
 					<li class="remember" style="margin-bottom: -10px;">
 						<label class="container">ingat saya
 							<input type="checkbox" />
@@ -85,7 +90,7 @@ if (isset($_POST["login"])) {
 					</li>
 					<li id="forgot"><a href="">Lupa password</a></li>
 					<li>
-						<button type="submit" name="login">Masuk !</button>
+						<button type="submit" name="login" class="submit">Masuk</button>
 					</li>
 					<li class="optionlink">
 						Belum punya akun?
