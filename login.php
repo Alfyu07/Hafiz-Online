@@ -69,12 +69,15 @@ if (isset($_POST["login"])) {
 			<form action="" method="post" id="login">
 				<!-- <label class='centered'>Masuk sebagai : </label> -->
 				<div class="pilih-user">
-					<p>Masuk sebagai</p>
-					<div>
-						<button type='button' name='user' value='santri' class='user active'>Santri</button>
-						<button type='button' name='user' value='ustadz' class='user'>ustadz</button>
+					<p>Masuk Sebagai</p>
+					<div class="switch-field">
+						<input type="radio" id="santri" name="user" value="santri" checked />
+						<label for="santri">Santri</label>
+						<input type="radio" id="ustadz" name="user" value="ustadz" />
+						<label for="ustadz">Ustadz</label>
 					</div>
 				</div>
+
 				<?php if (isset($error)) : ?>
 					<p style="color:red; font-style:italic; text-align:center" id="error">username / password salah</p>
 				<?php endif; ?>
