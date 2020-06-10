@@ -15,8 +15,8 @@ echo '
       <li><a href="./santri/hafal-quran.php">Tahfiz</a></li>
       <li><a href="./santri/quiz.php">Murajaah</a></li>
       <li><a href="./list-artikel.php">Artikel dan Event</a></li>
-      <li><a href="" class="btn-primary" id="signUp">Sign Up</a></li>
-      <li><a href="" id="login-text">Login</a></li>
+      <li><a href="registrasi.php" class="btn-primary" id="signUp">Sign Up</a></li>
+      <li><a href="login.php" id="login-text">Login</a></li>
     </ul>
   </div>
 </nav>
