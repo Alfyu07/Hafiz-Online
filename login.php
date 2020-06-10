@@ -4,7 +4,7 @@ if (isset($_POST["login"])) {
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 
-	if (isset($_POST["santri"])) {
+	if ($_POST["user"]==="santri") {
 		$result = mysqli_query($conn, "SELECT * FROM santri where name = '$username'");
 		if (mysqli_num_rows($result) === 1) {
 			//cek password
@@ -16,9 +16,10 @@ if (isset($_POST["login"])) {
 				$_SESSION["id_user"] = $row["id_santri"];
 				header("Location: index.php");
 				exit;
-			}
+			} #else {var_dump ($row); echo "<br>"}
+			
 		}
-	} else if (isset($_POST["ustadz"])) {
+	} else if ($_POST["user"]==="ustadz") {
 		$result2 = mysqli_query($conn, "SELECT * FROM ustadz where name = '$username'");
 		//cek $username
 		if (mysqli_num_rows($result2) === 1) {
@@ -29,12 +30,13 @@ if (isset($_POST["login"])) {
 				$_SESSION["ustadz"] = true;
 				$_SESSION["username"] = $row["name"];
 				$_SESSION["id_user"] = $row["id_ustadz"];
-				header("Location: admin.php");
+				header("Location: ustadz/ustadznavbar.php");
 				exit;
 			}
 		}
 	}
 	$error = true;
+	#if (isset($_POST["user"])){echo $_POST["user"];}
 }
 
 ?>
