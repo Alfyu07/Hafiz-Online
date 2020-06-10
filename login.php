@@ -71,10 +71,9 @@ if (isset($_POST["login"])) {
 				<div class="pilih-user">
 					<p>Masuk sebagai</p>
 					<div>
-						<button type='button' name='user' value='santri' class='user'>Santri</button>
-						<button type='button' name='user' value='ustadz' class='user active'>ustadz</button>
+						<button type='button' name='user' value='santri' class='user active'>Santri</button>
+						<button type='button' name='user' value='ustadz' class='user'>ustadz</button>
 					</div>
-
 				</div>
 				<?php if (isset($error)) : ?>
 					<p style="color:red; font-style:italic; text-align:center" id="error">username / password salah</p>
