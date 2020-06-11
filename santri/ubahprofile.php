@@ -4,6 +4,20 @@ require '../functions.php';
 $id = $_SESSION["id_user"];
 $user = query("SELECT * FROM santri WHERE id_santri = '$id'");
 #var_dump ($user);
+if (isset($_POST["submit"])){
+	#var_dump ($_POST);#nama, tanggal lahir, email, alamat, no telp
+	#if($_POST["nama"] == ''){echo "<script>alert('nama kosong')</script>";}
+	if($_POST["nama"] == ''){$_POST["nama"] = $user[0]["name"];}
+	if($_POST["birth_date"] == ''){$_POST["birth_date"] = $user[0]["birth_date"];}
+	if($_POST["email"] == ''){$_POST["email"] = $user[0]["email"];}
+	if($_POST["address"] == ''){$_POST["address"] = $user[0]["address"];}
+	if($_POST["phone_number"] == ''){$_POST["phone_number"] = $user[0]["phone_number"];}
+	if(updSantri2($_POST, $id)>0){
+	#	echo "<script>alert('Profil berhasil diubah!');</script>";
+		header('Location: profile.php');
+	}
+}
+
 ?>
 <html lang="en">
 
@@ -130,35 +144,64 @@ $user = query("SELECT * FROM santri WHERE id_santri = '$id'");
       <div class="line"></div>
 
       <div class="inputname">
-        <input class="info name" type="text" placeholder="Masukkan nama disini"></input>
+        <input class="info name" name="nama" type="text" 
+		placeholder= <?php 
+		if (!isset($user[0]["name"])) {
+            echo "Masukkan nama di sini";
+			}
+			else {echo $user[0]["name"];} 
+        ?>
+		> 
+		</input>
         <hr>
       </div>
     </div>
     <div class="userinfo">
       <div class="contain">
         <label class="field">Tanggal Lahir</label>
-        <input type="date" class="info"></input>
+        <input type="date" name="birth_date" class="info" 
+		placeholder=<?php
+			if (!isset($user[0]["birth_date"])) {
+				echo "";}
+			else {echo $user[0]["birth_date"];} 
+			?>												
+		>
+		</input>
       </div>
       <div class="contain">
         <label class="field">Email</label>
-        <input type="email" class="info" placeholder="sharahmaerfoldian@gmail.com"></input>
+        <input type="email" name="email" class="info" 
+		placeholder=<?php
+        if (!isset($user[0]["email"])) {
+        echo "kosong";}
+		else {echo $user[0]["email"];} 
+			?>			
+		>
+		</input>
       </div>
       <div class="contain">
         <label class="field">Alamat</label>
-        <input type="text" class="info" placeholder="Batu Layar"></input>
+        <input type="text" name="address" class="info" 
+		placeholder=<?php
+        if (!isset($user[0]["address"])) {
+			echo "kosong";}
+		else {echo $user[0]["address"];} 
+        ?>
+		>
+		</input>
       </div>
       <div class="contain">
         <label class="field">No Telepon</label>
-        <input type="text" class="info" placeholder=<?php
-                                                    if (!isset($user[0]["phone_number"])) {
-                                                      echo "Belum diatur";
-                                                    } else {
-                                                      echo $user[0]["phone_number"];
-                                                    } #"0272-3912-3393"
-                                                    ?>>
+        <input type="text" name="phone_number" class="info" 
+		placeholder=<?php
+        if (!isset($user[0]["phone_number"])) {
+			echo "kosong";}
+		else {echo $user[0]["phone_number"];} #"0272-3912-3393"
+		?>
+		>
         </input>
       </div>
-      <button type='submit' class="modal-btn ya" href="#">Selesai</button>
+      <button type='submit' name="submit" class="modal-btn ya" href="#">Selesai</button>
   </form>
   </div>
 

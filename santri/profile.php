@@ -35,7 +35,7 @@
   </div>
   <div class="userinfo">
     <div class="contain">
-      <p class="field">Tempat Tanggal Lahir</p>
+      <p class="field">Tanggal Lahir</p>
       <p class="info">
 	  <?php 
 	  if(!isset($user[0]["birth_date"])){echo "Belum diatur";} 
