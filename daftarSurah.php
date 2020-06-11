@@ -1,5 +1,4 @@
 <?php
-require 'functions.php';
 #$quran = query('SELECT * FROM DaftarSurat');
 #$surah['suraId'] ubah jadi -> $surah['index']
 $quran = query('SELECT * FROM daftarsurat');
@@ -7,7 +6,7 @@ $quran = query('SELECT * FROM daftarsurat');
 <h1 class="daftar-title">Daftar Surah</h1>
 <main class="daftar-container">
   <?php foreach ($quran as $surah) : ?>
-    <a href="index.php?halaman=quran&id=<?= $surah['index'] ?> " class="ayat card">
+    <a href="index.php?halaman=quran&id=<?= $surah['suraId'] ?> " class="ayat card">
 
       <li class="no-ayat"><?php echo $surah["suraId"]; ?></li>
       <li class="surahIndo">
