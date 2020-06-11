@@ -471,4 +471,63 @@ label.container {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.container.special {
+  cursor: pointer;
+}
+
+.container .atur {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .atur input {
+  opacity: 1;
+  height: 30px;
+  width: 80px;
+  padding: 6px;
+  margin-left: 0.8rem;
+  position: relative;
+  cursor: text;
+}
+
+.container .atur input {
+  margin-right: 0.5rem;
+}
+
+.container .atur p {
+  margin: 0.5rem;
+}
+
+.container .atur p,
+.container .atur label {
+  font-weight: 400;
+}
+
+label.container.atur {
+  padding: 8px;
+  margin: 0;
+  margin-top: -8px;
+  padding-bottom: 16px;
+}
+
+.container.special {
+  display: none;
+}
+
+.container.special.active {
+  display: block;
+}
+
+.atur {
+  margin-top: 10px;
+  margin-left: 50px;
+}
 /*# sourceMappingURL=pilih.css.map */

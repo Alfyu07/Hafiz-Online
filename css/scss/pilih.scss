@@ -34,3 +34,54 @@ label.container {
   display: flex;
   justify-content: center;
 }
+// form {
+//   display: grid;
+//   gap: 1rem;
+//   grid-template-columns: 1fr 1fr 1fr;
+// }
+.container.special {
+  cursor: pointer;
+}
+.container {
+  .atur {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    input {
+      opacity: 1;
+      height: 30px;
+      width: 80px;
+      padding: 6px;
+      margin-left: 0.8rem;
+      position: relative;
+      cursor: text;
+    }
+
+    input {
+      margin-right: 0.5rem;
+    }
+    p {
+      margin: 0.5rem;
+    }
+    p,
+    label {
+      font-weight: 400;
+    }
+  }
+}
+label.container.atur {
+  padding: 8px;
+  margin: 0;
+  margin-top: -8px;
+  padding-bottom: 16px;
+}
+.container.special {
+  display: none;
+}
+.container.special.active {
+  display: block;
+}
+.atur {
+  margin-top: 10px;
+  margin-left: 50px;
+}
