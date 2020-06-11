@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+require 'functions.php';
+?>
 <html lang="en">
 
 <head>
@@ -12,7 +15,10 @@
 </head>
 
 <body>
-	<?php require 'navbar.php' ?>
+	<?php 
+	if($_SESSION["santri"]){require './santri/santrinavbar.php';}
+	else if($_SESSION["ustadz"]){require './ustadz/ustadznavbar.php';}
+	else {require 'navbar.php';} ?>
 	<!-- Banner landing page -->
 
 	<?php

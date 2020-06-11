@@ -14,13 +14,13 @@
       $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
 
     #data session
-    $_SESSION["login"] = false;
-    $_SESSION["username"] = "";
-    $_SESSION["id_user"] = 0; #untuk edit profil, query(UPDATE...WHERE id='$_SESSION["id_user"]')
+    if (!isset($_SESSION["login"])){ $_SESSION["login"] = false;}
+    if (!isset($_SESSION["useername"])){ $_SESSION["username"] = "";}
+    if (!isset($_SESSION["id_user"])){ $_SESSION["id_user"] = 0;} #untuk edit profil, query(UPDATE...WHERE id='$_SESSION["id_user"]')
     #untuk bedain menu admin/santri/ustadz
-    $_SESSION["admin"] = false;
-    $_SESSION["santri"] = false;
-    $_SESSION["ustadz"] = false;
+    if (!isset($_SESSION["admin"])){  $_SESSION["admin"] = false;}
+    if (!isset($_SESSION["santri"])){ $_SESSION["santri"] = false;}
+    if (!isset($_SESSION["ustadz"])){ $_SESSION["ustadz"] = false;}
 
 
     //ambil data dari tabel

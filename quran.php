@@ -2,7 +2,8 @@
 require "functions.php";
 $surah = $_GET['id']; //nanti di pilih pas pemilihan surah
 $quran = query("SELECT * FROM quran_id where suraId = '$surah'");
-$namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$surah'");
+#$namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId = '$surah'");
+$namasurah = query("SELECT surat_indonesia from daftarsurat where suraId = '$surah'");
 ?>
 <main class="quran-container">
 	<?php foreach ($namasurah as $nama) : ?>
