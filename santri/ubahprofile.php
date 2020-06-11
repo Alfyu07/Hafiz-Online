@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
-	require '../functions.php';
-	$id = $_SESSION["id_user"];
-	$user = query("SELECT * FROM santri WHERE id_santri = '$id'");
-	#var_dump ($user);
+require '../functions.php';
+$id = $_SESSION["id_user"];
+$user = query("SELECT * FROM santri WHERE id_santri = '$id'");
+#var_dump ($user);
 ?>
 <html lang="en">
 
@@ -89,6 +89,26 @@
 
     }
 
+    input[type="file"] {
+      display: none;
+    }
+
+    .custom-file-upload {
+      /* border: 1px solid #ccc; */
+      display: flex;
+      align-items: center;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .custom-file-upload:hover {
+      color: #2181e7;
+    }
+
+    .custom-file-upload .iconify {
+      font-size: 1.5rem;
+    }
+
     @media (min-width: 768px) {}
   </style>
   <link rel="stylesheet" href="../css/modal.css">
@@ -97,47 +117,53 @@
 <body>
   <?php require "santrinavbar.php"; ?>
 
+  <form action="" method="post">
+    <div class="picture">
+      <img src="../Asset/img/pp.jpeg" alt="" />
 
-  <div class="picture">
-    <img src="../Asset/img/pp.jpeg" alt="" />
-    <a class="uploadfoto" href="">
-      <span class="iconify" data-inline="false" data-icon="bx:bxs-camera-plus"></span>
-      Ganti Foto Profil
-    </a>
-    <div class="line"></div>
-    <div class="inputname">
-      <input class="info name" type="text" placeholder="Masukkan nama disini"></input>
-      <hr>
+      <label class="custom-file-upload">
+        <input type="file" class="uploadfoto" href="">
+        <span class="iconify" data-inline="false" data-icon="bx:bxs-camera-plus"></span>
+        Ganti Foto Profil
+      </label>
+
+      <div class="line"></div>
+
+      <div class="inputname">
+        <input class="info name" type="text" placeholder="Masukkan nama disini"></input>
+        <hr>
+      </div>
     </div>
+    <div class="userinfo">
+      <div class="contain">
+        <label class="field">Tanggal Lahir</label>
+        <input type="date" class="info"></input>
+      </div>
+      <div class="contain">
+        <label class="field">Email</label>
+        <input type="email" class="info" placeholder="sharahmaerfoldian@gmail.com"></input>
+      </div>
+      <div class="contain">
+        <label class="field">Alamat</label>
+        <input type="text" class="info" placeholder="Batu Layar"></input>
+      </div>
+      <div class="contain">
+        <label class="field">No Telepon</label>
+        <input type="text" class="info" placeholder=<?php
+                                                    if (!isset($user[0]["phone_number"])) {
+                                                      echo "Belum diatur";
+                                                    } else {
+                                                      echo $user[0]["phone_number"];
+                                                    } #"0272-3912-3393"
+                                                    ?>>
+        </input>
+      </div>
+      <button type='submit' class="modal-btn ya" href="#">Selesai</button>
+  </form>
   </div>
-  <div class="userinfo">
-    <div class="contain">
-      <label class="field">Tanggal Lahir</label>
-      <input type="date" class="info"></input>
-    </div>
-    <div class="contain">
-      <label class="field">Email</label>
-      <input type="email" class="info" placeholder="sharahmaerfoldian@gmail.com"></input>
-    </div>
-    <div class="contain">
-      <label class="field">Alamat</label>
-      <input type="text" class="info" placeholder="Batu Layar"></input>
-    </div>
-    <div class="contain">
-      <label class="field">No Telepon</label>
-      <input type="text" class="info" placeholder=
-	  <?php 
-	  if(!isset($user[0]["phone_number"])){echo "Belum diatur";} 
-	  else {echo $user[0]["phone_number"];} #"0272-3912-3393"
-	  ?>	 
-	  >
-	  </input>
-    </div>
-    <button class="modal-btn ya" href="#">Selesai</button>
-  </div>
 
 
-  <div class="modal-bg">
+  <!-- <div class="modal-bg">
     <div class="modal confirm">
       <strong>Apakah anda yakin?</strong>
       <div class="input">
@@ -149,7 +175,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
 
