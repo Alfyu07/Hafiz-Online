@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+	require '../functions.php';
+	$id = $_SESSION["id_user"];
+	$user = query("SELECT * FROM santri WHERE id_santri = '$id'");
+	#var_dump ($user);
+?>
 <html lang="en">
 
 <head>
@@ -119,7 +125,13 @@
     </div>
     <div class="contain">
       <label class="field">No Telepon</label>
-      <input type="text" class="info" placeholder="0272-3912-3393"></input>
+      <input type="text" class="info" placeholder=
+	  <?php 
+	  if(!isset($user[0]["phone_number"])){echo "Belum diatur";} 
+	  else {echo $user[0]["phone_number"];} #"0272-3912-3393"
+	  ?>	 
+	  >
+	  </input>
     </div>
     <button class="modal-btn ya" href="#">Selesai</button>
   </div>

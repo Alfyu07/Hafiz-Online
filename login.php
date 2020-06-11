@@ -30,7 +30,7 @@ if (isset($_POST["login"])) {
 				$_SESSION["ustadz"] = true;
 				$_SESSION["username"] = $row["name"];
 				$_SESSION["id_user"] = $row["id_ustadz"];
-				header("Location: ustadz/ustadznavbar.php");
+				header("Location: index.php");
 				exit;
 			}
 		}

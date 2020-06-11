@@ -23,8 +23,8 @@ echo '
               <img src="./Asset/img/pp.jpeg" alt="" class="dropbtn">
               <i class="fa fa-caret-down"></i>
               <div class="dropdown-content img">
-                <a href="./listhafalan.php">Riwayat Hafalan</a>
-                <a href="./profile.html">Profile</a>
+                <a href="./santri/listhafalan.php">Riwayat Hafalan</a>
+                <a href="./santri/profile.php">Profile</a>
                 <a href="logout.php">Log Out</a>
               </div>
             </div>
