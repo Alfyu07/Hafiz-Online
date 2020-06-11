@@ -19,7 +19,7 @@ require 'functions.php';
 	if ($_SESSION["santri"]) {
 		require 'santrinavbar.php';
 	} else if ($_SESSION["ustadz"]) {
-		require './ustadz/ustadznavbar.php';
+		require 'ustadznavbar.php';
 	} else {
 		require 'navbar.php';
 	} ?>
