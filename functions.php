@@ -9,7 +9,7 @@
     // // #KONEKSI DENGAN DATABASE XAMPP
     $dbServer = "localhost";
     $dbUser = "root";
-    $dbPass = "";
+    $dbPass = "250700";
     $dbname = "hafizquran";
     $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
 

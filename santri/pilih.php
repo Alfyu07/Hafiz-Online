@@ -1,3 +1,8 @@
+<?php
+require '../functions.php';
+$sql = 'SELECT * FROM juz';
+$juzQuran = query($sql);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -83,45 +88,15 @@
 		<form action="hafal-quran.php" method="get">
 			<p class="collapsible">Pilih Juz</p>
 			<div class="content">
-				<label class="container">Juz 1
-					<input type="checkbox" name="juz" value="1">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 2
-					<input type="checkbox" name="juz" value="2">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 3
-					<input type="checkbox" name="juz" value="3">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 4
-					<input type="checkbox" name="juz" value="4">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 5
-					<input type="checkbox" name="juz" value="5">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 6
-					<input type="checkbox" name="juz" value="6">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 7
-					<input type="checkbox" name="juz" value="7">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 8
-					<input type="checkbox" name="juz" value="8">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Juz 9
-					<input type="checkbox" name="juz" value="9">
-					<span class="checkmark"></span>
-				</label>
+				<?php foreach ($juzQuran as $juz) : ?>
+					<label class="container">Juz <?= $juz['id_juz'] ?>
+						<input type="checkbox" name="juz" value="<?= $juz['id_juz'] ?>">
+						<span class="checkmark"></span>
+					</label>
+				<?php endforeach ?>
 			</div>
 			<p class="collapsible">Pilih Surah</p>
-			<div class="content">
+			<div class="content surat">
 				<label class="container">Al-Fatihah
 					<input type="checkbox" name="surah" value="1">
 					<span class="checkmark"></span>
@@ -133,7 +108,7 @@
 			</div>
 
 			<p class="collapsible">Pilih Ayat</p>
-			<div class="content">
+			<div class="content ayat">
 				<label class="container">Semua
 					<input type="checkbox" name="surah">
 					<span class="checkmark"></span>

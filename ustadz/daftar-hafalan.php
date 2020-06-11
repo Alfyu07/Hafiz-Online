@@ -11,9 +11,6 @@
 <body>
   <?php require "ustadznavbar.php" ?>
 
-
-
-
   <main>
     <section class="table">
       <div class="field">
