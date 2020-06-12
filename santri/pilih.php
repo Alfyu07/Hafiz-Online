@@ -89,7 +89,7 @@ require '../functions.php';
 						newjuz: val
 					}, function() {
 						var nilai = [];
-						var surah = $('input[name="surah"]');
+						var surah = $('input[name="surah[]"]');
 						console.log(surah.length);
 						for (let i = 0; i < surah.length; i++) {
 							surah[i].addEventListener('click', function() {
@@ -119,7 +119,7 @@ require '../functions.php';
 	<?php require "santrinavbar.php" ?>
 	<h1>Pilih Hafalan</h1>
 	<main>
-		<form action="hafal-quran.php" method="post">
+		<form action="hafal-quran.php" method="get">
 			<div class="pilih">
 				<p class="collapsible">Pilih Juz</p>
 				<div class="content">
@@ -135,11 +135,13 @@ require '../functions.php';
 				</div>
 			</div>
 			<div class="pilih">
+				<!-- pilih surat -->
 				<p class="collapsible">Pilih Surah</p>
 				<div class="content surat">
 
 				</div>
 			</div>
+
 
 			<div class="pilih">
 				<p class="collapsible">Pilih Ayat</p>
