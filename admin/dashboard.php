@@ -6,13 +6,13 @@
   <div class="card">
     <span class="iconify" data-inline="false" data-icon="bx:bxs-user-detail"></span>
 
-    <a href="">
+    <a href="admin.php?halaman=santri">
       Kelola Santri</a>
   </div>
   <div class="card">
     <span class="iconify" data-inline="false" data-icon="bx:bxs-user-detail"></span>
 
-    <a href="">
+    <a href="admin.php?halaman=ustadz">
       Kelola Ustadz</a>
   </div>
 </div>
