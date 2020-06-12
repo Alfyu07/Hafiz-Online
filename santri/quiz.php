@@ -1,3 +1,16 @@
+<?php
+require "../functions.php";
+if (!$_SESSION['santri']) {
+  echo "
+	<script>
+		alert('Anda harus login terlebih dahulu');
+		window.location.href = '../login.php';
+	</script>";
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
