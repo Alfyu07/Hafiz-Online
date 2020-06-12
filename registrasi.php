@@ -2,9 +2,8 @@
 require 'functions.php';
 if (isset($_POST["register"])) {
   if (insSantri($_POST) > 0) {
-    echo "<script>
-        alert('user baru berhasil ditambahkan!');
-      </script>";
+    $_SESSION['register'] = true;
+    header("location:index.php");
   } else {
     echo mysqli_error($conn);
   }
@@ -59,7 +58,7 @@ if (isset($_POST["register"])) {
             </label>
           </li>
           <li>
-            <button type="submit" name="register" style="border-top:2rem;">Register!</button>
+            <button type="submit" name="register" class="submit" style="border-top:2rem;">Register!</button>
           </li>
         </ul>
       </form>

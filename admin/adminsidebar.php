@@ -2,10 +2,10 @@
   <a href="" class="brand-title">HafizQuran</a>
   <div class="user">
     <div class="image">
-      <img src="../Asset/img/pp.jpeg" alt="">
+      <img src="../Asset/img/pp.png" alt="">
     </div>
     <div class="info">
-      <a href="">Sharah Almira Najati</a>
+      <a href=""><?= $_SESSION['username'] ?></a>
     </div>
   </div>
   <div class="sidebar">

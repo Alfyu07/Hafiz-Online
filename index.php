@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <?php
 require 'functions.php';
+
+if ($_SESSION['register']) {
+	echo "<script> alert('Registrasi berhasil')</script>";
+	$_SESSION['register'] = false;
+}
+
+
 ?>
+
 <html lang="en">
 
 <head>

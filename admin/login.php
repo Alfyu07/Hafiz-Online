@@ -13,6 +13,9 @@ if (isset($_POST["login"])) {
 			#echo '<script language="javascript">alert("Anda berhasil login Admin!")</script>';
 			$_SESSION["login"] = true;
 			$_SESSION["admin"] = true;
+			$_SESSION["username"] = $row['nama'];
+			$_SESSION["id"] = $row['id_admin'];
+
 			header("Location: admin.php");
 			#exit;
 		} else {

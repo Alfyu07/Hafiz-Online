@@ -17,7 +17,7 @@
     if (!isset($_SESSION["login"])) {
       $_SESSION["login"] = false;
     }
-    if (!isset($_SESSION["useername"])) {
+    if (!isset($_SESSION["username"])) {
       $_SESSION["username"] = "";
     }
     if (!isset($_SESSION["id_user"])) {
@@ -33,7 +33,9 @@
     if (!isset($_SESSION["ustadz"])) {
       $_SESSION["ustadz"] = false;
     }
-
+    if (!isset($_SESSION["register"])) {
+      $_SESSION["register"] = false;
+    }
 
     //ambil data dari tabel
     // var_dump($conn);
