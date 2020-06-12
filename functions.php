@@ -9,7 +9,7 @@
     // // #KONEKSI DENGAN DATABASE XAMPP
     $dbServer = "localhost";
     $dbUser = "root";
-    $dbPass = "";
+    $dbPass = "250700";
     $dbname = "hafizquran";
     $conn = mysqli_connect($dbServer, $dbUser, $dbPass, $dbname);
 
@@ -119,7 +119,7 @@
     #UPDATE 'tabel' SET kol1 = ?, kol2 = ?, ... WHERE 'tabel_id'=?
     function updSantri($data, $id_user)
     {  #name, phone_number, address, birth_date, email, password
-	  #nama, tanggal lahir, email, alamat, no telp
+      #nama, tanggal lahir, email, alamat, no telp
       #$id_user dapet dari $_SESSION["id_user"]
       global $conn;
 
@@ -138,10 +138,10 @@
       $result = mysqli_query($conn, $query);
       return $result;
     }
-	
+
     function updSantri2($data, $id_user)
-    {  
-	  #name, phone_number, address, birth_date, email, password
+    {
+      #name, phone_number, address, birth_date, email, password
       global $conn;
 
       #$data : data/nilai baru
@@ -158,7 +158,7 @@
 
       $result = mysqli_query($conn, $query);
       return $result;
-    }	
+    }
 
     #DELETE FROM 'tabel' WHERE 'tabel_id'=?
     function delSantri($id_user)
