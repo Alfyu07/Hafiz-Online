@@ -1,9 +1,18 @@
 <?php
 require '../functions.php';
-$fromsurah = 1; // dipilih dari surah sekian ini mungkin nanti pake method get
-$tosurah = 2; //sampe surah sekian
-$fromayat = 1; // dari from surah ayat sekian
-$toayat = 12; //sampe from surah ayat sekian
+$fromsurah = min($_GET['surah']);
+// var_dump($fromsurah); // dipilih dari surah sekian ini mungkin nanti pake method get
+$tosurah = max($_GET['surah']); //sampe surah sekian
+// var_dump($tosurah); // dipilih dari surah sekian ini mungkin nanti pake method get
+if ($_GET['ayat'] == 'atur') {
+  $fromayat = $_GET['min-ayat']; // dari from surah ayat sekian
+  $toayat = $_GET['max-ayat']; //sampe from surah ayat sekian  
+} else {
+  $sql = "SELECT jumlah_ayat from daftarsurat where suraId = $tosurah";
+  $fromayat = 1;
+  $toayat = query($sql);
+  $toayat = $toayat[0]['jumlah_ayat'];
+}
 
 // Mengambil id ayat awal
 $idfrom = query("SELECT id from quran_id where suraId = '$fromsurah' and verseID = '$fromayat'")[0]['id'];
@@ -14,7 +23,7 @@ $idto =  query("SELECT id from quran_id where suraId = '$tosurah' and verseID = 
 /* Mengambil keseluruhan ayat dari ayat awal sampe akhir walaupun bisa jadi beda surat*/
 $quran = query("SELECT * from quran_id where id BETWEEN '$idfrom' and '$idto'");
 /* Mengambil nama surat */
-$namasurah = query("SELECT surat_indonesia from DaftarSurat where suraId between '$fromsurah' and '$tosurah'");
+$namasurah = query("SELECT surat_indonesia from daftarsurat where suraId between '$fromsurah' and '$tosurah'");
 
 // Mengambil bismillah 
 $bismillah = query("SELECT * FROM quran_id where id = 0")

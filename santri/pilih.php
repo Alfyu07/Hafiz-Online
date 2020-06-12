@@ -1,7 +1,5 @@
 <?php
 require '../functions.php';
-$sql = 'SELECT * FROM juz';
-$juzQuran = query($sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,6 +77,42 @@ $juzQuran = query($sql);
 			transform: rotate(45deg);
 		}
 	</style>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function() {
+			var juz = $('input[name="juz"]');
+			for (let i = 0; i < juz.length; i++) {
+				juz[i].addEventListener('click', () => {
+					var val = juz[i].value;
+					$('.content.juz').html("")
+					$('.content.surat').load('load-daftarsurah.php', {
+						newjuz: val
+					}, function() {
+						var nilai = [];
+						var surah = $('input[name="surah[]"]');
+						console.log(surah.length);
+						for (let i = 0; i < surah.length; i++) {
+							surah[i].addEventListener('click', function() {
+								if (surah[i].checked && !nilai.includes(surah[i].value)) {
+									nilai.push(surah[i].value);
+								} else {
+									nilai.pop()
+								}
+								console.log(nilai)
+								$('.container.special').html("")
+								$('.container.special').load('load-rangeayat.php', {
+									rangesurat: nilai
+								})
+							})
+						}
+					})
+				})
+			}
+
+		});
+	</script>
+
+
 </head>
 
 <body>
@@ -86,37 +120,47 @@ $juzQuran = query($sql);
 	<h1>Pilih Hafalan</h1>
 	<main>
 		<form action="hafal-quran.php" method="get">
-			<p class="collapsible">Pilih Juz</p>
-			<div class="content">
-				<?php foreach ($juzQuran as $juz) : ?>
-					<label class="container">Juz <?= $juz['id_juz'] ?>
-						<input type="checkbox" name="juz" value="<?= $juz['id_juz'] ?>">
-						<span class="checkmark"></span>
-					</label>
-				<?php endforeach ?>
+			<div class="pilih">
+				<p class="collapsible">Pilih Juz</p>
+				<div class="content">
+					<?php
+					$sql = 'SELECT * FROM juz';
+					$juzQuran = query($sql);
+					foreach ($juzQuran as $juz) : ?>
+						<label class="container">Juz <?= $juz['id_juz'] ?>
+							<input type="radio" name="juz" value="<?= $juz['id_juz'] ?>">
+							<span class="checkmark"></span>
+						</label>
+					<?php endforeach ?>
+				</div>
 			</div>
-			<p class="collapsible">Pilih Surah</p>
-			<div class="content surat">
-				<label class="container">Al-Fatihah
-					<input type="checkbox" name="surah" value="1">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Al-Baqarah
-					<input type="checkbox" name="surah" value="2">
-					<span class="checkmark"></span>
-				</label>
+			<div class="pilih">
+				<!-- pilih surat -->
+				<p class="collapsible">Pilih Surah</p>
+				<div class="content surat">
+
+				</div>
 			</div>
 
-			<p class="collapsible">Pilih Ayat</p>
-			<div class="content ayat">
-				<label class="container">Semua
-					<input type="checkbox" name="surah">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Atur
-					<input type="checkbox" name="surah">
-					<span class="checkmark"></span>
-				</label>
+
+			<div class="pilih">
+				<p class="collapsible">Pilih Ayat</p>
+				<div class="content ayat">
+					<label class="container">Semua
+						<input type="radio" name="ayat" value='semua'>
+						<span class="checkmark"></span>
+					</label>
+					<label class="container">Atur
+						<input type="radio" name="ayat" value='atur'>
+						<span class="checkmark"></span>
+					</label>
+					<label class="container special">
+						<div class="atur">
+
+						</div>
+					</label>
+
+				</div>
 			</div>
 			<button type="submit" class="primary-btn submit">Simpan</button>
 		</form>
@@ -139,6 +183,18 @@ $juzQuran = query($sql);
 				}
 			});
 		}
+
+		var atur = $('input[name="ayat"][value="atur"]')
+		var semua = $('input[name="ayat"][value="semua"]')
+
+		atur[0].addEventListener('click', function() {
+			$('.container.special').addClass('active');
+			$('.content.ayat').scrollTop(100)
+
+		})
+		semua[0].addEventListener('click', function() {
+			$('.container.special').removeClass('active');
+		})
 	</script>
 
 </body>
