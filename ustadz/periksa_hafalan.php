@@ -48,8 +48,8 @@ $bismillah = query("SELECT * FROM quran_id where id = 0");
     </div>
     <div class="plyr-container">
       <audio id="player" controls>
-        <source src="" type="audio/mp3" />
-        <source src="" type="audio/ogg" />
+        <source src="../Asset/Rekam003.wav" type="audio/mp3" />
+        <source src="../Asset/Rekam003.wav" type="audio/ogg" />
       </audio>
     </div>
     <section class="view">

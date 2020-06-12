@@ -23,7 +23,7 @@
       <!-- /ini ulang pake php nanti -->
       <div class="row">
         <img src="../Asset/img/pp.jpeg" alt=""></img>
-        <a href="" class="nama">Wahyu Alfandi</a>
+        <a href="periksa_hafalan.php" class="nama">Wahyu Alfandi</a>
         <time class="tanggal">17/5/2020</time>
         <div class="deskripsi">
           <p>Juz 30</p>
@@ -34,7 +34,7 @@
       <!-- sampe sini -->
       <div class="row">
         <img src="../Asset/img/pp.jpeg" alt=""></img>
-        <a href="" class="nama">Izumi Kazuhita</a>
+        <a href="periksa_hafalan.php" class="nama">Izumi Kazuhita</a>
         <time class="tanggal">17/5/2020</time>
         <div class="deskripsi">
           <p>Juz 30</p>
@@ -44,7 +44,7 @@
       </div>
       <div class="row">
         <img src="../Asset/img/pp.jpeg" alt=""></img>
-        <a href="" class="nama">Zikry Ramadhan</a>
+        <a href="periksa_hafalan.php" class="nama">Zikry Ramadhan</a>
         <time class="tanggal">17/5/2020</time>
         <div class="deskripsi">
           <p>Juz 30</p>
@@ -55,7 +55,7 @@
 
       <div class="row">
         <img src="../Asset/img/pp.jpeg" alt=""></img>
-        <a href="" class="nama">Wahyu Alfandi</a>
+        <a href="periksa_hafalan.php" class="nama">Wahyu Alfandi</a>
         <time class="tanggal">17/5/2020</time>
         <div class="deskripsi">
           <p>Juz 30</p>
@@ -65,7 +65,7 @@
       </div>
       <div class="row">
         <img src="../Asset/img/pp.jpeg" alt=""></img>
-        <a href="" class="nama">Sharah Almira Najati</a>
+        <a href="periksa_hafalan.php" class="nama">Sharah Almira Najati</a>
         <time class="tanggal">17/5/2020</time>
         <div class="deskripsi">
           <p>Juz 30</p>

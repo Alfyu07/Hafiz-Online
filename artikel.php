@@ -24,7 +24,16 @@ require 'functions.php';
 </head>
 
 <body>
-  <?php require "navbar.php"; ?>
+
+  <?php
+  if ($_SESSION["santri"]) {
+    require 'santrinavbar.php';
+  } else if ($_SESSION["ustadz"]) {
+    require 'ustadznavbar.php';
+  } else {
+    require 'navbar.php';
+  } ?>
+
   <main id="artikel">
     <header class="header-article">
       <!-- disini nanti pake php judulnya di taruh -->

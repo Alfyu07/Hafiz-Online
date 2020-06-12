@@ -15,7 +15,7 @@ $namasurah = query("SELECT surat_indonesia from daftarsurat where suraId = '$sur
 			<li class="play">
 				<div class="player">
 					<audio class="plyr-audio">
-						<source src="Asset/ayat/<?= $ayat["id"] + 1 ?>.mp3" type="audio/mp3" />
+						<source src="Asset/ayat/<?= $ayat["id"] ?>.mp3" type="audio/mp3" />
 					</audio>
 					<button class="plymedia"><span class="iconify" data-inline="false" data-icon="bi:play-fill"></span>
 						play</button>

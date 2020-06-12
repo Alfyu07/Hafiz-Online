@@ -1,3 +1,8 @@
+<?php
+require "functions.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +14,14 @@
 </head>
 
 <body>
-  <?php require "navbar.php"; ?>
+  <?php
+  if ($_SESSION["santri"]) {
+    require 'santrinavbar.php';
+  } else if ($_SESSION["ustadz"]) {
+    require 'ustadznavbar.php';
+  } else {
+    require 'navbar.php';
+  } ?>
 
   <!-- Akhir dari navigasi -->
   <div class="photo-grid">
