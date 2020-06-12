@@ -15,7 +15,7 @@ echo '
           <li><a href="../index.php?halaman=daftarSurah">Baca Quran</a></li>
           <li>
             <div class="dropdown">
-              <p class="dropbtn" style="padding : 6px 30px; margin:0; font-size:18px">Event
+              <p class="dropdown" style="padding : 6px 30px; margin:0; font-size:18px">Event
               <i class="fa fa-caret-down"></i>
               </p>
               <div class="dropdown-content">
@@ -26,7 +26,7 @@ echo '
           </li>
           <li>
             <div class="dropdown">
-              <p class="dropbtn" style="padding : 6px 30px; margin:0; font-size:18px">Artikel
+              <p class="dropdown" style="padding : 6px 30px; margin:0; font-size:18px">Artikel
               <i class="fa fa-caret-down"></i>
               </p>
               <div class="dropdown-content">
@@ -38,7 +38,7 @@ echo '
 
           <li>
             <div class="dropdown">
-              <img src="../Asset/img/pp.jpeg" alt="" class="dropbtn">
+              <img src="../Asset/img/pp.jpeg" alt="" class="dropdown">
               <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content img">

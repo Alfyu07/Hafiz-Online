@@ -1,6 +1,6 @@
-<?php
+t<?php
 
-echo '
+  echo '
 <header>
     <!-- Navigasi -->
     <nav class="navbar">
@@ -9,7 +9,7 @@ echo '
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
-      </a>
+      </a>  
       <div class="navbar-links">
         <ul>
           <li><a href="index.php?halaman=daftarSurah">Baca Quran</a></li>

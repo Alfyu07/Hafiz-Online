@@ -17,6 +17,15 @@
       justify-self: center;
       align-self: center;
     }
+
+    p.deskripsi {
+      text-align: center;
+    }
+
+    .row,
+    .field {
+      grid-template-columns: repeat(5, 1fr);
+    }
   </style>
 </head>
 
@@ -35,12 +44,12 @@
     </aside>
     <section class="table">
       <div class="field">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <strong class="nama">Juz</strong>
         <strong class="tanggal">Surah</strong>
         <strong class="deskripsi">Ayat</strong>
@@ -50,12 +59,12 @@
 
       <!-- /ini ulang pake php nanti -->
       <div class="row">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <p class="tanggal">Juz 30</p>
         <p class="deskripsi">Surah At-Takasur,
           Surah Al- ‘Asr</p>
@@ -65,12 +74,12 @@
       </div>
       <!-- sampe sini -->
       <div class="row">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <p class="tanggal">Juz 30</p>
         <p class="deskripsi">Surah At-Takasur,
           Surah Al- ‘Asr</p>
@@ -79,12 +88,12 @@
         <p class="nilai">87</p>
       </div>
       <div class="row">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <p class="tanggal">Juz 30</p>
         <p class="deskripsi">Surah At-Takasur,
           Surah Al- ‘Asr</p>
@@ -93,12 +102,12 @@
         <p class="nilai">87</p>
       </div>
       <div class="row">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <p class="tanggal">Juz 30</p>
         <p class="deskripsi">Surah At-Takasur,
           Surah Al- ‘Asr</p>
@@ -107,12 +116,12 @@
         <p class="nilai">87</p>
       </div>
       <div class="row">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <p class="tanggal">Juz 30</p>
         <p class="deskripsi">Surah At-Takasur,
           Surah Al- ‘Asr</p>
@@ -121,12 +130,12 @@
         <p class="nilai">87</p>
       </div>
       <div class="row">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <p class="tanggal">Juz 30</p>
         <p class="deskripsi">Surah At-Takasur,
           Surah Al- ‘Asr</p>
@@ -135,12 +144,12 @@
         <p class="nilai">87</p>
       </div>
       <div class="row">
-        <div class="check">
+        <!-- <div class="check">
           <label class="container">
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-        </div>
+        </div> -->
         <p class="tanggal">Juz 30</p>
         <p class="deskripsi">Surah At-Takasur,
           Surah Al- ‘Asr</p>

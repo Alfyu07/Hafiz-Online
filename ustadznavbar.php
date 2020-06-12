@@ -43,7 +43,7 @@ echo '
               </button>
               <div class="dropdown-content img">
                 <a href="./ustadz/daftar-hafalan.php">Riwayat Hafalan</a>
-                <a href="./profile.php">Profile</a>
+                <a href="./ustadz/profile.php">Profile</a>
                 <a href="logout.php">Log Out</a>
               </div>
             </div>

@@ -2,8 +2,11 @@
 require 'functions.php';
 if (isset($_POST["register"])) {
   if (insSantri($_POST) > 0) {
-    $_SESSION['register'] = true;
-    header("location:index.php");
+    echo "
+      <script>
+        alert('Registrasi Berhasil!');
+        window.location.href = '/login.php';
+      </script>";
   } else {
     echo mysqli_error($conn);
   }

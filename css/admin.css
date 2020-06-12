@@ -463,7 +463,8 @@ button {
           justify-content: flex-end;
 }
 
-button.modal-btn {
+button.modal-btn,
+a.modal-btn {
   margin: 1rem 10px;
   border: none;
   width: 120px;
@@ -474,16 +475,19 @@ button.modal-btn {
   color: white;
 }
 
-button.modal-btn a {
+button.modal-btn a,
+a.modal-btn a {
   text-decoration: none;
   color: white;
 }
 
-button.modal-btn.tidak {
+button.modal-btn.tidak,
+a.modal-btn.tidak {
   background-color: #ff7777;
 }
 
-button.modal-btn.ya {
+button.modal-btn.ya,
+a.modal-btn.ya {
   background-color: #51a1f7;
 }
 

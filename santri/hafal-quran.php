@@ -159,8 +159,8 @@ $bismillah = query("SELECT * FROM quran_id where id = 0")
     <div class="modal confirm">
       <strong>Apakah anda yakin?</strong>
       <div class="input">
-        <button class="modal-btn tidak">Tidak</button>
-        <button class="modal-btn ya">Ya</button>
+        <a href="../index.php" class="modal-btn tidak">Tidak</a>
+        <a href="listhafalan.php" class="modal-btn ya">Ya</a>
         <div class="modal-close">
           <span class="iconify" data-inline="false" data-icon="fa-solid:times-circle" style="color: #ff2f3b; font-size: 30px;"></span>
         </div>

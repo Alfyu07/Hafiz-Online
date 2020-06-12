@@ -127,7 +127,20 @@ button {
           justify-content: flex-end;
 }
 
-button.modal-btn {
+button.modal-btn,
+a.modal-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-text-decoration: nonelis;
+          text-decoration: nonelis;
+  margin-right: 0;
   margin: 1rem 10px;
   border: none;
   width: 120px;
@@ -138,16 +151,19 @@ button.modal-btn {
   color: white;
 }
 
-button.modal-btn a {
+button.modal-btn a,
+a.modal-btn a {
   text-decoration: none;
   color: white;
 }
 
-button.modal-btn.tidak {
+button.modal-btn.tidak,
+a.modal-btn.tidak {
   background-color: #ff7777;
 }
 
-button.modal-btn.ya {
+button.modal-btn.ya,
+a.modal-btn.ya {
   background-color: #51a1f7;
 }
 /*# sourceMappingURL=modal.css.map */

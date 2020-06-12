@@ -52,7 +52,13 @@
   display: flex;
   justify-content: flex-end;
 }
-button.modal-btn {
+button.modal-btn,
+a.modal-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: nonelis;
+  margin-right: 0;
   margin: 1rem 10px;
   border: none;
   width: 120px;

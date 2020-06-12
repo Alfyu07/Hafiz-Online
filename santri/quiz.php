@@ -3,7 +3,7 @@ require "../functions.php";
 if (!$_SESSION['santri']) {
   echo "
 	<script>
-		alert('Anda harus login terlebih dahulu');
+		alert('Anda harus login terlebih dahulu!');
 		window.location.href = '../login.php';
 	</script>";
 }

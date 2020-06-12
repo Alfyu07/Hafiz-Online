@@ -33,10 +33,6 @@
     if (!isset($_SESSION["ustadz"])) {
       $_SESSION["ustadz"] = false;
     }
-    if (!isset($_SESSION["register"])) {
-      $_SESSION["register"] = false;
-    }
-
     //ambil data dari tabel
     // var_dump($conn);
     function query($query)
@@ -134,8 +130,8 @@
       $email = $data["email"];
 
       $query = "UPDATE santri SET name='$nama', phone_number='$phone_number', 
-	gender='$gender', email='$email' 
-	WHERE id_santri = $id_user";
+    gender='$gender', email='$email' 
+    WHERE id_santri = $id_user";
 
       $result = mysqli_query($conn, $query);
       return $result;
@@ -328,7 +324,7 @@
       $nama = mysqli_real_escape_string($conn, $data["username"]);
       $password = mysqli_real_escape_string($conn, $data["password"]);
 
-      $result = query("SELECT * FROM ustadz WHERE name = '$ustadz'");
+      $result = query("SELECT * FROM ustadz WHERE name = '$nama'");
       if (mysqli_num_rows($result) === 1) {
         //cek password
         $row = mysqli_fetch_assoc($result);
@@ -373,6 +369,27 @@
 
       return $result;
     }
+    function updUstadz2($data, $id_user)
+    {
+      #name, phone_number, address, birth_date, email, password
+      global $conn;
+
+      #$data : data/nilai baru
+      $nama = $data["nama"];
+      $phone_number = $data["phone_number"];
+      $address = $data["address"];
+      #$gender = $data["gender"];
+      $birth_date = $data["birth_date"];
+      $email = $data["email"];
+
+      $query = "UPDATE ustadz SET name='$nama', phone_number='$phone_number', email='$email' ,
+      address='$address', birth_date='$birth_date' WHERE id_ustadz = '$id_user'";
+      $result = mysqli_query($conn, $query);
+
+      // var_dump($result);
+      return $result;
+    }
+
 
     #DELETE FROM 'tabel' WHERE 'tabel_id'=?
     function delUstadz($id_user)
